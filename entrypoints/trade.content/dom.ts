@@ -3,38 +3,19 @@ import type {
   MercenarySkill,
   MercenarySupport,
   RequirementEvaluation,
+  SupportNameEvaluation,
 } from './types'
 import type { FilterConfig, SkillRequirement } from '@/utils/filter-config/types'
-
-const LISTING_SELECTOR = '.row[data-id]'
-const MERCENARY_MOD_SELECTOR = '.item-mod.item-mod--mercenary'
-
-const DECORATION_CLASSES = {
-  badge: 'poe-merc-finder-badge',
-  badgeFail: 'poe-merc-finder-badge--fail',
-  badgeMatch: 'poe-merc-finder-badge--match',
-  badgePerfect: 'poe-merc-finder-badge--perfect',
-  hidden: 'poe-merc-finder-listing--hidden',
-  listingFail: 'poe-merc-finder-listing--fail',
-  listingMatch: 'poe-merc-finder-listing--match',
-  listingPerfect: 'poe-merc-finder-listing--perfect',
-  optionalSupport: 'poe-merc-finder-highlight--optional',
-  requiredSupport: 'poe-merc-finder-highlight--required',
-  skill: 'poe-merc-finder-highlight--skill',
-} as const
-
-const LISTING_DECORATION_CLASSES = [
-  DECORATION_CLASSES.hidden,
-  DECORATION_CLASSES.listingFail,
-  DECORATION_CLASSES.listingMatch,
-  DECORATION_CLASSES.listingPerfect,
-]
-
-const LINE_DECORATION_CLASSES = [
-  DECORATION_CLASSES.optionalSupport,
-  DECORATION_CLASSES.requiredSupport,
-  DECORATION_CLASSES.skill,
-]
+import {
+  BADGE_LABELS,
+  BADGE_VARIANT_CLASSES,
+  DECORATION_CLASSES,
+  LINE_DECORATION_CLASSES,
+  LISTING_DECORATION_CLASSES,
+  LISTING_SELECTOR,
+  LISTING_STATUS_CLASSES,
+  MERCENARY_MOD_SELECTOR,
+} from './const'
 
 function normalizeGemName(value: string): string {
   return value.trim().toLocaleLowerCase()
@@ -87,8 +68,8 @@ function parseMercenarySkills(listing: Element): MercenarySkill[] {
 function evaluateSupportNames(
   supportsByName: ReadonlyMap<string, MercenarySupport>,
   requestedNames: string[],
-): { matched: MercenarySupport[], missing: string[] } {
-  return requestedNames.reduce<{ matched: MercenarySupport[], missing: string[] }>(
+): SupportNameEvaluation {
+  return requestedNames.reduce<SupportNameEvaluation>(
     (result, requestedName) => {
       const support = supportsByName.get(normalizeGemName(requestedName))
 
@@ -280,20 +261,11 @@ function createBadgeTitle(evaluation: ListingEvaluation): string {
 function addBadge(listing: Element, evaluation: ListingEvaluation): void {
   const badge = document.createElement('div')
 
-  const labels = {
-    fail: '✕ FAIL',
-    match: '✓ MATCH',
-    perfect: '★ PERFECT',
-  } as const
-
-  const variantClasses = {
-    fail: DECORATION_CLASSES.badgeFail,
-    match: DECORATION_CLASSES.badgeMatch,
-    perfect: DECORATION_CLASSES.badgePerfect,
-  } as const
-
-  badge.classList.add(DECORATION_CLASSES.badge, variantClasses[evaluation.status])
-  badge.textContent = `${labels[evaluation.status]} • ${formatCounts(evaluation)}`
+  badge.classList.add(
+    DECORATION_CLASSES.badge,
+    BADGE_VARIANT_CLASSES[evaluation.status],
+  )
+  badge.textContent = `${BADGE_LABELS[evaluation.status]} • ${formatCounts(evaluation)}`
   badge.title = createBadgeTitle(evaluation)
 
   const target = listing.querySelector('.right .details')
@@ -308,13 +280,7 @@ function decorateListing(
   evaluation: ListingEvaluation,
   hideFailures: boolean,
 ): void {
-  const listingClasses = {
-    fail: DECORATION_CLASSES.listingFail,
-    match: DECORATION_CLASSES.listingMatch,
-    perfect: DECORATION_CLASSES.listingPerfect,
-  } as const
-
-  listing.classList.add(listingClasses[evaluation.status])
+  listing.classList.add(LISTING_STATUS_CLASSES[evaluation.status])
 
   if (hideFailures && evaluation.status === 'fail') {
     listing.classList.add(DECORATION_CLASSES.hidden)

@@ -1,11 +1,6 @@
-import type { ApplyTradePageFilter } from '@/hooks/use-trade-page-filter/types'
+import type { MainSidebarProps } from './types'
 import FilterEditor from '@/components/filter-editor'
 import { useTradePageFilter } from '@/hooks/use-trade-page-filter'
-
-interface MainSidebarProps {
-  onApplyFilter: ApplyTradePageFilter
-  onCollapse: () => void
-}
 
 const MainSidebar: React.FC<MainSidebarProps> = ({
   onApplyFilter,

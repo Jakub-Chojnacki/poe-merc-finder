@@ -1,38 +1,22 @@
+import type { MercenarySkillOption } from './types'
 import mercenaryData from '@/data/mercenaries.json'
+import {
+  ALL_SKILL_OPTIONS,
+  SKILL_CATEGORIES,
+  SKILL_CATEGORY_LABELS,
+} from './const'
 
-const SKILL_CATEGORIES = ['primary', 'secondary', 'utility'] as const
-const SKILL_CATEGORY_LABELS = {
-  primary: 'Primary',
-  secondary: 'Secondary',
-  utility: 'Utility',
-} as const
+export { MERCENARY_OPTIONS, SUPPORT_GEM_NAMES } from './const'
 
-export const MERCENARY_OPTIONS = mercenaryData.mercenaries.map(mercenary => ({
-  name: mercenary.name,
-  attribute: mercenary.attribute,
-}))
-
-export const SUPPORT_GEM_NAMES = mercenaryData.supportGems.map(
-  support => support.name,
-)
-
-const allSkillOptions = [...new Set(
-  mercenaryData.mercenaries.flatMap(mercenary => (
-    SKILL_CATEGORIES.flatMap(category => (
-      mercenary.skills[category].map(skill => skill.name)
-    ))
-  )),
-)]
-  .sort((left, right) => left.localeCompare(right))
-  .map(name => ({ name, label: '' }))
-
-export function getMercenarySkillOptions(mercenaryName: string) {
+export function getMercenarySkillOptions(
+  mercenaryName: string,
+): MercenarySkillOption[] {
   const mercenary = mercenaryData.mercenaries.find(
     candidate => candidate.name === mercenaryName,
   )
 
   if (!mercenary) {
-    return allSkillOptions
+    return ALL_SKILL_OPTIONS
   }
 
   return SKILL_CATEGORIES.flatMap(category => (

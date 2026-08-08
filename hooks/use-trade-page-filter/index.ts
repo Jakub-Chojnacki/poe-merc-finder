@@ -1,10 +1,16 @@
-import type { ApplyTradePageFilter, FilterApplyStatus } from './types'
+import type {
+  ApplyTradePageFilter,
+  FilterApplyStatus,
+  UseTradePageFilterResult,
+} from './types'
 import type { FilterDraft } from '@/utils/filter-draft/types'
 import { useCallback, useState } from 'react'
 import { createFilterConfig } from '@/utils/filter-config'
 import { createEmptyFilterDraft } from '@/utils/filter-draft'
 
-export function useTradePageFilter(onApplyFilter: ApplyTradePageFilter) {
+export function useTradePageFilter(
+  onApplyFilter: ApplyTradePageFilter,
+): UseTradePageFilterResult {
   const [filterApplyStatus, setFilterApplyStatus]
     = useState<FilterApplyStatus>('idle')
 

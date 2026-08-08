@@ -1,20 +1,12 @@
-import type { CSSProperties } from 'react'
-import type { ApplyTradePageFilter } from '@/hooks/use-trade-page-filter/types'
+import type { InPageSidebarProps, SidebarStyle } from './types'
 import { useCallback, useEffect, useState } from 'react'
 import MainSidebar from '@/components/main-sidebar'
 import { useBetterTradingOffset } from '@/hooks/use-better-trading-offset'
-
-const COLLAPSED_STORAGE_KEY = 'mercenaryFilterSidebarCollapsed'
-const PAGE_CLASS = 'poe-merc-finder-page'
-const PAGE_OPEN_CLASS = 'poe-merc-finder-panel-open'
-
-interface InPageSidebarProps {
-  onApplyFilter: ApplyTradePageFilter
-}
-
-interface SidebarStyle extends CSSProperties {
-  '--sidebar-right-offset': string
-}
+import {
+  COLLAPSED_STORAGE_KEY,
+  PAGE_CLASS,
+  PAGE_OPEN_CLASS,
+} from './const'
 
 const InPageSidebar: React.FC<InPageSidebarProps> = ({ onApplyFilter }) => {
   const [isCollapsed, setIsCollapsed] = useState(false)

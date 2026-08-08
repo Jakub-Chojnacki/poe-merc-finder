@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
-
-const BETTER_TRADING_CONTAINER_SELECTOR = '#better-trading-container'
-const BETTER_TRADING_COLLAPSED_CLASS = 'bt-is-collapsed'
+import {
+  BETTER_TRADING_COLLAPSED_CLASS,
+  BETTER_TRADING_CONTAINER_SELECTOR,
+} from './const'
 
 export function useBetterTradingOffset(): number {
   const [offset, setOffset] = useState(0)

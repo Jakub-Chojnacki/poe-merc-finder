@@ -3,6 +3,7 @@ import type { FilterConfig } from '@/utils/filter-config/types'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import InPageSidebar from '@/components/in-page-sidebar'
+import { HIGHLIGHT_DELAY_MS } from './const'
 import {
   applyTradeFilter,
   clearTradeFilter,
@@ -10,8 +11,6 @@ import {
 } from './dom'
 import panelStyles from './panel.css?inline'
 import './style.css'
-
-const HIGHLIGHT_DELAY_MS = 200
 
 export default defineContentScript({
   matches: ['https://*.pathofexile.com/trade/search/*'],
