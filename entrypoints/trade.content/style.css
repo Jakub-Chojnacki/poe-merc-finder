@@ -1,0 +1,93 @@
+:root {
+  --poe-merc-finder-highlight-padding: 0.375rem;
+  --poe-merc-finder-highlight-width: 0.1875rem;
+  --poe-merc-finder-skill-color: #7daaff;
+  --poe-merc-finder-skill-background: rgb(120 170 255 / 8%);
+  --poe-merc-finder-required-color: #42d66b;
+  --poe-merc-finder-required-background: rgb(66 214 107 / 14%);
+  --poe-merc-finder-optional-color: #d8b84b;
+  --poe-merc-finder-optional-background: rgb(216 184 75 / 12%);
+  --poe-merc-finder-fail-color: #d24b4b;
+  --poe-merc-finder-fail-background: rgb(210 75 75 / 70%);
+  --poe-merc-finder-badge-background: #242428;
+  --poe-merc-finder-badge-border: #666;
+  --poe-merc-finder-badge-color: #eee;
+  --poe-merc-finder-badge-font-size: 0.8125rem;
+  --poe-merc-finder-badge-line-height: 1.4;
+  --poe-merc-finder-badge-padding-block: 0.5rem;
+  --poe-merc-finder-badge-padding-inline: 0.75rem;
+  --poe-merc-finder-badge-margin-bottom: 0.5rem;
+  --poe-merc-finder-badge-radius: 0.25rem;
+  --poe-merc-finder-border-width: 0.1875rem;
+  --poe-merc-finder-fail-border-width: 0.125rem;
+}
+
+:is(
+  .poe-merc-finder-highlight--skill,
+  .poe-merc-finder-highlight--required,
+  .poe-merc-finder-highlight--optional
+) {
+  padding-inline-start: var(--poe-merc-finder-highlight-padding);
+}
+
+.poe-merc-finder-highlight--skill {
+  background: var(--poe-merc-finder-skill-background) !important;
+  box-shadow: inset var(--poe-merc-finder-highlight-width) 0 0 var(--poe-merc-finder-skill-color);
+}
+
+.poe-merc-finder-highlight--required {
+  background: var(--poe-merc-finder-required-background) !important;
+  box-shadow: inset var(--poe-merc-finder-highlight-width) 0 0 var(--poe-merc-finder-required-color);
+}
+
+.poe-merc-finder-highlight--optional {
+  background: var(--poe-merc-finder-optional-background) !important;
+  box-shadow: inset var(--poe-merc-finder-highlight-width) 0 0 var(--poe-merc-finder-optional-color);
+}
+
+.row.poe-merc-finder-listing--perfect {
+  outline: var(--poe-merc-finder-border-width) solid var(--poe-merc-finder-required-color) !important;
+  outline-offset: calc(-1 * var(--poe-merc-finder-border-width));
+}
+
+.row.poe-merc-finder-listing--match {
+  outline: var(--poe-merc-finder-border-width) solid var(--poe-merc-finder-optional-color) !important;
+  outline-offset: calc(-1 * var(--poe-merc-finder-border-width));
+}
+
+.row.poe-merc-finder-listing--fail {
+  outline: var(--poe-merc-finder-fail-border-width) solid var(--poe-merc-finder-fail-background) !important;
+  outline-offset: calc(-1 * var(--poe-merc-finder-fail-border-width));
+}
+
+.row.poe-merc-finder-listing--hidden {
+  display: none !important;
+}
+
+.poe-merc-finder-badge {
+  display: inline-block;
+  margin-block: 0 var(--poe-merc-finder-badge-margin-bottom);
+  padding: var(--poe-merc-finder-badge-padding-block) var(--poe-merc-finder-badge-padding-inline);
+  color: var(--poe-merc-finder-badge-color);
+  background: var(--poe-merc-finder-badge-background);
+  border: 0.0625rem solid var(--poe-merc-finder-badge-border);
+  border-radius: var(--poe-merc-finder-badge-radius);
+  font-size: var(--poe-merc-finder-badge-font-size);
+  font-weight: 700;
+  line-height: var(--poe-merc-finder-badge-line-height);
+}
+
+.poe-merc-finder-badge--perfect {
+  color: var(--poe-merc-finder-required-color);
+  border-color: var(--poe-merc-finder-required-color);
+}
+
+.poe-merc-finder-badge--match {
+  color: var(--poe-merc-finder-optional-color);
+  border-color: var(--poe-merc-finder-optional-color);
+}
+
+.poe-merc-finder-badge--fail {
+  color: var(--poe-merc-finder-fail-color);
+  border-color: var(--poe-merc-finder-fail-color);
+}
