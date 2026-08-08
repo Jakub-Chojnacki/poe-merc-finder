@@ -1,6 +1,22 @@
+import {
+  isGetTradePageInfoMessage,
+} from '@/utils/trade-page-messaging';
+import { ROW_QUERY_SELECTOR } from './const';
+import type { TradePageInfo } from '@/utils/trade-page-messaging/types';
+
 export default defineContentScript({
-  matches: ['https://www.pathofexile.com/trade/search/*'],
+  matches: ['https://*.pathofexile.com/trade/search/*'],
   main() {
-    console.info('PoE Merc Finder is active on this trade search.');
+    browser.runtime.onMessage.addListener((message, _sender, sendResponse) => {
+      if (!isGetTradePageInfoMessage(message)) {
+        return;
+      }
+
+      const response: TradePageInfo = {
+        listingCount: document.querySelectorAll(ROW_QUERY_SELECTOR).length,
+      };
+
+      sendResponse(response);
+    });
   },
 });

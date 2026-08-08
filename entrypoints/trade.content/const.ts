@@ -1,0 +1,1 @@
+export const ROW_QUERY_SELECTOR = '.row[data-id]'

@@ -16,6 +16,10 @@
   --color-text-muted: #a5a5b0;
   --color-accent: #d6ad5c;
   --color-accent-soft: rgb(214 173 92 / 14%);
+  --color-success: #73d99b;
+  --color-success-soft: rgb(115 217 155 / 12%);
+  --color-danger: #ef8b8b;
+  --color-danger-soft: rgb(239 139 139 / 12%);
 }
 
 * {
