@@ -40,7 +40,7 @@ const InPageSidebar: React.FC<InPageSidebarProps> = ({ onApplyFilter }) => {
 
   const updateCollapsed = useCallback((collapsed: boolean) => {
     setIsCollapsed(collapsed)
-    void browser.storage.local.set({ [COLLAPSED_STORAGE_KEY]: collapsed })
+    browser.storage.local.set({ [COLLAPSED_STORAGE_KEY]: collapsed })
   }, [])
 
   const sidebarClassName = isCollapsed
@@ -73,7 +73,13 @@ const InPageSidebar: React.FC<InPageSidebarProps> = ({ onApplyFilter }) => {
         onClick={() => updateCollapsed(false)}
       >
         <span className="sidebar-expand-button__mark" aria-hidden="true">M</span>
-        <span aria-hidden="true">‹</span>
+        <svg
+          className="sidebar-chevron sidebar-chevron--left"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path d="m9 6 6 6-6 6" />
+        </svg>
       </button>
     </div>
   )

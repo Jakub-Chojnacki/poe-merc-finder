@@ -183,7 +183,7 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
         className="button apply-button"
         aria-live="polite"
         disabled={applyStatus === 'applying'}
-        onClick={() => void onApply()}
+        onClick={() => onApply()}
       >
         {APPLY_BUTTON_LABELS[applyStatus]}
       </button>
