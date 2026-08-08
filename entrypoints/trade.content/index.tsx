@@ -1,19 +1,21 @@
+import type { Root } from 'react-dom/client'
 import type { FilterConfig } from '@/utils/filter-config/types'
-import {
-  onTradePageMessage,
-} from '@/utils/trade-page-messaging'
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import InPageSidebar from '@/components/in-page-sidebar'
 import {
   applyTradeFilter,
   clearTradeFilter,
   nodeContainsTradeListing,
 } from './dom'
+import panelStyles from './panel.css?inline'
 import './style.css'
 
 const HIGHLIGHT_DELAY_MS = 200
 
 export default defineContentScript({
   matches: ['https://*.pathofexile.com/trade/search/*'],
-  main(ctx) {
+  async main(ctx) {
     let highlightTimeoutId: number | undefined
 
     let activeFilter: FilterConfig = {
@@ -23,6 +25,11 @@ export default defineContentScript({
 
     const applyHighlights = (): void => {
       applyTradeFilter(activeFilter)
+    }
+
+    const applyFilter = (filter: FilterConfig): void => {
+      activeFilter = filter
+      applyHighlights()
     }
 
     const scheduleHighlights = (): void => {
@@ -36,18 +43,35 @@ export default defineContentScript({
       }, HIGHLIGHT_DELAY_MS)
     }
 
-    const removeGetTradePageInfoListener = onTradePageMessage(
-      'getTradePageInfo',
-      () => {},
-    )
+    const ui = await createShadowRootUi<Root>(ctx, {
+      name: 'poe-merc-finder-sidebar',
+      position: 'modal',
+      anchor: 'body',
+      css: panelStyles,
+      isolateEvents: true,
+      zIndex: 2147483000,
+      onMount(container) {
+        container.style.pointerEvents = 'none'
 
-    const removeApplyTradeFilterListener = onTradePageMessage(
-      'applyTradeFilter',
-      (message) => {
-        activeFilter = message.data
-        applyHighlights()
+        const app = document.createElement('div')
+        app.className = 'extension-root'
+        container.append(app)
+
+        const root = createRoot(app)
+        root.render(
+          <StrictMode>
+            <InPageSidebar onApplyFilter={applyFilter} />
+          </StrictMode>,
+        )
+
+        return root
       },
-    )
+      onRemove(root) {
+        root?.unmount()
+      },
+    })
+
+    ui.mount()
 
     const observer = new MutationObserver((mutations) => {
       const listingsChanged = mutations.some(mutation => (
@@ -67,8 +91,11 @@ export default defineContentScript({
 
     ctx.onInvalidated(() => {
       observer.disconnect()
-      removeGetTradePageInfoListener()
-      removeApplyTradeFilterListener()
+
+      if (highlightTimeoutId !== undefined) {
+        window.clearTimeout(highlightTimeoutId)
+      }
+
       clearTradeFilter()
     })
   },

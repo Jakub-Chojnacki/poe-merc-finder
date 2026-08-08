@@ -1,6 +1,7 @@
-export type ConnectionState
-  = | { status: 'loading' }
-    | { status: 'connected' }
-    | { status: 'unsupported' }
+import type { FilterConfig } from '@/utils/filter-config/types'
 
-export type FilterSyncStatus = 'idle' | 'syncing' | 'synced' | 'error'
+export type FilterApplyStatus = 'idle' | 'applying' | 'applied' | 'error'
+
+export type ApplyTradePageFilter = (
+  filter: FilterConfig,
+) => Promise<void> | void

@@ -1,30 +1,22 @@
+import type { ApplyTradePageFilter } from '@/hooks/use-trade-page-filter/types'
 import FilterEditor from '@/components/filter-editor'
 import { useTradePageFilter } from '@/hooks/use-trade-page-filter'
-import { getConnectionView } from './get-connection-view'
 
-const MainSidebar: React.FC = () => {
+interface MainSidebarProps {
+  onApplyFilter: ApplyTradePageFilter
+  onCollapse: () => void
+}
+
+const MainSidebar: React.FC<MainSidebarProps> = ({
+  onApplyFilter,
+  onCollapse,
+}) => {
   const {
-    checkConnection,
-    connection,
+    applyFilter,
+    filterApplyStatus,
     filterDraft,
-    filterSyncStatus,
-    refreshTradePage,
     setFilterDraft,
-  } = useTradePageFilter()
-
-  const connectionView = getConnectionView(
-    connection.status,
-    filterSyncStatus,
-  )
-
-  const handleConnectionAction = () => {
-    if (connectionView.action === 'refresh') {
-      refreshTradePage()
-      return
-    }
-
-    checkConnection()
-  }
+  } = useTradePageFilter(onApplyFilter)
 
   return (
     <main className="panel-shell">
@@ -34,31 +26,23 @@ const MainSidebar: React.FC = () => {
           <h1>Mercenary Support Filter</h1>
         </div>
 
-        <span
-          className={`status-badge status-badge--${connection.status}`}
-          aria-live="polite"
-        >
-          {connectionView.statusLabel}
-        </span>
-      </header>
-
-      <section className="connection-card" aria-labelledby="connection-title">
-        <h2 id="connection-title">
-          {connectionView.title}
-        </h2>
-        <p>
-          {connectionView.description}
-        </p>
-
         <button
           type="button"
-          onClick={handleConnectionAction}
+          className="sidebar-icon-button"
+          aria-label="Collapse mercenary filter"
+          title="Collapse mercenary filter"
+          onClick={onCollapse}
         >
-          {connectionView.actionLabel}
+          <span aria-hidden="true">›</span>
         </button>
-      </section>
+      </header>
 
-      <FilterEditor value={filterDraft} onChange={setFilterDraft} />
+      <FilterEditor
+        applyStatus={filterApplyStatus}
+        value={filterDraft}
+        onApply={applyFilter}
+        onChange={setFilterDraft}
+      />
     </main>
   )
 }

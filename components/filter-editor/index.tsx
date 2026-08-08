@@ -1,7 +1,19 @@
 import type { FilterEditorProps, UpdatesToRequirement } from './types'
 import { createEmptySkillRequirement } from '@/utils/filter-draft'
 
-const FilterEditor: React.FC<FilterEditorProps> = ({ value, onChange }) => {
+const APPLY_BUTTON_LABELS = {
+  applied: 'Applied',
+  applying: 'Applying…',
+  error: 'Try again',
+  idle: 'Apply filters',
+} as const
+
+const FilterEditor: React.FC<FilterEditorProps> = ({
+  applyStatus,
+  onApply,
+  onChange,
+  value,
+}) => {
   const updateRequirement = (id: string, updates: UpdatesToRequirement): void => {
     onChange({
       ...value,
@@ -116,6 +128,16 @@ const FilterEditor: React.FC<FilterEditorProps> = ({ value, onChange }) => {
         />
         <span>Hide listings missing required skills or supports</span>
       </label>
+
+      <button
+        type="button"
+        className="button apply-button"
+        aria-live="polite"
+        disabled={applyStatus === 'applying'}
+        onClick={() => void onApply()}
+      >
+        {APPLY_BUTTON_LABELS[applyStatus]}
+      </button>
     </section>
   )
 }
