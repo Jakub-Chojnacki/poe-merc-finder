@@ -1,5 +1,7 @@
 import type { SkillRequirement } from '@/utils/filter-config/types'
 
+export type ListingStatus = 'perfect' | 'match' | 'fail'
+
 export interface MercenarySupport {
   name: string
   element: Element
@@ -20,15 +22,22 @@ export interface RequirementEvaluation {
   missingOptionalSupports: string[]
 }
 
+export interface SupportNameEvaluation {
+  matched: MercenarySupport[]
+  missing: string[]
+}
+
+export interface ListingCounts {
+  matchedSkills: number
+  totalSkills: number
+  matchedRequiredSupports: number
+  totalRequiredSupports: number
+  matchedOptionalSupports: number
+  totalOptionalSupports: number
+}
+
 export interface ListingEvaluation {
-  status: 'perfect' | 'match' | 'fail'
+  status: ListingStatus
   requirements: RequirementEvaluation[]
-  counts: {
-    matchedSkills: number
-    totalSkills: number
-    matchedRequiredSupports: number
-    totalRequiredSupports: number
-    matchedOptionalSupports: number
-    totalOptionalSupports: number
-  }
+  counts: ListingCounts
 }

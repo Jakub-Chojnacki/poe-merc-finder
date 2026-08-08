@@ -7,17 +7,12 @@ import {
   MERCENARY_OPTIONS,
   SUPPORT_GEM_NAMES,
 } from '@/utils/mercenary-data'
-
-const MERCENARY_CLASS_OPTIONS_ID = 'mercenary-class-options'
-const MERCENARY_SKILL_OPTIONS_ID = 'mercenary-skill-options'
-const MERCENARY_SUPPORT_OPTIONS_ID = 'mercenary-support-options'
-
-const APPLY_BUTTON_LABELS = {
-  applied: 'Applied',
-  applying: 'Applying…',
-  error: 'Try again',
-  idle: 'Apply filters',
-} as const
+import {
+  APPLY_BUTTON_LABELS,
+  MERCENARY_CLASS_OPTIONS_ID,
+  MERCENARY_SKILL_OPTIONS_ID,
+  MERCENARY_SUPPORT_OPTIONS_ID,
+} from './const'
 
 const FilterEditor: React.FC<FilterEditorProps> = ({
   applyStatus,
