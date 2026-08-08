@@ -11,6 +11,7 @@ export function createEmptySkillRequirement(): SkillRequirementDraft {
 
 export function createEmptyFilterDraft(): FilterDraft {
   return {
+    mercenaryClass: '',
     requirements: [createEmptySkillRequirement()],
     hideFailures: false,
   }

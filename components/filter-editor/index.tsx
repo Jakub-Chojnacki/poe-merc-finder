@@ -1,5 +1,15 @@
 import type { FilterEditorProps, UpdatesToRequirement } from './types'
+import GemListField from '@/components/gem-list-field'
 import { createEmptySkillRequirement } from '@/utils/filter-draft'
+import {
+  getMercenarySkillOptions,
+  MERCENARY_OPTIONS,
+  SUPPORT_GEM_NAMES,
+} from '@/utils/mercenary-data'
+
+const MERCENARY_CLASS_OPTIONS_ID = 'mercenary-class-options'
+const MERCENARY_SKILL_OPTIONS_ID = 'mercenary-skill-options'
+const MERCENARY_SUPPORT_OPTIONS_ID = 'mercenary-support-options'
 
 const APPLY_BUTTON_LABELS = {
   applied: 'Applied',
@@ -14,6 +24,8 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
   onChange,
   value,
 }) => {
+  const skillOptions = getMercenarySkillOptions(value.mercenaryClass)
+
   const updateRequirement = (id: string, updates: UpdatesToRequirement): void => {
     onChange({
       ...value,
@@ -56,6 +68,41 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
         </button>
       </header>
 
+      <label className="field">
+        <span>Mercenary class</span>
+        <input
+          type="text"
+          list={MERCENARY_CLASS_OPTIONS_ID}
+          value={value.mercenaryClass}
+          onChange={event => onChange({
+            ...value,
+            mercenaryClass: event.target.value,
+          })}
+          placeholder="Stormhand"
+        />
+        <small>Choose a class to narrow the skill suggestions, or type manually.</small>
+      </label>
+
+      <datalist id={MERCENARY_CLASS_OPTIONS_ID}>
+        {MERCENARY_OPTIONS.map(mercenary => (
+          <option key={mercenary.name} value={mercenary.name}>
+            {mercenary.attribute}
+          </option>
+        ))}
+      </datalist>
+
+      <datalist id={MERCENARY_SKILL_OPTIONS_ID}>
+        {skillOptions.map(skill => (
+          <option key={skill.name} value={skill.name} label={skill.label} />
+        ))}
+      </datalist>
+
+      <datalist id={MERCENARY_SUPPORT_OPTIONS_ID}>
+        {SUPPORT_GEM_NAMES.map(supportName => (
+          <option key={supportName} value={supportName} />
+        ))}
+      </datalist>
+
       <div className="skill-groups">
         {value.requirements.map((requirement, index) => (
           <fieldset className="skill-group" key={requirement.id}>
@@ -79,6 +126,7 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
               <span>Skill name</span>
               <input
                 type="text"
+                list={MERCENARY_SKILL_OPTIONS_ID}
                 value={requirement.skill}
                 onChange={event =>
                   updateRequirement(requirement.id, {
@@ -88,33 +136,25 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
               />
             </label>
 
-            <label className="field">
-              <span>Required supports</span>
-              <textarea
-                value={requirement.requiredSupports}
-                onChange={event =>
-                  updateRequirement(requirement.id, {
-                    requiredSupports: event.target.value,
-                  })}
-                placeholder={'Return\nGreater Multiple Projectiles'}
-                rows={3}
-              />
-              <small>Every support must be linked to this skill.</small>
-            </label>
+            <GemListField
+              label="Required supports"
+              value={requirement.requiredSupports}
+              onChange={requiredSupports =>
+                updateRequirement(requirement.id, { requiredSupports })}
+              optionsId={MERCENARY_SUPPORT_OPTIONS_ID}
+              placeholder={'Return\nGreater Multiple Projectiles'}
+              hint="Every support must be linked to this skill. The list remains manually editable."
+            />
 
-            <label className="field">
-              <span>Optional supports</span>
-              <textarea
-                value={requirement.optionalSupports}
-                onChange={event =>
-                  updateRequirement(requirement.id, {
-                    optionalSupports: event.target.value,
-                  })}
-                placeholder={'Greater Pierce\nChain'}
-                rows={3}
-              />
-              <small>These improve the match but are not required.</small>
-            </label>
+            <GemListField
+              label="Optional supports"
+              value={requirement.optionalSupports}
+              onChange={optionalSupports =>
+                updateRequirement(requirement.id, { optionalSupports })}
+              optionsId={MERCENARY_SUPPORT_OPTIONS_ID}
+              placeholder={'Greater Pierce\nChain'}
+              hint="These improve the match but are not required. The list remains manually editable."
+            />
           </fieldset>
         ))}
       </div>

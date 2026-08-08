@@ -6,6 +6,7 @@ export interface SkillRequirementDraft {
 }
 
 export interface FilterDraft {
+  mercenaryClass: string
   requirements: SkillRequirementDraft[]
   hideFailures: boolean
 }
