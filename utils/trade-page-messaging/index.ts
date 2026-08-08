@@ -1,13 +1,12 @@
 import { GET_TRADE_PAGE_INFO } from "./const";
 import type { GetTradePageInfoMessage, TradePageInfo } from "./types";
-
+import { isNonNullObject } from '@/utils/type-guards';
 
 export function isGetTradePageInfoMessage(
   message: unknown,
 ): message is GetTradePageInfoMessage {
   return (
-    typeof message === 'object' &&
-    message !== null &&
+    isNonNullObject(message) &&
     'type' in message &&
     message.type === GET_TRADE_PAGE_INFO
   );
@@ -15,11 +14,8 @@ export function isGetTradePageInfoMessage(
 
 export function isTradePageInfo(value: unknown): value is TradePageInfo {
   return (
-    typeof value === 'object' &&
-    value !== null &&
-    'listingCount' in value &&
-    typeof value.listingCount === 'number' &&
-    Number.isInteger(value.listingCount) &&
-    value.listingCount >= 0
+    isNonNullObject(value) &&
+    'connected' in value &&
+    value.connected === true
   );
 }

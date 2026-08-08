@@ -1,3 +1,5 @@
+import FilterEditor from '@/components/filter-editor';
+import { createEmptyFilterDraft } from '@/utils/filter-draft';
 import { isTradePageInfo } from "@/utils/trade-page-messaging";
 import { GET_TRADE_PAGE_INFO } from "@/utils/trade-page-messaging/const";
 import type { ConnectionState } from "./types";
@@ -6,6 +8,8 @@ const MainSidebar: React.FC = () => {
   const [connection, setConnection] = useState<ConnectionState>({
     status: "loading",
   });
+
+  const [filterDraft, setFilterDraft] = useState(createEmptyFilterDraft);
 
   const checkConnection = useCallback(async () => {
     setConnection({ status: "loading" });
@@ -25,12 +29,14 @@ const MainSidebar: React.FC = () => {
         type: GET_TRADE_PAGE_INFO,
       });
 
+      console.log(response)
+
       if (!isTradePageInfo(response)) {
         setConnection({ status: "unsupported" });
         return;
       }
 
-      setConnection({ status: "connected", info: response });
+      setConnection({ status: "connected" });
     } catch(error) {
       setConnection({ status: "unsupported" });
       console.log(error)
@@ -89,12 +95,12 @@ const MainSidebar: React.FC = () => {
           {connection.status === "loading"
             ? "Looking for a trade search"
             : isConnected
-              ? `${connection.info.listingCount} listings found`
+              ? "Connected to the trade page"
               : "Open a supported PoE trade search"}
         </h2>
         <p>
           {isConnected
-            ? "The extension can now read results from the active trade tab."
+            ? "Manual filters are ready to configure."
             : "Navigate to a Path of Exile trade search, then check the connection again."}
         </p>
 
@@ -102,6 +108,8 @@ const MainSidebar: React.FC = () => {
           Check again
         </button>
       </section>
+
+      <FilterEditor value={filterDraft} onChange={setFilterDraft} />
     </main>
   );
 };

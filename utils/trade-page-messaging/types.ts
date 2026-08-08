@@ -5,5 +5,5 @@ import type { GET_TRADE_PAGE_INFO } from "./const";
 };
 
 export type TradePageInfo = {
-  listingCount: number;
+  connected: true;
 };
