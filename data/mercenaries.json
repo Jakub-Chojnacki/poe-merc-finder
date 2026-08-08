@@ -1,0 +1,4196 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-08T12:26:45.466Z",
+  "sources": [
+    {
+      "page": "List of mercenary classes",
+      "revision": 1699330,
+      "url": "https://www.poewiki.net/wiki/List_of_mercenary_classes"
+    },
+    {
+      "page": "Mercenary",
+      "revision": 1699850,
+      "url": "https://www.poewiki.net/wiki/Mercenary#List_of_mercenary_exclusive_support_gems"
+    },
+    {
+      "page": "Path of Exile trade stats",
+      "revision": null,
+      "url": "https://www.pathofexile.com/api/trade/data/stats"
+    }
+  ],
+  "mercenaries": [
+    {
+      "name": "Bastion",
+      "attribute": "Str/Dex",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Shield Crush",
+            "supportCount": "high"
+          },
+          {
+            "name": "Shield Charge",
+            "supportCount": "medium"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Spectral Shield Throw of Trarthus",
+            "supportCount": "high"
+          },
+          {
+            "name": "Tempest Shield",
+            "supportCount": "none"
+          },
+          {
+            "name": "Prismplate",
+            "supportCount": "none"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Determination",
+            "supportCount": "none"
+          },
+          {
+            "name": "Dash",
+            "supportCount": "none"
+          },
+          {
+            "name": "Intimidating Cry",
+            "supportCount": "low"
+          },
+          {
+            "name": "Physical Aegis",
+            "supportCount": "none"
+          },
+          {
+            "name": "Impenetrable Bastion",
+            "supportCount": "low"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Blade Ambusher",
+      "attribute": "Dex/Int",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Blade Trap",
+            "supportCount": "high"
+          },
+          {
+            "name": "Trarthan Agility",
+            "supportCount": "low"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Spectral Throw of Trarthus",
+            "supportCount": "high"
+          },
+          {
+            "name": "Spectral Helix of Trarthus",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Smoke Mine",
+            "supportCount": "low"
+          },
+          {
+            "name": "Flame Dash",
+            "supportCount": "low"
+          },
+          {
+            "name": "Grace",
+            "supportCount": "none"
+          },
+          {
+            "name": "Summon Skitterbots",
+            "supportCount": "low"
+          },
+          {
+            "name": "Bear Trap",
+            "supportCount": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Bladebitter",
+      "attribute": "Dex/Int",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Viper Strike",
+            "supportCount": "high"
+          },
+          {
+            "name": "Abyssal Cry",
+            "supportCount": "low"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Venom Gyre",
+            "supportCount": "high"
+          },
+          {
+            "name": "Profane Strike",
+            "supportCount": "high"
+          },
+          {
+            "name": "Cobra Lash",
+            "supportCount": "high"
+          },
+          {
+            "name": "Pestilent Strike",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Whirling Blades",
+            "supportCount": "low"
+          },
+          {
+            "name": "Dash",
+            "supportCount": "none"
+          },
+          {
+            "name": "Malevolence",
+            "supportCount": "none"
+          },
+          {
+            "name": "Withering Step",
+            "supportCount": "low"
+          },
+          {
+            "name": "Grace",
+            "supportCount": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Bladecaster",
+      "attribute": "Dex/Int",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Clutches of the Damned",
+            "supportCount": "none"
+          },
+          {
+            "name": "Bloody Warp",
+            "supportCount": "low"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Seismic Crush",
+            "supportCount": "medium"
+          },
+          {
+            "name": "Bladefall",
+            "supportCount": "high"
+          },
+          {
+            "name": "Blade Vortex",
+            "supportCount": "high"
+          },
+          {
+            "name": "Ethereal Knives",
+            "supportCount": "high"
+          },
+          {
+            "name": "Bladefall of Trarthus",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Dash",
+            "supportCount": "none"
+          },
+          {
+            "name": "Grace",
+            "supportCount": "none"
+          },
+          {
+            "name": "Flame Dash",
+            "supportCount": "low"
+          },
+          {
+            "name": "Aspect of the Spider",
+            "supportCount": "none"
+          },
+          {
+            "name": "Frost Shield",
+            "supportCount": "low"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Bloodletter",
+      "attribute": "Str/Dex",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Bloodthirst",
+            "supportCount": "none"
+          },
+          {
+            "name": "Blood Mortar",
+            "supportCount": "medium"
+          },
+          {
+            "name": "Lacerate",
+            "supportCount": "high"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Bladestorm",
+            "supportCount": "high"
+          },
+          {
+            "name": "Perforate",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Leap Slam",
+            "supportCount": "low"
+          },
+          {
+            "name": "Dash",
+            "supportCount": "none"
+          },
+          {
+            "name": "Determination",
+            "supportCount": "none"
+          },
+          {
+            "name": "Oil Slick",
+            "supportCount": "low"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Cardinal",
+      "attribute": "Str/Int",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Holy Hammers",
+            "supportCount": "high"
+          },
+          {
+            "name": "Holy Strike",
+            "supportCount": "high"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Holy Sweep",
+            "supportCount": "high"
+          },
+          {
+            "name": "Sanctified Strike",
+            "supportCount": "high"
+          },
+          {
+            "name": "Consecrated Path",
+            "supportCount": "medium"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Purity of Lightning",
+            "supportCount": "none"
+          },
+          {
+            "name": "Flame Dash",
+            "supportCount": "low"
+          },
+          {
+            "name": "Herald of Purity",
+            "supportCount": "medium"
+          },
+          {
+            "name": "Wrath",
+            "supportCount": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Combatant",
+      "attribute": "Str/Dex",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Inspiring Cry",
+            "supportCount": "low"
+          },
+          {
+            "name": "Herald of Ice",
+            "supportCount": "none"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Frost Blades",
+            "supportCount": "high"
+          },
+          {
+            "name": "Wild Strike",
+            "supportCount": "high"
+          },
+          {
+            "name": "Spectral Helix",
+            "supportCount": "high"
+          },
+          {
+            "name": "Static Strike",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Wrath",
+            "supportCount": "none"
+          },
+          {
+            "name": "Dash",
+            "supportCount": "none"
+          },
+          {
+            "name": "Frostblink",
+            "supportCount": "low"
+          },
+          {
+            "name": "Purity of Ice",
+            "supportCount": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Cruel Mistress",
+      "attribute": "Int",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Despair",
+            "supportCount": "low"
+          },
+          {
+            "name": "Void Sphere",
+            "supportCount": "medium"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Dark Bargain",
+            "supportCount": "high"
+          },
+          {
+            "name": "Voltaxic Burst",
+            "supportCount": "high"
+          },
+          {
+            "name": "Soulrend of Reaping",
+            "supportCount": "high"
+          },
+          {
+            "name": "Forbidden Rite Totem",
+            "supportCount": "high"
+          },
+          {
+            "name": "Summon Seeking Void",
+            "supportCount": "none"
+          },
+          {
+            "name": "Profane Cascade",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Zealotry",
+            "supportCount": "none"
+          },
+          {
+            "name": "Lightning Warp",
+            "supportCount": "low"
+          },
+          {
+            "name": "Frostblink",
+            "supportCount": "low"
+          },
+          {
+            "name": "Flame Dash",
+            "supportCount": "low"
+          },
+          {
+            "name": "Envy",
+            "supportCount": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Earthshaker",
+      "attribute": "Str",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Intimidating Cry",
+            "supportCount": "low"
+          },
+          {
+            "name": "Leap Slam",
+            "supportCount": "low"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Vaal Ground Slam",
+            "supportCount": "high"
+          },
+          {
+            "name": "Ground Slam",
+            "supportCount": "high"
+          },
+          {
+            "name": "Earthquake of Amplification",
+            "supportCount": "high"
+          },
+          {
+            "name": "Sunder of Trarthus",
+            "supportCount": "high"
+          },
+          {
+            "name": "Tectonic Cascade",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Determination",
+            "supportCount": "none"
+          },
+          {
+            "name": "Molten Shell",
+            "supportCount": "low"
+          },
+          {
+            "name": "Burrow",
+            "supportCount": "low"
+          },
+          {
+            "name": "Endure",
+            "supportCount": "none"
+          },
+          {
+            "name": "Vaal Vitality",
+            "supportCount": "low"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Eruptor",
+      "attribute": "Str",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Infernal Cry",
+            "supportCount": "low"
+          },
+          {
+            "name": "Leap Slam",
+            "supportCount": "low"
+          },
+          {
+            "name": "Triggerslam",
+            "supportCount": "medium"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Volcanic Fissure of Snaking",
+            "supportCount": "high"
+          },
+          {
+            "name": "Consecrated Path",
+            "supportCount": "medium"
+          },
+          {
+            "name": "Tectonic Slam",
+            "supportCount": "high"
+          },
+          {
+            "name": "Ashen Fissure",
+            "supportCount": "medium"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Molten Shell",
+            "supportCount": "low"
+          },
+          {
+            "name": "Determination",
+            "supportCount": "none"
+          },
+          {
+            "name": "Purity of Fire",
+            "supportCount": "none"
+          },
+          {
+            "name": "Herald of Ash",
+            "supportCount": "none"
+          },
+          {
+            "name": "Flame Link",
+            "supportCount": "low"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Fallen Reverend",
+      "attribute": "Str/Int",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Absolution",
+            "supportCount": "high"
+          },
+          {
+            "name": "Raise Spectre of Transience",
+            "supportCount": "high"
+          },
+          {
+            "name": "Desecrate",
+            "supportCount": "low"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Reinforce: Fallen Bishop",
+            "supportCount": "none"
+          },
+          {
+            "name": "Reinforce: Fallen Emperor",
+            "supportCount": "none"
+          },
+          {
+            "name": "Reinforce: Fallen Osseotitan",
+            "supportCount": "none"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Wrath",
+            "supportCount": "none"
+          },
+          {
+            "name": "Zealotry",
+            "supportCount": "none"
+          },
+          {
+            "name": "Battlemage's Cry",
+            "supportCount": "low"
+          },
+          {
+            "name": "Flame Dash",
+            "supportCount": "low"
+          },
+          {
+            "name": "Frostblink",
+            "supportCount": "low"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Flamehand",
+      "attribute": "Int",
+      "infamous": false,
+      "skills": {
+        "primary": [
+          {
+            "name": "Flame Wall",
+            "supportCount": "medium"
+          },
+          {
+            "name": "Flammability",
+            "supportCount": "low"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Greater Flame Dash",
+            "supportCount": "high"
+          },
+          {
+            "name": "Flameblast",
+            "supportCount": "high"
+          },
+          {
+            "name": "Vaal Flameblast",
+            "supportCount": "high"
+          },
+          {
+            "name": "Fireball",
+            "supportCount": "high"
+          },
+          {
+            "name": "Fireball of Impact",
+            "supportCount": "high"
+          },
+          {
+            "name": "Rolling Magma",
+            "supportCount": "high"
+          },
+          {
+            "name": "Flame Surge",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Lightning Warp",
+            "supportCount": "low"
+          },
+          {
+            "name": "Frostblink",
+            "supportCount": "low"
+          },
+          {
+            "name": "Purity of Fire",
+            "supportCount": "none"
+          },
+          {
+            "name": "Anger",
+            "supportCount": "none"
+          },
+          {
+            "name": "Flame Aegis",
+            "supportCount": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Flamequiver",
+      "attribute": "Dex",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Burning Arrow",
+            "supportCount": "high"
+          },
+          {
+            "name": "Alchemist's Mark",
+            "supportCount": "none"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Vaal Burning Arrow",
+            "supportCount": "high"
+          },
+          {
+            "name": "Molten Well",
+            "supportCount": "high"
+          },
+          {
+            "name": "Artillery Ballista",
+            "supportCount": "high"
+          },
+          {
+            "name": "Explosive Arrow",
+            "supportCount": "high"
+          },
+          {
+            "name": "Blast Rain of Trarthus",
+            "supportCount": "high"
+          },
+          {
+            "name": "Conflagration",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Grace",
+            "supportCount": "none"
+          },
+          {
+            "name": "Blink Arrow",
+            "supportCount": "medium"
+          },
+          {
+            "name": "Dash",
+            "supportCount": "none"
+          },
+          {
+            "name": "Blasphemy Flammability",
+            "supportCount": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Flaming Charlatan",
+      "attribute": "Str/Int",
+      "infamous": false,
+      "skills": {
+        "primary": [
+          {
+            "name": "Holy Flame Totem",
+            "supportCount": "medium"
+          },
+          {
+            "name": "Purifying Flame",
+            "supportCount": "high"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Holy Mortar",
+            "supportCount": "high"
+          },
+          {
+            "name": "Wave of Conviction of Trarthus",
+            "supportCount": "medium"
+          },
+          {
+            "name": "Scorching Ray",
+            "supportCount": "medium"
+          },
+          {
+            "name": "Meteor",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Lightning Warp",
+            "supportCount": "low"
+          },
+          {
+            "name": "Flame Dash",
+            "supportCount": "low"
+          },
+          {
+            "name": "Herald of Ash",
+            "supportCount": "none"
+          },
+          {
+            "name": "Anger",
+            "supportCount": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Frost Ambusher",
+      "attribute": "Dex/Int",
+      "infamous": false,
+      "skills": {
+        "primary": [
+          {
+            "name": "Frost Shield",
+            "supportCount": "low"
+          },
+          {
+            "name": "Greater Vortex Trap",
+            "supportCount": "high"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Ice Trap",
+            "supportCount": "high"
+          },
+          {
+            "name": "Creeping Frost",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Summon Skitterbots",
+            "supportCount": "none"
+          },
+          {
+            "name": "Flame Dash",
+            "supportCount": "low"
+          },
+          {
+            "name": "Frostblink",
+            "supportCount": "low"
+          },
+          {
+            "name": "Grace",
+            "supportCount": "none"
+          },
+          {
+            "name": "Arctic Armour",
+            "supportCount": "none"
+          },
+          {
+            "name": "Vaal Arctic Armour",
+            "supportCount": "low"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Frosthand",
+      "attribute": "Int",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Frost Bomb",
+            "supportCount": "low"
+          },
+          {
+            "name": "Frostbite",
+            "supportCount": "low"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Frost Wall",
+            "supportCount": "low"
+          },
+          {
+            "name": "Eye of Winter",
+            "supportCount": "high"
+          },
+          {
+            "name": "Vortex",
+            "supportCount": "high"
+          },
+          {
+            "name": "Frostbolt",
+            "supportCount": "high"
+          },
+          {
+            "name": "Ice Nova",
+            "supportCount": "high"
+          },
+          {
+            "name": "Ice Nova of Projection",
+            "supportCount": "high"
+          },
+          {
+            "name": "Icestorm",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Lightning Warp",
+            "supportCount": "low"
+          },
+          {
+            "name": "Frostblink",
+            "supportCount": "low"
+          },
+          {
+            "name": "Flame Dash",
+            "supportCount": "low"
+          },
+          {
+            "name": "Purity of Ice",
+            "supportCount": "none"
+          },
+          {
+            "name": "Discipline",
+            "supportCount": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Kineticist",
+      "attribute": "Str/Dex/Int",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Elemental Weakness",
+            "supportCount": "low"
+          },
+          {
+            "name": "Flame Wall",
+            "supportCount": "medium"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Kinetic Bolt",
+            "supportCount": "high"
+          },
+          {
+            "name": "Power Siphon",
+            "supportCount": "medium"
+          },
+          {
+            "name": "Barrage",
+            "supportCount": "high"
+          },
+          {
+            "name": "Greater Kinetic Blast",
+            "supportCount": "high"
+          },
+          {
+            "name": "Kinetic Blast of Clustering",
+            "supportCount": "high"
+          },
+          {
+            "name": "Kinetic Rain of Impact",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Flame Dash",
+            "supportCount": "low"
+          },
+          {
+            "name": "Frostblink",
+            "supportCount": "low"
+          },
+          {
+            "name": "Haste",
+            "supportCount": "none"
+          },
+          {
+            "name": "Inspiring Cry",
+            "supportCount": "low"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Manyshot",
+      "attribute": "Dex",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Ice Shot",
+            "supportCount": "high"
+          },
+          {
+            "name": "Vaal Grace",
+            "supportCount": "none"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Vaal Ice Shot",
+            "supportCount": "high"
+          },
+          {
+            "name": "Frigid Forkshot",
+            "supportCount": "high"
+          },
+          {
+            "name": "Icicle Rain",
+            "supportCount": "high"
+          },
+          {
+            "name": "Mirror Arrow",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Hatred",
+            "supportCount": "none"
+          },
+          {
+            "name": "Frost Bomb",
+            "supportCount": "low"
+          },
+          {
+            "name": "Grace",
+            "supportCount": "none"
+          },
+          {
+            "name": "Dash",
+            "supportCount": "none"
+          },
+          {
+            "name": "Blink Arrow",
+            "supportCount": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Mysterious Diver",
+      "attribute": "Str/Dex",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Elemental Hit of Ice",
+            "supportCount": "high"
+          },
+          {
+            "name": "Frost Bomb",
+            "supportCount": "low"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Frost Blades",
+            "supportCount": "high"
+          },
+          {
+            "name": "Herald of Ice",
+            "supportCount": "none"
+          },
+          {
+            "name": "Wild Strike",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Hatred",
+            "supportCount": "none"
+          },
+          {
+            "name": "Purity of Ice",
+            "supportCount": "none"
+          },
+          {
+            "name": "Frostblink",
+            "supportCount": "low"
+          },
+          {
+            "name": "Dash",
+            "supportCount": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Reanimator",
+      "attribute": "Int",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Raise Zombie of Gigantism",
+            "supportCount": "high"
+          },
+          {
+            "name": "Desecrate",
+            "supportCount": "low"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Raise Zombie of Falling",
+            "supportCount": "high"
+          },
+          {
+            "name": "Summon Skeletons",
+            "supportCount": "high"
+          },
+          {
+            "name": "Flesh Offering",
+            "supportCount": "low"
+          },
+          {
+            "name": "Bone Offering",
+            "supportCount": "low"
+          },
+          {
+            "name": "Summon Raging Spirit",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Lightning Warp",
+            "supportCount": "low"
+          },
+          {
+            "name": "Frostblink",
+            "supportCount": "low"
+          },
+          {
+            "name": "Flame Dash",
+            "supportCount": "low"
+          },
+          {
+            "name": "Blasphemy Enfeeble",
+            "supportCount": "none"
+          },
+          {
+            "name": "Relic of Binding",
+            "supportCount": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Ripper",
+      "attribute": "Str",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Tunnelslam",
+            "supportCount": "medium"
+          },
+          {
+            "name": "Enrage",
+            "supportCount": "low"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Cleave",
+            "supportCount": "high"
+          },
+          {
+            "name": "Vaal Cleave",
+            "supportCount": "high"
+          },
+          {
+            "name": "Chain Hook of Trarthus",
+            "supportCount": "high"
+          },
+          {
+            "name": "Leap Slam of Groundbreaking",
+            "supportCount": "high"
+          },
+          {
+            "name": "Slicing Wind",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Molten Shell",
+            "supportCount": "low"
+          },
+          {
+            "name": "Determination",
+            "supportCount": "none"
+          },
+          {
+            "name": "Leap Slam",
+            "supportCount": "low"
+          },
+          {
+            "name": "Vitality",
+            "supportCount": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Sanguimancer",
+      "attribute": "Str/Dex/Int",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Boiling Blood",
+            "supportCount": "medium"
+          },
+          {
+            "name": "Storm Call of Trarthus",
+            "supportCount": "high"
+          },
+          {
+            "name": "Bodyswap",
+            "supportCount": "low"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Exsanguinate",
+            "supportCount": "high"
+          },
+          {
+            "name": "Vaal Reap",
+            "supportCount": "high"
+          },
+          {
+            "name": "Reap",
+            "supportCount": "high"
+          },
+          {
+            "name": "Corrupted Blade Vortex of the Scythe",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Flame Dash",
+            "supportCount": "low"
+          },
+          {
+            "name": "Lightning Warp",
+            "supportCount": "low"
+          },
+          {
+            "name": "Pride",
+            "supportCount": "none"
+          },
+          {
+            "name": "Proximity Shield",
+            "supportCount": "low"
+          },
+          {
+            "name": "Vaal Vitality",
+            "supportCount": "low"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Shattersword",
+      "attribute": "Str/Dex",
+      "infamous": false,
+      "skills": {
+        "primary": [
+          {
+            "name": "Call of Steel",
+            "supportCount": "none"
+          },
+          {
+            "name": "Rallying Cry",
+            "supportCount": "low"
+          },
+          {
+            "name": "Triggerblades",
+            "supportCount": "medium"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Shattering Steel",
+            "supportCount": "high"
+          },
+          {
+            "name": "Splitting Steel",
+            "supportCount": "high"
+          },
+          {
+            "name": "Lancing Steel",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Dash",
+            "supportCount": "none"
+          },
+          {
+            "name": "Whirling Blades",
+            "supportCount": "low"
+          },
+          {
+            "name": "Grace",
+            "supportCount": "none"
+          },
+          {
+            "name": "Brutal Teachings",
+            "supportCount": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Shock Ambusher",
+      "attribute": "Dex/Int",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Conductivity",
+            "supportCount": "low"
+          },
+          {
+            "name": "Vaal Lightning Trap",
+            "supportCount": "low"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Lightning Trap",
+            "supportCount": "high"
+          },
+          {
+            "name": "Lightning Spire Trap",
+            "supportCount": "high"
+          },
+          {
+            "name": "Ball Lightning of Orbiting",
+            "supportCount": "high"
+          },
+          {
+            "name": "Lightning Warp",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Flame Dash",
+            "supportCount": "low"
+          },
+          {
+            "name": "Frostblink",
+            "supportCount": "low"
+          },
+          {
+            "name": "Smoke Mine",
+            "supportCount": "low"
+          },
+          {
+            "name": "Summon Skitterbots",
+            "supportCount": "none"
+          },
+          {
+            "name": "Zealotry",
+            "supportCount": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Smoulderstrike",
+      "attribute": "Str",
+      "infamous": false,
+      "skills": {
+        "primary": [
+          {
+            "name": "Punishment",
+            "supportCount": "low"
+          },
+          {
+            "name": "Inflame",
+            "supportCount": "low"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Vaal Molten Strike",
+            "supportCount": "high"
+          },
+          {
+            "name": "Infernal Blow of Immolation",
+            "supportCount": "high"
+          },
+          {
+            "name": "Molten Strike",
+            "supportCount": "high"
+          },
+          {
+            "name": "Flamebolt Strike",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Anger",
+            "supportCount": "none"
+          },
+          {
+            "name": "Leap Slam",
+            "supportCount": "low"
+          },
+          {
+            "name": "Molten Shell",
+            "supportCount": "low"
+          },
+          {
+            "name": "Flame Aegis",
+            "supportCount": "none"
+          },
+          {
+            "name": "Infernal Cry",
+            "supportCount": "low"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Sniper",
+      "attribute": "Dex",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Ensnaring Arrow",
+            "supportCount": "medium"
+          },
+          {
+            "name": "Poacher's Mark",
+            "supportCount": "none"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Greater Split Arrow",
+            "supportCount": "high"
+          },
+          {
+            "name": "Rain of Arrows of Saturation",
+            "supportCount": "high"
+          },
+          {
+            "name": "Tornado Shot",
+            "supportCount": "high"
+          },
+          {
+            "name": "Shrapnel Ballista",
+            "supportCount": "high"
+          },
+          {
+            "name": "Barrage of Volley Fire",
+            "supportCount": "high"
+          },
+          {
+            "name": "Siege Ballista of Trarthus",
+            "supportCount": "high"
+          },
+          {
+            "name": "Split Arrow",
+            "supportCount": "high"
+          },
+          {
+            "name": "Puncture",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Grace",
+            "supportCount": "none"
+          },
+          {
+            "name": "Blink Arrow",
+            "supportCount": "medium"
+          },
+          {
+            "name": "Dash",
+            "supportCount": "none"
+          },
+          {
+            "name": "Frenzy",
+            "supportCount": "medium"
+          },
+          {
+            "name": "Haste",
+            "supportCount": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Stormhand",
+      "attribute": "Int",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Conductivity",
+            "supportCount": "low"
+          },
+          {
+            "name": "Sigil of Power",
+            "supportCount": "low"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Spark",
+            "supportCount": "high"
+          },
+          {
+            "name": "Arc",
+            "supportCount": "high"
+          },
+          {
+            "name": "Ball Lightning of Static",
+            "supportCount": "high"
+          },
+          {
+            "name": "Greater Shock Nova",
+            "supportCount": "high"
+          },
+          {
+            "name": "Greater Stormcall",
+            "supportCount": "high"
+          },
+          {
+            "name": "Orb of Storms",
+            "supportCount": "medium"
+          },
+          {
+            "name": "Storm Call",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Lightning Warp",
+            "supportCount": "low"
+          },
+          {
+            "name": "Frostblink",
+            "supportCount": "low"
+          },
+          {
+            "name": "Flame Dash",
+            "supportCount": "low"
+          },
+          {
+            "name": "Wrath",
+            "supportCount": "none"
+          },
+          {
+            "name": "Purity of Lightning",
+            "supportCount": "none"
+          },
+          {
+            "name": "Proximity Shield",
+            "supportCount": "low"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Storming Zealot",
+      "attribute": "Str/Int",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Unnerving Blast",
+            "supportCount": "high"
+          },
+          {
+            "name": "Wave of Conviction",
+            "supportCount": "low"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Divine Ire",
+            "supportCount": "high"
+          },
+          {
+            "name": "Tornado of Elemental Turbulence",
+            "supportCount": "medium"
+          },
+          {
+            "name": "Divine Retribution",
+            "supportCount": "high"
+          },
+          {
+            "name": "Shockwave Totem of Shocking",
+            "supportCount": "medium"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Charged Dash of the Arcane",
+            "supportCount": "low"
+          },
+          {
+            "name": "Wrath",
+            "supportCount": "none"
+          },
+          {
+            "name": "Lightning Warp",
+            "supportCount": "low"
+          },
+          {
+            "name": "Flame Dash",
+            "supportCount": "low"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Striker",
+      "attribute": "Str",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Vigilant Strike",
+            "supportCount": "high"
+          },
+          {
+            "name": "Enduring Cry",
+            "supportCount": "low"
+          },
+          {
+            "name": "Physical Aegis",
+            "supportCount": "none"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Heavy Strike of Vulnerability",
+            "supportCount": "high"
+          },
+          {
+            "name": "Boneshatter",
+            "supportCount": "high"
+          },
+          {
+            "name": "Dual Strike",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Determination",
+            "supportCount": "none"
+          },
+          {
+            "name": "Leap Slam",
+            "supportCount": "low"
+          },
+          {
+            "name": "Molten Shell",
+            "supportCount": "low"
+          },
+          {
+            "name": "Vitality",
+            "supportCount": "none"
+          },
+          {
+            "name": "Vaal Ancestral Warchief",
+            "supportCount": "high"
+          },
+          {
+            "name": "Decoy Totem",
+            "supportCount": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Swiftblade",
+      "attribute": "Str/Dex",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Cyclone of the Empire",
+            "supportCount": "medium"
+          },
+          {
+            "name": "Rallying Cry",
+            "supportCount": "low"
+          },
+          {
+            "name": "Triggerblades",
+            "supportCount": "medium"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Flicker Strike",
+            "supportCount": "high"
+          },
+          {
+            "name": "Vaal Double Strike",
+            "supportCount": "high"
+          },
+          {
+            "name": "Holy Sweep",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Pride",
+            "supportCount": "none"
+          },
+          {
+            "name": "Leap Slam",
+            "supportCount": "low"
+          },
+          {
+            "name": "Dash",
+            "supportCount": "none"
+          },
+          {
+            "name": "Incite",
+            "supportCount": "none"
+          },
+          {
+            "name": "Steelskin Ally",
+            "supportCount": "low"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Thunderquiver",
+      "attribute": "Dex",
+      "infamous": false,
+      "skills": {
+        "primary": [
+          {
+            "name": "Lightning Arrow",
+            "supportCount": "high"
+          },
+          {
+            "name": "Assassin's Mark",
+            "supportCount": "none"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Galvanic Arrow",
+            "supportCount": "high"
+          },
+          {
+            "name": "Greater Lightning Arrow",
+            "supportCount": "high"
+          },
+          {
+            "name": "Vaal Lightning Arrow",
+            "supportCount": "high"
+          },
+          {
+            "name": "Storm Rain",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Wrath",
+            "supportCount": "none"
+          },
+          {
+            "name": "Blink Arrow",
+            "supportCount": "medium"
+          },
+          {
+            "name": "Trarthan Agility",
+            "supportCount": "low"
+          },
+          {
+            "name": "Precision",
+            "supportCount": "none"
+          },
+          {
+            "name": "Dash",
+            "supportCount": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Toxicologist",
+      "attribute": "Dex",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Withering Step",
+            "supportCount": "low"
+          },
+          {
+            "name": "Chaotic Burst",
+            "supportCount": "low"
+          },
+          {
+            "name": "Chaotic Shot",
+            "supportCount": "high"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Vaal Caustic Arrow",
+            "supportCount": "high"
+          },
+          {
+            "name": "Toxic Rain",
+            "supportCount": "high"
+          },
+          {
+            "name": "Scourge Arrow of Menace",
+            "supportCount": "high"
+          },
+          {
+            "name": "Caustic Arrow",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Blink Arrow",
+            "supportCount": "none"
+          },
+          {
+            "name": "Malevolence",
+            "supportCount": "medium"
+          },
+          {
+            "name": "Grace",
+            "supportCount": "none"
+          },
+          {
+            "name": "Dash",
+            "supportCount": "none"
+          },
+          {
+            "name": "Trarthan Agility",
+            "supportCount": "low"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Warpriest",
+      "attribute": "Str/Int",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Summon Holy Relic",
+            "supportCount": "high"
+          },
+          {
+            "name": "Smite",
+            "supportCount": "high"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Beacons of Faith",
+            "supportCount": "high"
+          },
+          {
+            "name": "Dominating Blow",
+            "supportCount": "high"
+          },
+          {
+            "name": "Sanctified Strike",
+            "supportCount": "high"
+          },
+          {
+            "name": "Raise Spectre: Holy Flame Elementals",
+            "supportCount": "none"
+          },
+          {
+            "name": "Touch of God",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Purity of Lightning",
+            "supportCount": "none"
+          },
+          {
+            "name": "Flame Dash",
+            "supportCount": "low"
+          },
+          {
+            "name": "Consecrated Path",
+            "supportCount": "medium"
+          },
+          {
+            "name": "Herald of Purity",
+            "supportCount": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Winter Deacon",
+      "attribute": "Str/Int",
+      "infamous": false,
+      "skills": {
+        "primary": [
+          {
+            "name": "Frost Shield",
+            "supportCount": "low"
+          },
+          {
+            "name": "Vaal Glacial Hammer",
+            "supportCount": "high"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Ice Crash",
+            "supportCount": "high"
+          },
+          {
+            "name": "Glacial Hammer",
+            "supportCount": "high"
+          },
+          {
+            "name": "Earthquake of Winter",
+            "supportCount": "high"
+          },
+          {
+            "name": "Heavy Strike of Trarthus",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Hatred",
+            "supportCount": "none"
+          },
+          {
+            "name": "Frostblink",
+            "supportCount": "low"
+          },
+          {
+            "name": "Frost Bomb",
+            "supportCount": "low"
+          },
+          {
+            "name": "Arctic Armour",
+            "supportCount": "none"
+          },
+          {
+            "name": "Purity of Ice",
+            "supportCount": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Withertouch",
+      "attribute": "Int",
+      "infamous": true,
+      "skills": {
+        "primary": [
+          {
+            "name": "Bane",
+            "supportCount": "low"
+          },
+          {
+            "name": "Temporal Chains",
+            "supportCount": "low"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "Greater Soulrend",
+            "supportCount": "high"
+          },
+          {
+            "name": "Scourstorm",
+            "supportCount": "medium"
+          },
+          {
+            "name": "Blight",
+            "supportCount": "high"
+          },
+          {
+            "name": "Essence Drain of Wickedness",
+            "supportCount": "high"
+          },
+          {
+            "name": "Altar of Chaos",
+            "supportCount": "high"
+          }
+        ],
+        "utility": [
+          {
+            "name": "Malevolence",
+            "supportCount": "none"
+          },
+          {
+            "name": "Lightning Warp",
+            "supportCount": "low"
+          },
+          {
+            "name": "Frostblink",
+            "supportCount": "low"
+          },
+          {
+            "name": "Flame Dash",
+            "supportCount": "low"
+          },
+          {
+            "name": "Clarity",
+            "supportCount": "none"
+          },
+          {
+            "name": "Withering Step",
+            "supportCount": "low"
+          },
+          {
+            "name": "Wither Totem",
+            "supportCount": "low"
+          }
+        ]
+      }
+    }
+  ],
+  "supportGems": [
+    {
+      "name": "Added Chaos",
+      "baseName": "Added Chaos",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_31430"
+    },
+    {
+      "name": "Added Cold",
+      "baseName": "Added Cold",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_52758"
+    },
+    {
+      "name": "Added Fire",
+      "baseName": "Added Fire",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_45439"
+    },
+    {
+      "name": "Added Lightning",
+      "baseName": "Added Lightning",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_64283"
+    },
+    {
+      "name": "Ailment Damage",
+      "baseName": "Ailment Damage",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_9607"
+    },
+    {
+      "name": "Ailment Effect",
+      "baseName": "Ailment Effect",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_61972"
+    },
+    {
+      "name": "Arcane Traps",
+      "baseName": "Arcane Traps",
+      "grade": "normal",
+      "tier": 3,
+      "description": "Gain Arcane Surge when your Trap is Triggered by an Enemy",
+      "tradeStatId": "mercenary.support_14557"
+    },
+    {
+      "name": "Arrow Nova",
+      "baseName": "Arrow Nova",
+      "grade": "normal",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_58429"
+    },
+    {
+      "name": "Brittle Chance",
+      "baseName": "Brittle Chance",
+      "grade": "normal",
+      "tier": 3,
+      "description": "30% chance to inflict Brittle",
+      "tradeStatId": "mercenary.support_54837"
+    },
+    {
+      "name": "Brutality",
+      "baseName": "Brutality",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_64271"
+    },
+    {
+      "name": "Chain",
+      "baseName": "Chain",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_31052"
+    },
+    {
+      "name": "Chance to Bleed",
+      "baseName": "Chance to Bleed",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_38948"
+    },
+    {
+      "name": "Chance to Poison",
+      "baseName": "Chance to Poison",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_58384"
+    },
+    {
+      "name": "Chaos Penetration",
+      "baseName": "Chaos Penetration",
+      "grade": "normal",
+      "tier": 2,
+      "description": "Supported Skills Penetrate 15% Chaos Resistance",
+      "tradeStatId": "mercenary.support_33975"
+    },
+    {
+      "name": "Charged Traps",
+      "baseName": "Charged Traps",
+      "grade": "normal",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_5081"
+    },
+    {
+      "name": "Cold Penetration",
+      "baseName": "Cold Penetration",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_54628"
+    },
+    {
+      "name": "Combustion",
+      "baseName": "Combustion",
+      "grade": "normal",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_58581"
+    },
+    {
+      "name": "Concentrated Effect",
+      "baseName": "Concentrated Effect",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_21489"
+    },
+    {
+      "name": "Cooldown Recovery",
+      "baseName": "Cooldown Recovery",
+      "grade": "normal",
+      "tier": 2,
+      "description": "Supported Skills have 30% increased Cooldown Recovery Rate",
+      "tradeStatId": "mercenary.support_48875"
+    },
+    {
+      "name": "Critical Chance",
+      "baseName": "Critical Chance",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_61471"
+    },
+    {
+      "name": "Critical Damage",
+      "baseName": "Critical Damage",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_32189"
+    },
+    {
+      "name": "DoT Multiplier",
+      "baseName": "DoT Multiplier",
+      "grade": "normal",
+      "tier": 2,
+      "description": "Supported Skills have +25% to Damage over Time Multiplier",
+      "tradeStatId": "mercenary.support_6927"
+    },
+    {
+      "name": "Elemental Damage with Attacks",
+      "baseName": "Elemental Damage with Attacks",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_44886"
+    },
+    {
+      "name": "Elemental Focus",
+      "baseName": "Elemental Focus",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_37388"
+    },
+    {
+      "name": "Excommunicate",
+      "baseName": "Excommunicate",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_45433"
+    },
+    {
+      "name": "Faster Attacks",
+      "baseName": "Faster Attacks",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_987"
+    },
+    {
+      "name": "Faster Casting",
+      "baseName": "Faster Casting",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_38851"
+    },
+    {
+      "name": "Faster Projectiles",
+      "baseName": "Faster Projectiles",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_57644"
+    },
+    {
+      "name": "Fire Penetration",
+      "baseName": "Fire Penetration",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_62885"
+    },
+    {
+      "name": "Fist of War",
+      "baseName": "Fist of War",
+      "grade": "normal",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_12347"
+    },
+    {
+      "name": "Freeze Chance",
+      "baseName": "Freeze Chance",
+      "grade": "normal",
+      "tier": 2,
+      "description": "Supported Skills have 40% chance to Freeze",
+      "tradeStatId": "mercenary.support_27458"
+    },
+    {
+      "name": "Generosity",
+      "baseName": "Generosity",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_35435"
+    },
+    {
+      "name": "Gilded Additional Duration",
+      "baseName": "Additional Duration",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "base skill effect duration [1000]",
+      "tradeStatId": "mercenary.support_55998"
+    },
+    {
+      "name": "Gilded Additional Fissures",
+      "baseName": "Additional Fissures",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Fissures from Supported Skills erupt +1 additional time",
+      "tradeStatId": "mercenary.support_3609"
+    },
+    {
+      "name": "Gilded Additional Leech",
+      "baseName": "Additional Leech",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Essence Drain Regenerates +30% of Debuff Damage as Life",
+      "tradeStatId": "mercenary.support_56511"
+    },
+    {
+      "name": "Gilded Additional Pods",
+      "baseName": "Additional Pods",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Each Arrow from Supported Scourge Arrow leaves +1 Spore Pod",
+      "tradeStatId": "mercenary.support_20568"
+    },
+    {
+      "name": "Gilded Additional Pulses",
+      "baseName": "Additional Pulses",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Each Arrow from Supported Storm Rain can fire +2 Beams",
+      "tradeStatId": "mercenary.support_30722"
+    },
+    {
+      "name": "Gilded Archers",
+      "baseName": "Archers",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "100% chance to Summon a Skeleton Archer with Supported Skills instead of a Skeleton Warrior",
+      "tradeStatId": "mercenary.support_52378"
+    },
+    {
+      "name": "Gilded Area per Projectile",
+      "baseName": "Area per Projectile",
+      "grade": "gilded",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_28387"
+    },
+    {
+      "name": "Gilded Ash",
+      "baseName": "Ash",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Skills have 50% chance to Cover Enemies in Ash on Hit",
+      "tradeStatId": "mercenary.support_37275"
+    },
+    {
+      "name": "Gilded Astral Totem",
+      "baseName": "Astral Totem",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Nova Spells Cast at the targeted location instead of around you",
+      "tradeStatId": "mercenary.support_41118"
+    },
+    {
+      "name": "Gilded Beam Width",
+      "baseName": "Beam Width",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Divine Ire's beam has 40% increased width",
+      "tradeStatId": "mercenary.support_13568"
+    },
+    {
+      "name": "Gilded Bitterwound",
+      "baseName": "Bitterwound",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Enemies Hit by Supported Skills have 50% reduced Life regeneration rate for four seconds",
+      "tradeStatId": "mercenary.support_51944"
+    },
+    {
+      "name": "Gilded Blasting",
+      "baseName": "Blasting",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Blast Rain has a 50% chance to fire an additional Arrow",
+      "tradeStatId": "mercenary.support_49189"
+    },
+    {
+      "name": "Gilded Cascade Count",
+      "baseName": "Cascade Count",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Skills cause +2 Bursts",
+      "tradeStatId": "mercenary.support_32431"
+    },
+    {
+      "name": "Gilded Caustic Conversion",
+      "baseName": "Caustic Conversion",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Skills have 40% of Physical Damage Converted to Chaos Damage",
+      "tradeStatId": "mercenary.support_39101"
+    },
+    {
+      "name": "Gilded Chain Distance",
+      "baseName": "Chain Distance",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Arc has +10% more Damage with Hits and Ailments for each remaining Chain",
+      "tradeStatId": "mercenary.support_31571"
+    },
+    {
+      "name": "Gilded Clone Speed",
+      "baseName": "Clone Speed",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Doubles created by Supported Skill have 40% increased Movement Speed",
+      "tradeStatId": "mercenary.support_56315"
+    },
+    {
+      "name": "Gilded Conflagrant",
+      "baseName": "Conflagrant",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "100% increased Scorching Ray beam length",
+      "tradeStatId": "mercenary.support_59468"
+    },
+    {
+      "name": "Gilded Consecration",
+      "baseName": "Consecration",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Consecrated Ground created by Supported Skills grants 40% increased Damage to you and Allies",
+      "tradeStatId": "mercenary.support_10782"
+    },
+    {
+      "name": "Gilded Crush",
+      "baseName": "Crush",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Skills have 50% chance to Crush Enemies for 4 seconds on Hit",
+      "tradeStatId": "mercenary.support_39307"
+    },
+    {
+      "name": "Gilded Cull",
+      "baseName": "Cull",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Kill Enemies that have 10% Life or lower when Hit by Supported Skills",
+      "tradeStatId": "mercenary.support_42140"
+    },
+    {
+      "name": "Gilded Damage from Life",
+      "baseName": "Damage from Life",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Spell Deals +2% of maximum Life, as base Fire Damage",
+      "tradeStatId": "mercenary.support_9300"
+    },
+    {
+      "name": "Gilded Devotion",
+      "baseName": "Devotion",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Summoned Raging Spirits have Diamond Shrine and Massive Shrine Buffs",
+      "tradeStatId": "mercenary.support_40676"
+    },
+    {
+      "name": "Gilded Divine Shield",
+      "baseName": "Divine Shield",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "+35% Chance to Block Attack Damage while on Consecrated Ground",
+      "tradeStatId": "mercenary.support_4032"
+    },
+    {
+      "name": "Gilded Electrocuting",
+      "baseName": "Electrocuting",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Enemies Shocked by supported Skills have 50% reduced Movement Speed",
+      "tradeStatId": "mercenary.support_26713"
+    },
+    {
+      "name": "Gilded Elemental Weakness on Hit",
+      "baseName": "Elemental Weakness on Hit",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Skills have 50% chance to Curse Enemies with Elemental Weakness on Hit",
+      "tradeStatId": "mercenary.support_3756"
+    },
+    {
+      "name": "Gilded Empowered Link",
+      "baseName": "Empowered Link",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Skills grant Linked Target an additional 38 to 56 Added Fire Damage",
+      "tradeStatId": "mercenary.support_36350"
+    },
+    {
+      "name": "Gilded Ensnare Effect",
+      "baseName": "Ensnare Effect",
+      "grade": "gilded",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_25565"
+    },
+    {
+      "name": "Gilded Exposure on Hit",
+      "baseName": "Exposure on Hit",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Skills have 30% chance to inflict Lightning Exposure on Hit",
+      "tradeStatId": "mercenary.support_50741"
+    },
+    {
+      "name": "Gilded Extra Armaments",
+      "baseName": "Extra Armaments",
+      "grade": "gilded",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_8720"
+    },
+    {
+      "name": "Gilded Extra Targets",
+      "baseName": "Extra Targets",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Lightning Arrow hits 2 additional Enemies",
+      "tradeStatId": "mercenary.support_37259"
+    },
+    {
+      "name": "Gilded Faster Cyclone",
+      "baseName": "Faster Cyclone",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "35% more Movement Speed while using Supported Skill",
+      "tradeStatId": "mercenary.support_17178"
+    },
+    {
+      "name": "Gilded Fortification",
+      "baseName": "Fortification",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Fortification from Supported Skills applies to nearby Allies for 8 seconds",
+      "tradeStatId": "mercenary.support_60910"
+    },
+    {
+      "name": "Gilded Freezer Burn",
+      "baseName": "Freezer Burn",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Skills gain 30% of Cold Damage as Extra Fire Damage",
+      "tradeStatId": "mercenary.support_17213"
+    },
+    {
+      "name": "Gilded Frenzy",
+      "baseName": "Frenzy",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Skills gain a Frenzy Charge on Hit",
+      "tradeStatId": "mercenary.support_48738"
+    },
+    {
+      "name": "Gilded Grasp",
+      "baseName": "Grasp",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Skills inflict 1 Grasping Vine on Hit",
+      "tradeStatId": "mercenary.support_32361"
+    },
+    {
+      "name": "Gilded Heft",
+      "baseName": "Heft",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "40% more Maximum Physical Attack Damage",
+      "tradeStatId": "mercenary.support_3194"
+    },
+    {
+      "name": "Gilded Hinder Duration",
+      "baseName": "Hinder Duration",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Blight has 80% increased Hinder Duration",
+      "tradeStatId": "mercenary.support_3180"
+    },
+    {
+      "name": "Gilded Hopelessness",
+      "baseName": "Hopelessness",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Your Chaos Damage can Chill",
+      "tradeStatId": "mercenary.support_38317"
+    },
+    {
+      "name": "Gilded Icecrash Radius",
+      "baseName": "Icecrash Radius",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "active skill base tertiary area of effect radius [5]",
+      "tradeStatId": "mercenary.support_29166"
+    },
+    {
+      "name": "Gilded Impale Extraction",
+      "baseName": "Impale Extraction",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "50% chance on Hit with Supported Skills to remove all Impales from Enemy Impales removed this way multiply their Reflected Damage for this Hit by the number of Hits they have left",
+      "tradeStatId": "mercenary.support_52383"
+    },
+    {
+      "name": "Gilded Increased Angle",
+      "baseName": "Increased Angle",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Skills have 40% increased angle",
+      "tradeStatId": "mercenary.support_39050"
+    },
+    {
+      "name": "Gilded Inhibitor",
+      "baseName": "Inhibitor",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Enemies Shocked by Supported Skills have 25% reduced Cast Speed",
+      "tradeStatId": "mercenary.support_21678"
+    },
+    {
+      "name": "Gilded Inversion",
+      "baseName": "Inversion",
+      "grade": "gilded",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_62171"
+    },
+    {
+      "name": "Gilded Jolt",
+      "baseName": "Jolt",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "10% Critical Strike Chance Your Critical Strikes Knock Back Shocked Enemies",
+      "tradeStatId": "mercenary.support_40212"
+    },
+    {
+      "name": "Gilded Lumbering Dead",
+      "baseName": "Lumbering Dead",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Skills have 50% increased Minion Attack Speed Supported Skills have 30% reduced Minion Movement Speed",
+      "tradeStatId": "mercenary.support_29562"
+    },
+    {
+      "name": "Gilded Malediction",
+      "baseName": "Malediction",
+      "grade": "gilded",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_48949"
+    },
+    {
+      "name": "Gilded Maximum Explosions",
+      "baseName": "Maximum Explosions",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Skills have +2 Maximum Explosive Arrows stuck in an Enemy",
+      "tradeStatId": "mercenary.support_42966"
+    },
+    {
+      "name": "Gilded Maximum Spikes",
+      "baseName": "Maximum Spikes",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Perforate creates +2 Spikes",
+      "tradeStatId": "mercenary.support_9460"
+    },
+    {
+      "name": "Gilded Maximum Stages",
+      "baseName": "Maximum Stages",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Skill has +3 to maximum Stages",
+      "tradeStatId": "mercenary.support_48614"
+    },
+    {
+      "name": "Gilded Maximum Storms",
+      "baseName": "Maximum Storms",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Skills have +1 to Maximum number of Bladestorms at a time",
+      "tradeStatId": "mercenary.support_10682"
+    },
+    {
+      "name": "Gilded Molten Eruption",
+      "baseName": "Molten Eruption",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Every fifth attack with Supported Skill fires 5 additional Projectiles",
+      "tradeStatId": "mercenary.support_2205"
+    },
+    {
+      "name": "Gilded Nova",
+      "baseName": "Nova",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Skills Fire Projectiles in a cirlce.",
+      "tradeStatId": "mercenary.support_42155"
+    },
+    {
+      "name": "Gilded Onslaught on Cry",
+      "baseName": "Onslaught on Cry",
+      "grade": "gilded",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_52432"
+    },
+    {
+      "name": "Gilded Physical Damage Reduction",
+      "baseName": "Physical Damage Reduction",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "15% additional Physical Damage Reduction while affected by Buffs from Supported Guard Skill",
+      "tradeStatId": "mercenary.support_26792"
+    },
+    {
+      "name": "Gilded Pierce",
+      "baseName": "Pierce",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Projectiles Pierce all Targets",
+      "tradeStatId": "mercenary.support_10482"
+    },
+    {
+      "name": "Gilded Power Charge on Critical Strike",
+      "baseName": "Power Charge on Critical Strike",
+      "grade": "gilded",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_6109"
+    },
+    {
+      "name": "Gilded Purified Ground",
+      "baseName": "Purified Ground",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "30% increased Effect of Consecrated Ground created with Supported Skills",
+      "tradeStatId": "mercenary.support_56144"
+    },
+    {
+      "name": "Gilded Reactor",
+      "baseName": "Reactor",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Lightning Spire Trap strikes 10 additional areas Supported Skills deal 80% reduced Damage",
+      "tradeStatId": "mercenary.support_25885"
+    },
+    {
+      "name": "Gilded Relic Recovery",
+      "baseName": "Relic Recovery",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Holy Relic's Nova Skill grants +25 Life regenerated per second to Allies",
+      "tradeStatId": "mercenary.support_44238"
+    },
+    {
+      "name": "Gilded Scattershot",
+      "baseName": "Scattershot",
+      "grade": "gilded",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_60983"
+    },
+    {
+      "name": "Gilded Scorch Chance",
+      "baseName": "Scorch Chance",
+      "grade": "gilded",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_19004"
+    },
+    {
+      "name": "Gilded Searing Agony",
+      "baseName": "Searing Agony",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Reap debuffs deal Fire Damage per second instead of Physical Damage per second",
+      "tradeStatId": "mercenary.support_50273"
+    },
+    {
+      "name": "Gilded Secondary Shots",
+      "baseName": "Secondary Shots",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Tornado Shot fires +2 additional secondary Projectiles",
+      "tradeStatId": "mercenary.support_18499"
+    },
+    {
+      "name": "Gilded Shield Damage",
+      "baseName": "Shield Damage",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "3% increased Attack Damage per 75 Armour or Evasion Rating on Shield with Supported Skills",
+      "tradeStatId": "mercenary.support_30406"
+    },
+    {
+      "name": "Gilded Snaking",
+      "baseName": "Snaking",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "sunder number of fake chains [1]",
+      "tradeStatId": "mercenary.support_4006"
+    },
+    {
+      "name": "Gilded Sphere Frequency",
+      "baseName": "Sphere Frequency",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Void Sphere has 35% increased Pulse Frequency",
+      "tradeStatId": "mercenary.support_12569"
+    },
+    {
+      "name": "Gilded Stun Duration",
+      "baseName": "Stun Duration",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Skills have 30% increased Stun Duration on Enemies",
+      "tradeStatId": "mercenary.support_26618"
+    },
+    {
+      "name": "Gilded Totemic Onslaught",
+      "baseName": "Totemic Onslaught",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Totems from Supported Skills have Onslaught if summoned Recently",
+      "tradeStatId": "mercenary.support_25001"
+    },
+    {
+      "name": "Gilded Trauma Duration",
+      "baseName": "Trauma Duration",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "",
+      "tradeStatId": "mercenary.support_21276"
+    },
+    {
+      "name": "Gilded Uncertainty",
+      "baseName": "Uncertainty",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "vaal lightning arrow number of redirects [3]",
+      "tradeStatId": "mercenary.support_11052"
+    },
+    {
+      "name": "Gilded Volleys",
+      "baseName": "Volleys",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Supported Bladefall has 2 additional Volleys",
+      "tradeStatId": "mercenary.support_1075"
+    },
+    {
+      "name": "Gilded Voltage",
+      "baseName": "Voltage",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Critical Strike Chance with Supported Skills is increased by Overcapped Lightning Resistance",
+      "tradeStatId": "mercenary.support_22587"
+    },
+    {
+      "name": "Gilded Voltaxic Conversion",
+      "baseName": "Voltaxic Conversion",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "40% of Lightning Damage with Converted to Chaos Damage with Supported Skills",
+      "tradeStatId": "mercenary.support_17946"
+    },
+    {
+      "name": "Gilded Wither Stacks",
+      "baseName": "Wither Stacks",
+      "grade": "gilded",
+      "tier": 3,
+      "description": "Withering Step inflicts 5 additional Withered Debuffs",
+      "tradeStatId": "mercenary.support_55952"
+    },
+    {
+      "name": "Greater Added Chaos",
+      "baseName": "Added Chaos",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_11914"
+    },
+    {
+      "name": "Greater Added Cold",
+      "baseName": "Added Cold",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_60094"
+    },
+    {
+      "name": "Greater Added Fire",
+      "baseName": "Added Fire",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_6121"
+    },
+    {
+      "name": "Greater Added Lightning",
+      "baseName": "Added Lightning",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_40533"
+    },
+    {
+      "name": "Greater Ailment Damage",
+      "baseName": "Ailment Damage",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_65362"
+    },
+    {
+      "name": "Greater Ailment Effect",
+      "baseName": "Ailment Effect",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_33272"
+    },
+    {
+      "name": "Greater Area of Effect",
+      "baseName": "Area of Effect",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_19113"
+    },
+    {
+      "name": "Greater Brutality",
+      "baseName": "Brutality",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_59345"
+    },
+    {
+      "name": "Greater Chance to Bleed",
+      "baseName": "Chance to Bleed",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_31439"
+    },
+    {
+      "name": "Greater Chance to Poison",
+      "baseName": "Chance to Poison",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_9585"
+    },
+    {
+      "name": "Greater Chaos Penetration",
+      "baseName": "Chaos Penetration",
+      "grade": "greater",
+      "tier": 3,
+      "description": "Supported Skills Penetrate 20% Chaos Resistance",
+      "tradeStatId": "mercenary.support_39984"
+    },
+    {
+      "name": "Greater Cold Penetration",
+      "baseName": "Cold Penetration",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_26094"
+    },
+    {
+      "name": "Greater Concentrated Effect",
+      "baseName": "Concentrated Effect",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_51806"
+    },
+    {
+      "name": "Greater Cooldown Recovery",
+      "baseName": "Cooldown Recovery",
+      "grade": "greater",
+      "tier": 3,
+      "description": "Supported Skills have 40% increased Cooldown Recovery Rate",
+      "tradeStatId": "mercenary.support_10608"
+    },
+    {
+      "name": "Greater Critical Chance",
+      "baseName": "Critical Chance",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_62220"
+    },
+    {
+      "name": "Greater Critical Damage",
+      "baseName": "Critical Damage",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_55659"
+    },
+    {
+      "name": "Greater Curse Effect",
+      "baseName": "Curse Effect",
+      "grade": "greater",
+      "tier": 3,
+      "description": "20% increased Effect of Supported Curses",
+      "tradeStatId": "mercenary.support_3263"
+    },
+    {
+      "name": "Greater DoT Multiplier",
+      "baseName": "DoT Multiplier",
+      "grade": "greater",
+      "tier": 3,
+      "description": "Supported Skills have +35% to Damage over Time Multiplier",
+      "tradeStatId": "mercenary.support_37460"
+    },
+    {
+      "name": "Greater Elemental Damage with Attacks",
+      "baseName": "Elemental Damage with Attacks",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_28416"
+    },
+    {
+      "name": "Greater Elemental Focus",
+      "baseName": "Elemental Focus",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_31600"
+    },
+    {
+      "name": "Greater Excommunicate",
+      "baseName": "Excommunicate",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_8617"
+    },
+    {
+      "name": "Greater Faster Attacks",
+      "baseName": "Faster Attacks",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_50485"
+    },
+    {
+      "name": "Greater Faster Casting",
+      "baseName": "Faster Casting",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_8607"
+    },
+    {
+      "name": "Greater Faster Projectiles",
+      "baseName": "Faster Projectiles",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_14517"
+    },
+    {
+      "name": "Greater Fire Penetration",
+      "baseName": "Fire Penetration",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_54494"
+    },
+    {
+      "name": "Greater Fork",
+      "baseName": "Fork",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_32052"
+    },
+    {
+      "name": "Greater Fortify",
+      "baseName": "Fortify",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_31664"
+    },
+    {
+      "name": "Greater Freeze Chance",
+      "baseName": "Freeze Chance",
+      "grade": "greater",
+      "tier": 3,
+      "description": "Supported Skills have 60% chance to Freeze",
+      "tradeStatId": "mercenary.support_12387"
+    },
+    {
+      "name": "Greater Generosity",
+      "baseName": "Generosity",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_53367"
+    },
+    {
+      "name": "Greater Hypothermia",
+      "baseName": "Hypothermia",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_53145"
+    },
+    {
+      "name": "Greater Ignite Chance",
+      "baseName": "Ignite Chance",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_10997"
+    },
+    {
+      "name": "Greater Impale Chance",
+      "baseName": "Impale Chance",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_29720"
+    },
+    {
+      "name": "Greater Infused Channelling",
+      "baseName": "Infused Channelling",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_63104"
+    },
+    {
+      "name": "Greater Ironwood",
+      "baseName": "Ironwood",
+      "grade": "greater",
+      "tier": 3,
+      "description": "Totems created by Supported Skills have +30% to Physical Damage Reduction Totems created by Supported Skills have +60% to Elemental Resistances",
+      "tradeStatId": "mercenary.support_1227"
+    },
+    {
+      "name": "Greater Leech",
+      "baseName": "Leech",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_41756"
+    },
+    {
+      "name": "Greater Less Duration",
+      "baseName": "Less Duration",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_61947"
+    },
+    {
+      "name": "Greater Lightning Penetration",
+      "baseName": "Lightning Penetration",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_26815"
+    },
+    {
+      "name": "Greater Lucky Lightning Damage",
+      "baseName": "Lucky Lightning Damage",
+      "grade": "greater",
+      "tier": 3,
+      "description": "Lightning Damage with Non-Critical Strikes is Lucky",
+      "tradeStatId": "mercenary.support_24343"
+    },
+    {
+      "name": "Greater Melee Physical Damage",
+      "baseName": "Melee Physical Damage",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_63342"
+    },
+    {
+      "name": "Greater Minion Damage",
+      "baseName": "Minion Damage",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_52472"
+    },
+    {
+      "name": "Greater Minion Life",
+      "baseName": "Minion Life",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_31863"
+    },
+    {
+      "name": "Greater Mitigation Ignore",
+      "baseName": "Mitigation Ignore",
+      "grade": "greater",
+      "tier": 3,
+      "description": "Hits from Supported Skills have 30% chance to ignore Enemy Physical Damage Reduction",
+      "tradeStatId": "mercenary.support_33557"
+    },
+    {
+      "name": "Greater More Duration",
+      "baseName": "More Duration",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_26568"
+    },
+    {
+      "name": "Greater Multiple Projectiles",
+      "baseName": "Multiple Projectiles",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_49419"
+    },
+    {
+      "name": "Greater Multistrike",
+      "baseName": "Multistrike",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_25973"
+    },
+    {
+      "name": "Greater Physical as Extra",
+      "baseName": "Physical as Extra",
+      "grade": "greater",
+      "tier": 3,
+      "description": "Gain 35% of Physical Damage as Extra Damage of a random Element",
+      "tradeStatId": "mercenary.support_45050"
+    },
+    {
+      "name": "Greater Physical as Extra Chaos",
+      "baseName": "Physical as Extra Chaos",
+      "grade": "greater",
+      "tier": 3,
+      "description": "Supported Skills gain 30% of Physical Damage as Extra Chaos Damage",
+      "tradeStatId": "mercenary.support_58214"
+    },
+    {
+      "name": "Greater Pierce",
+      "baseName": "Pierce",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_27970"
+    },
+    {
+      "name": "Greater Pulverise",
+      "baseName": "Pulverise",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_64416"
+    },
+    {
+      "name": "Greater Rage on Hit",
+      "baseName": "Rage on Hit",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_57658"
+    },
+    {
+      "name": "Greater Raging Cry",
+      "baseName": "Raging Cry",
+      "grade": "greater",
+      "tier": 3,
+      "description": "Gain 20 Rage when you use a Warcry",
+      "tradeStatId": "mercenary.support_13784"
+    },
+    {
+      "name": "Greater Sacred Wisps",
+      "baseName": "Sacred Wisps",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_45969"
+    },
+    {
+      "name": "Greater Shock Chance",
+      "baseName": "Shock Chance",
+      "grade": "greater",
+      "tier": 3,
+      "description": "Supported Skills have 60% chance to Shock",
+      "tradeStatId": "mercenary.support_38046"
+    },
+    {
+      "name": "Greater Slower Projectiles",
+      "baseName": "Slower Projectiles",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_44952"
+    },
+    {
+      "name": "Greater Strike Distance",
+      "baseName": "Strike Distance",
+      "grade": "greater",
+      "tier": 3,
+      "description": "Supported Skills have +0.6 metres to Melee Strike Range",
+      "tradeStatId": "mercenary.support_812"
+    },
+    {
+      "name": "Greater Swift Affliction",
+      "baseName": "Swift Affliction",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_65240"
+    },
+    {
+      "name": "Greater Throwing Speed",
+      "baseName": "Throwing Speed",
+      "grade": "greater",
+      "tier": 3,
+      "description": "Supported Skills have 40% increased Mine Throwing Speed Supported Skills have 40% increased Trap Throwing Speed",
+      "tradeStatId": "mercenary.support_58938"
+    },
+    {
+      "name": "Greater Trap and Mine Damage",
+      "baseName": "Trap and Mine Damage",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_59079"
+    },
+    {
+      "name": "Greater Trigger Radius",
+      "baseName": "Trigger Radius",
+      "grade": "greater",
+      "tier": 3,
+      "description": "Supported Skills have 60% increased Trap Trigger Area of Effect",
+      "tradeStatId": "mercenary.support_54156"
+    },
+    {
+      "name": "Greater Warcry Speed",
+      "baseName": "Warcry Speed",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_52142"
+    },
+    {
+      "name": "Greater Wither on Hit",
+      "baseName": "Wither on Hit",
+      "grade": "greater",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_61510"
+    },
+    {
+      "name": "Hallow",
+      "baseName": "Hallow",
+      "grade": "normal",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_56233"
+    },
+    {
+      "name": "Hypothermia",
+      "baseName": "Hypothermia",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_38571"
+    },
+    {
+      "name": "Ignite Chance",
+      "baseName": "Ignite Chance",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_50303"
+    },
+    {
+      "name": "Impale Chance",
+      "baseName": "Impale Chance",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_11497"
+    },
+    {
+      "name": "Increased Area of Effect",
+      "baseName": "Increased Area of Effect",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_53342"
+    },
+    {
+      "name": "Infused Channelling",
+      "baseName": "Infused Channelling",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_34697"
+    },
+    {
+      "name": "Ironwood",
+      "baseName": "Ironwood",
+      "grade": "normal",
+      "tier": 2,
+      "description": "Totems created by Supported Skills have +20% to Physical Damage Reduction Totems created by Supported Skills have +40% to Elemental Resistances",
+      "tradeStatId": "mercenary.support_6667"
+    },
+    {
+      "name": "Knockback",
+      "baseName": "Knockback",
+      "grade": "normal",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_65002"
+    },
+    {
+      "name": "Leech",
+      "baseName": "Leech",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_3240"
+    },
+    {
+      "name": "Less Duration",
+      "baseName": "Less Duration",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_65114"
+    },
+    {
+      "name": "Lesser Added Chaos",
+      "baseName": "Added Chaos",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_45284"
+    },
+    {
+      "name": "Lesser Added Cold",
+      "baseName": "Added Cold",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_13069"
+    },
+    {
+      "name": "Lesser Added Fire",
+      "baseName": "Added Fire",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_42977"
+    },
+    {
+      "name": "Lesser Added Lightning",
+      "baseName": "Added Lightning",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_36665"
+    },
+    {
+      "name": "Lesser Ailment Damage",
+      "baseName": "Ailment Damage",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_44527"
+    },
+    {
+      "name": "Lesser Ailment Effect",
+      "baseName": "Ailment Effect",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_12388"
+    },
+    {
+      "name": "Lesser Brutality",
+      "baseName": "Brutality",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_55807"
+    },
+    {
+      "name": "Lesser Chain",
+      "baseName": "Chain",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_14317"
+    },
+    {
+      "name": "Lesser Chance to Bleed",
+      "baseName": "Chance to Bleed",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_42600"
+    },
+    {
+      "name": "Lesser Chance to Poison",
+      "baseName": "Chance to Poison",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_1864"
+    },
+    {
+      "name": "Lesser Chaos Penetration",
+      "baseName": "Chaos Penetration",
+      "grade": "lesser",
+      "tier": 1,
+      "description": "Supported Skills Penetrate 10% Chaos Resistance",
+      "tradeStatId": "mercenary.support_25880"
+    },
+    {
+      "name": "Lesser Cold Penetration",
+      "baseName": "Cold Penetration",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_40565"
+    },
+    {
+      "name": "Lesser Concentrated Effect",
+      "baseName": "Concentrated Effect",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_42698"
+    },
+    {
+      "name": "Lesser Cooldown Recovery",
+      "baseName": "Cooldown Recovery",
+      "grade": "lesser",
+      "tier": 1,
+      "description": "Supported Skills have 20% increased Cooldown Recovery Rate",
+      "tradeStatId": "mercenary.support_30881"
+    },
+    {
+      "name": "Lesser Critical Chance",
+      "baseName": "Critical Chance",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_23209"
+    },
+    {
+      "name": "Lesser Critical Damage",
+      "baseName": "Critical Damage",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_30688"
+    },
+    {
+      "name": "Lesser DoT Multiplier",
+      "baseName": "DoT Multiplier",
+      "grade": "lesser",
+      "tier": 1,
+      "description": "Supported Skills have +15% to Damage over Time Multiplier",
+      "tradeStatId": "mercenary.support_22977"
+    },
+    {
+      "name": "Lesser Elemental Damage with Attacks",
+      "baseName": "Elemental Damage with Attacks",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_59712"
+    },
+    {
+      "name": "Lesser Elemental Focus",
+      "baseName": "Elemental Focus",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_30359"
+    },
+    {
+      "name": "Lesser Excommunicate",
+      "baseName": "Excommunicate",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_29922"
+    },
+    {
+      "name": "Lesser Faster Attacks",
+      "baseName": "Faster Attacks",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_52447"
+    },
+    {
+      "name": "Lesser Faster Casting",
+      "baseName": "Faster Casting",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_43469"
+    },
+    {
+      "name": "Lesser Faster Projectiles",
+      "baseName": "Faster Projectiles",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_25199"
+    },
+    {
+      "name": "Lesser Fire Penetration",
+      "baseName": "Fire Penetration",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_46010"
+    },
+    {
+      "name": "Lesser Freeze Chance",
+      "baseName": "Freeze Chance",
+      "grade": "lesser",
+      "tier": 1,
+      "description": "Supported Skills have 20% chance to Freeze",
+      "tradeStatId": "mercenary.support_34226"
+    },
+    {
+      "name": "Lesser Generosity",
+      "baseName": "Generosity",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_59349"
+    },
+    {
+      "name": "Lesser Hypothermia",
+      "baseName": "Hypothermia",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_26146"
+    },
+    {
+      "name": "Lesser Ignite Chance",
+      "baseName": "Ignite Chance",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_52335"
+    },
+    {
+      "name": "Lesser Impale Chance",
+      "baseName": "Impale Chance",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_54252"
+    },
+    {
+      "name": "Lesser Increased Area of Effect",
+      "baseName": "Increased Area of Effect",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_22670"
+    },
+    {
+      "name": "Lesser Infused Channelling",
+      "baseName": "Infused Channelling",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_59986"
+    },
+    {
+      "name": "Lesser Ironwood",
+      "baseName": "Ironwood",
+      "grade": "lesser",
+      "tier": 1,
+      "description": "Totems created by Supported Skills have +10% to Physical Damage Reduction Totems created by Supported Skills have +30% to Elemental Resistances",
+      "tradeStatId": "mercenary.support_230"
+    },
+    {
+      "name": "Lesser Leech",
+      "baseName": "Leech",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_32130"
+    },
+    {
+      "name": "Lesser Less Duration",
+      "baseName": "Less Duration",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_54768"
+    },
+    {
+      "name": "Lesser Lightning Penetration",
+      "baseName": "Lightning Penetration",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_37739"
+    },
+    {
+      "name": "Lesser Melee Physical Damage",
+      "baseName": "Melee Physical Damage",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_64940"
+    },
+    {
+      "name": "Lesser Minion Damage",
+      "baseName": "Minion Damage",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_8821"
+    },
+    {
+      "name": "Lesser Minion Life",
+      "baseName": "Minion Life",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_23582"
+    },
+    {
+      "name": "Lesser Mitigation Ignore",
+      "baseName": "Mitigation Ignore",
+      "grade": "lesser",
+      "tier": 1,
+      "description": "Hits from Supported Skills have 20% chance to ignore Enemy Physical Damage Reduction",
+      "tradeStatId": "mercenary.support_16261"
+    },
+    {
+      "name": "Lesser More Duration",
+      "baseName": "More Duration",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_2602"
+    },
+    {
+      "name": "Lesser Physical as Extra",
+      "baseName": "Physical as Extra",
+      "grade": "lesser",
+      "tier": 1,
+      "description": "Gain 10% of Physical Damage as Extra Damage of a random Element",
+      "tradeStatId": "mercenary.support_28037"
+    },
+    {
+      "name": "Lesser Pierce",
+      "baseName": "Pierce",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_6040"
+    },
+    {
+      "name": "Lesser Pulverise",
+      "baseName": "Pulverise",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_35729"
+    },
+    {
+      "name": "Lesser Rage on Hit",
+      "baseName": "Rage on Hit",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_55249"
+    },
+    {
+      "name": "Lesser Raging Cry",
+      "baseName": "Raging Cry",
+      "grade": "lesser",
+      "tier": 1,
+      "description": "Gain 10 Rage when you use a Warcry",
+      "tradeStatId": "mercenary.support_49237"
+    },
+    {
+      "name": "Lesser Shock Chance",
+      "baseName": "Shock Chance",
+      "grade": "lesser",
+      "tier": 1,
+      "description": "Supported Skills have 20% chance to Shock",
+      "tradeStatId": "mercenary.support_9710"
+    },
+    {
+      "name": "Lesser Slower Projectiles",
+      "baseName": "Slower Projectiles",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_15866"
+    },
+    {
+      "name": "Lesser Spell Cascade",
+      "baseName": "Spell Cascade",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_65120"
+    },
+    {
+      "name": "Lesser Strike Distance",
+      "baseName": "Strike Distance",
+      "grade": "lesser",
+      "tier": 1,
+      "description": "Supported Skills have +0.2 metres to Melee Strike Range",
+      "tradeStatId": "mercenary.support_30389"
+    },
+    {
+      "name": "Lesser Swift Affliction",
+      "baseName": "Swift Affliction",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_834"
+    },
+    {
+      "name": "Lesser Throwing Speed",
+      "baseName": "Throwing Speed",
+      "grade": "lesser",
+      "tier": 1,
+      "description": "Supported Skills have 15% increased Mine Throwing Speed Supported Skills have 15% increased Trap Throwing Speed",
+      "tradeStatId": "mercenary.support_32260"
+    },
+    {
+      "name": "Lesser Trap and Mine Damage",
+      "baseName": "Trap and Mine Damage",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_49954"
+    },
+    {
+      "name": "Lesser Trigger Radius",
+      "baseName": "Trigger Radius",
+      "grade": "lesser",
+      "tier": 1,
+      "description": "Supported Skills have 20% increased Trap Trigger Area of Effect",
+      "tradeStatId": "mercenary.support_40446"
+    },
+    {
+      "name": "Lesser Warcry Speed",
+      "baseName": "Warcry Speed",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_55470"
+    },
+    {
+      "name": "Lesser Wither on Hit",
+      "baseName": "Wither on Hit",
+      "grade": "lesser",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_53673"
+    },
+    {
+      "name": "Lightning Penetration",
+      "baseName": "Lightning Penetration",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_41256"
+    },
+    {
+      "name": "Maim",
+      "baseName": "Maim",
+      "grade": "normal",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_56389"
+    },
+    {
+      "name": "Maximum Shock Effect",
+      "baseName": "Maximum Shock Effect",
+      "grade": "normal",
+      "tier": 3,
+      "description": "+10% to Maximum Effect of Shock",
+      "tradeStatId": "mercenary.support_64801"
+    },
+    {
+      "name": "Melee Physical Damage",
+      "baseName": "Melee Physical Damage",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_53516"
+    },
+    {
+      "name": "Melee Splash",
+      "baseName": "Melee Splash",
+      "grade": "normal",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_40660"
+    },
+    {
+      "name": "Minion Caustic Death",
+      "baseName": "Minion Caustic Death",
+      "grade": "normal",
+      "tier": 3,
+      "description": "Your Minions spread Caustic Ground on Death, dealing 2.5% of their maximum Life as Chaos Damage per second",
+      "tradeStatId": "mercenary.support_13016"
+    },
+    {
+      "name": "Minion Damage",
+      "baseName": "Minion Damage",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_28579"
+    },
+    {
+      "name": "Minion Life",
+      "baseName": "Minion Life",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_20579"
+    },
+    {
+      "name": "Mirage Archer",
+      "baseName": "Mirage Archer",
+      "grade": "normal",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_37727"
+    },
+    {
+      "name": "Mitigation Ignore",
+      "baseName": "Mitigation Ignore",
+      "grade": "normal",
+      "tier": 2,
+      "description": "Hits from Supported Skills have 25% chance to ignore Enemy Physical Damage Reduction",
+      "tradeStatId": "mercenary.support_4351"
+    },
+    {
+      "name": "More Duration",
+      "baseName": "More Duration",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_50222"
+    },
+    {
+      "name": "Multiple Projectiles",
+      "baseName": "Multiple Projectiles",
+      "grade": "normal",
+      "tier": 1,
+      "description": null,
+      "tradeStatId": "mercenary.support_12054"
+    },
+    {
+      "name": "Multiple Totems",
+      "baseName": "Multiple Totems",
+      "grade": "normal",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_17097"
+    },
+    {
+      "name": "Multiple Traps",
+      "baseName": "Multiple Traps",
+      "grade": "normal",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_2555"
+    },
+    {
+      "name": "Multistrike",
+      "baseName": "Multistrike",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_62638"
+    },
+    {
+      "name": "Physical as Extra",
+      "baseName": "Physical as Extra",
+      "grade": "normal",
+      "tier": 2,
+      "description": "Gain 20% of Physical Damage as Extra Damage of a random Element",
+      "tradeStatId": "mercenary.support_39342"
+    },
+    {
+      "name": "Physical as Extra Chaos",
+      "baseName": "Physical as Extra Chaos",
+      "grade": "normal",
+      "tier": 2,
+      "description": "Supported Skills gain 15% of Physical Damage as Extra Chaos Damage",
+      "tradeStatId": "mercenary.support_51009"
+    },
+    {
+      "name": "Pierce",
+      "baseName": "Pierce",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_56267"
+    },
+    {
+      "name": "Pulverise",
+      "baseName": "Pulverise",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_64717"
+    },
+    {
+      "name": "Rage on Hit",
+      "baseName": "Rage on Hit",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_64986"
+    },
+    {
+      "name": "Raging Cry",
+      "baseName": "Raging Cry",
+      "grade": "normal",
+      "tier": 2,
+      "description": "Gain 15 Rage when you use a Warcry",
+      "tradeStatId": "mercenary.support_36496"
+    },
+    {
+      "name": "Return",
+      "baseName": "Return",
+      "grade": "normal",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_5293"
+    },
+    {
+      "name": "Second Wind",
+      "baseName": "Second Wind",
+      "grade": "normal",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_50475"
+    },
+    {
+      "name": "Shock Chance",
+      "baseName": "Shock Chance",
+      "grade": "normal",
+      "tier": 2,
+      "description": "Supported Skills have 40% chance to Shock",
+      "tradeStatId": "mercenary.support_64846"
+    },
+    {
+      "name": "Slower Projectiles",
+      "baseName": "Slower Projectiles",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_2210"
+    },
+    {
+      "name": "Spell Cascade",
+      "baseName": "Spell Cascade",
+      "grade": "normal",
+      "tier": 3,
+      "description": null,
+      "tradeStatId": "mercenary.support_1751"
+    },
+    {
+      "name": "Strike Distance",
+      "baseName": "Strike Distance",
+      "grade": "normal",
+      "tier": 2,
+      "description": "Supported Skills have +0.4 metres to Melee Strike Range",
+      "tradeStatId": "mercenary.support_59784"
+    },
+    {
+      "name": "Swift Affliction",
+      "baseName": "Swift Affliction",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_64281"
+    },
+    {
+      "name": "Throwing Speed",
+      "baseName": "Throwing Speed",
+      "grade": "normal",
+      "tier": 2,
+      "description": "Supported Skills have 30% increased Mine Throwing Speed Supported Skills have 30% increased Trap Throwing Speed",
+      "tradeStatId": "mercenary.support_3465"
+    },
+    {
+      "name": "Trap and Mine Damage",
+      "baseName": "Trap and Mine Damage",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_31171"
+    },
+    {
+      "name": "Trigger Radius",
+      "baseName": "Trigger Radius",
+      "grade": "normal",
+      "tier": 2,
+      "description": "Supported Skills have 40% increased Trap Trigger Area of Effect",
+      "tradeStatId": "mercenary.support_819"
+    },
+    {
+      "name": "Warcry Speed",
+      "baseName": "Warcry Speed",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_47477"
+    },
+    {
+      "name": "Wither on Hit",
+      "baseName": "Wither on Hit",
+      "grade": "normal",
+      "tier": 2,
+      "description": null,
+      "tradeStatId": "mercenary.support_15235"
+    }
+  ]
+}

@@ -13,6 +13,7 @@
     "zip": "wxt zip",
     "zip:firefox": "wxt zip -b firefox",
     "compile": "tsc --noEmit",
+    "data:update": "node scripts/scrape-mercenary-data.mjs",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "postinstall": "wxt prepare"
@@ -27,6 +28,7 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@wxt-dev/module-react": "^1.1.5",
+    "cheerio": "^1.2.0",
     "eslint": "^10.8.1",
     "eslint-plugin-react-refresh": "^0.5.3",
     "typescript": "^5.9.3",
