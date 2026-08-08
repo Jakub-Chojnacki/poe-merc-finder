@@ -1,21 +1,12 @@
-import type { GetTradePageInfoMessage, TradePageInfo } from './types'
-import { isNonNullObject } from '@/utils/type-guards'
-import { GET_TRADE_PAGE_INFO } from './const'
+import type { FilterConfig } from '@/utils/filter-config/types'
+import { defineExtensionMessaging } from '@webext-core/messaging'
 
-export function isGetTradePageInfoMessage(
-  message: unknown,
-): message is GetTradePageInfoMessage {
-  return (
-    isNonNullObject(message)
-    && 'type' in message
-    && message.type === GET_TRADE_PAGE_INFO
-  )
+interface TradePageProtocolMap {
+  applyTradeFilter: (filter: FilterConfig) => void
+  getTradePageInfo: () => void
 }
 
-export function isTradePageInfo(value: unknown): value is TradePageInfo {
-  return (
-    isNonNullObject(value)
-    && 'connected' in value
-    && value.connected === true
-  )
-}
+export const {
+  onMessage: onTradePageMessage,
+  sendMessage: sendTradePageMessage,
+} = defineExtensionMessaging<TradePageProtocolMap>()
