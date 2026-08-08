@@ -1,4 +1,5 @@
 import type { FilterEditorProps, UpdatesToRequirement } from './types'
+import ClearableDatalistField from '@/components/clearable-datalist-field'
 import GemListField from '@/components/gem-list-field'
 import { createEmptySkillRequirement } from '@/utils/filter-draft'
 import {
@@ -68,20 +69,18 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
         </button>
       </header>
 
-      <label className="field">
-        <span>Mercenary class</span>
-        <input
-          type="text"
-          list={MERCENARY_CLASS_OPTIONS_ID}
-          value={value.mercenaryClass}
-          onChange={event => onChange({
-            ...value,
-            mercenaryClass: event.target.value,
-          })}
-          placeholder="Stormhand"
-        />
-        <small>Choose a class to narrow the skill suggestions, or type manually.</small>
-      </label>
+      <ClearableDatalistField
+        label="Mercenary class"
+        clearLabel="Clear"
+        optionsId={MERCENARY_CLASS_OPTIONS_ID}
+        value={value.mercenaryClass}
+        onChange={mercenaryClass => onChange({
+          ...value,
+          mercenaryClass,
+        })}
+        placeholder="Stormhand"
+        hint="Choose a class to narrow the skill suggestions, or type manually."
+      />
 
       <datalist id={MERCENARY_CLASS_OPTIONS_ID}>
         {MERCENARY_OPTIONS.map(mercenary => (
@@ -122,19 +121,14 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
               </button>
             )}
 
-            <label className="field">
-              <span>Skill name</span>
-              <input
-                type="text"
-                list={MERCENARY_SKILL_OPTIONS_ID}
-                value={requirement.skill}
-                onChange={event =>
-                  updateRequirement(requirement.id, {
-                    skill: event.target.value,
-                  })}
-                placeholder="Kinetic Blast of Clustering"
-              />
-            </label>
+            <ClearableDatalistField
+              label="Skill name"
+              clearLabel="Clear"
+              optionsId={MERCENARY_SKILL_OPTIONS_ID}
+              value={requirement.skill}
+              onChange={skill => updateRequirement(requirement.id, { skill })}
+              placeholder="Kinetic Blast of Clustering"
+            />
 
             <GemListField
               label="Required supports"
