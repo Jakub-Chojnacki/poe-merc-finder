@@ -5,7 +5,7 @@ export default defineConfig({
   modules: ['@wxt-dev/module-react'],
   manifest: {
     name: 'PoE Merc Finder',
-    description: 'Filter mercenaries based on links for a specific gem',
+    description: 'Filter Path of Exile mercenary trade listings by skills and their linked support gems.',
     minimum_chrome_version: '114',
     permissions: ['storage'],
   },

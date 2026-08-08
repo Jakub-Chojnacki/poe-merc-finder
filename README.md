@@ -7,7 +7,7 @@ website.
 The trade site can find mercenaries that have a particular skill or support
 gem, but it cannot require those supports to be linked to a specific skill. This extensions allows you to high-light matching patterns.
 
-![PoE Merc Finder filtering mercenary listings](public/example.png)
+![PoE Merc Finder filtering mercenary listings](docs/example.png)
 
 ## Features
 
@@ -37,6 +37,9 @@ gem, but it cannot require those supports to be linked to a specific skill. This
 
 Saved setups and panel preferences are stored locally by the extension. They
 are not transmitted to an external service.
+
+See the [privacy policy](PRIVACY.md) for complete details about local data
+handling and extension permissions.
 
 ## Development
 
