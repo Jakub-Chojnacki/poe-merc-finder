@@ -240,29 +240,53 @@
 }
 
 .skill-group {
-  position: relative;
-  display: grid;
-  gap: var(--space-3-5);
   margin: 0;
-  padding: var(--space-4);
+  overflow: hidden;
   background: var(--color-surface);
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-md);
 }
 
-.skill-group legend {
-  padding: 0 var(--space-1-5);
+.skill-group__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2-5) var(--space-4);
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.skill-group__title {
+  margin: 0;
   font-size: var(--font-size-sm);
   font-weight: 700;
 }
 
+.skill-group__content {
+  display: grid;
+  gap: var(--space-3-5);
+  padding: var(--space-4);
+}
+
 .remove-button {
-  position: absolute;
-  top: var(--space-2-5);
-  right: var(--space-2-5);
-  padding: var(--space-1) var(--space-2);
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: var(--space-6);
+  height: var(--space-6);
+  padding: 0;
   color: var(--color-danger);
-  font-size: var(--font-size-xs);
+  background: transparent;
+  border-radius: var(--radius-pill);
+}
+
+.remove-button__icon {
+  width: var(--space-3-5);
+  height: var(--space-3-5);
+  fill: none;
+  stroke: currentcolor;
+  stroke-linecap: round;
+  stroke-width: 2;
 }
 
 .remove-button:hover {
