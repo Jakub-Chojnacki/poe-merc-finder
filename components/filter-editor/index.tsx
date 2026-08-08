@@ -1,36 +1,35 @@
-import { createEmptySkillRequirement } from "@/utils/filter-draft";
-import type { SkillRequirementDraft } from "@/utils/filter-draft/types";
-import type { FilterEditorProps, UpdatesToRequirement } from "./types";
+import type { FilterEditorProps, UpdatesToRequirement } from './types'
+import { createEmptySkillRequirement } from '@/utils/filter-draft'
 
 const FilterEditor: React.FC<FilterEditorProps> = ({ value, onChange }) => {
   const updateRequirement = (id: string, updates: UpdatesToRequirement): void => {
     onChange({
       ...value,
-      requirements: value.requirements.map((requirement) =>
+      requirements: value.requirements.map(requirement =>
         requirement.id === id ? { ...requirement, ...updates } : requirement,
       ),
-    });
-  };
+    })
+  }
 
   const addRequirement = (): void => {
     onChange({
       ...value,
       requirements: [...value.requirements, createEmptySkillRequirement()],
-    });
-  };
+    })
+  }
 
   const removeRequirement = (id: string): void => {
     const requirements = value.requirements.filter(
-      (requirement) => requirement.id !== id,
-    );
+      requirement => requirement.id !== id,
+    )
 
     onChange({
       ...value,
-      requirements: !!requirements.length
+      requirements: requirements.length
         ? requirements
         : [createEmptySkillRequirement()],
-    });
-  };
+    })
+  }
 
   return (
     <section className="filter-editor" aria-labelledby="filter-editor-title">
@@ -48,7 +47,10 @@ const FilterEditor: React.FC<FilterEditorProps> = ({ value, onChange }) => {
       <div className="skill-groups">
         {value.requirements.map((requirement, index) => (
           <fieldset className="skill-group" key={requirement.id}>
-            <legend>Skill {index + 1}</legend>
+            <legend>
+              Skill
+              {index + 1}
+            </legend>
 
             {value.requirements.length > 1 && (
               <button
@@ -66,11 +68,10 @@ const FilterEditor: React.FC<FilterEditorProps> = ({ value, onChange }) => {
               <input
                 type="text"
                 value={requirement.skill}
-                onChange={(event) =>
+                onChange={event =>
                   updateRequirement(requirement.id, {
                     skill: event.target.value,
-                  })
-                }
+                  })}
                 placeholder="Kinetic Blast of Clustering"
               />
             </label>
@@ -79,12 +80,11 @@ const FilterEditor: React.FC<FilterEditorProps> = ({ value, onChange }) => {
               <span>Required supports</span>
               <textarea
                 value={requirement.requiredSupports}
-                onChange={(event) =>
+                onChange={event =>
                   updateRequirement(requirement.id, {
                     requiredSupports: event.target.value,
-                  })
-                }
-                placeholder={"Return\nGreater Multiple Projectiles"}
+                  })}
+                placeholder={'Return\nGreater Multiple Projectiles'}
                 rows={3}
               />
               <small>Every support must be linked to this skill.</small>
@@ -94,12 +94,11 @@ const FilterEditor: React.FC<FilterEditorProps> = ({ value, onChange }) => {
               <span>Optional supports</span>
               <textarea
                 value={requirement.optionalSupports}
-                onChange={(event) =>
+                onChange={event =>
                   updateRequirement(requirement.id, {
                     optionalSupports: event.target.value,
-                  })
-                }
-                placeholder={"Greater Pierce\nChain"}
+                  })}
+                placeholder={'Greater Pierce\nChain'}
                 rows={3}
               />
               <small>These improve the match but are not required.</small>
@@ -112,14 +111,13 @@ const FilterEditor: React.FC<FilterEditorProps> = ({ value, onChange }) => {
         <input
           type="checkbox"
           checked={value.hideFailures}
-          onChange={(event) =>
-            onChange({ ...value, hideFailures: event.target.checked })
-          }
+          onChange={event =>
+            onChange({ ...value, hideFailures: event.target.checked })}
         />
         <span>Hide listings missing required skills or supports</span>
       </label>
     </section>
-  );
-};
+  )
+}
 
-export default FilterEditor;
+export default FilterEditor

@@ -1,8 +1,8 @@
-import "./App.css";
-import MainSidebar from "@/components/main-sidebar";
+import MainSidebar from '@/components/main-sidebar'
+import './App.css'
 
 function App() {
-  return <MainSidebar />;
+  return <MainSidebar />
 }
 
-export default App;
+export default App
