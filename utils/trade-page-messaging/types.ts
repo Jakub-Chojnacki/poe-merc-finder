@@ -1,9 +1,9 @@
-import type { GET_TRADE_PAGE_INFO } from "./const";
+import type { GET_TRADE_PAGE_INFO } from './const'
 
- export type GetTradePageInfoMessage = {
-  type: typeof GET_TRADE_PAGE_INFO;
-};
+export interface GetTradePageInfoMessage {
+  type: typeof GET_TRADE_PAGE_INFO
+}
 
-export type TradePageInfo = {
-  connected: true;
-};
+export interface TradePageInfo {
+  connected: true
+}

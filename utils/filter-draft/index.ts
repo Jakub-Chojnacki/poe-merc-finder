@@ -1,4 +1,4 @@
-import type { FilterDraft, SkillRequirementDraft } from './types';
+import type { FilterDraft, SkillRequirementDraft } from './types'
 
 export function createEmptySkillRequirement(): SkillRequirementDraft {
   return {
@@ -6,12 +6,12 @@ export function createEmptySkillRequirement(): SkillRequirementDraft {
     skill: '',
     requiredSupports: '',
     optionalSupports: '',
-  };
+  }
 }
 
 export function createEmptyFilterDraft(): FilterDraft {
   return {
     requirements: [createEmptySkillRequirement()],
     hideFailures: false,
-  };
+  }
 }
