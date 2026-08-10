@@ -2,12 +2,13 @@ import type { MainSidebarProps } from './types'
 import FilterEditor from '@/components/filter-editor'
 import ChevronIcon from '@/components/icons/chevron'
 import SavedSetupManager from '@/components/saved-setup-manager'
+import { CollapsibleTrigger } from '@/components/ui/collapsible'
+import UiTooltip from '@/components/ui/tooltip'
 import { useTradePageFilter } from '@/hooks/use-trade-page-filter'
 
 const MainSidebar: React.FC<MainSidebarProps> = ({
   initialFilterDraft,
   onApplyFilter,
-  onCollapse,
 }) => {
   const {
     applyFilter,
@@ -24,17 +25,19 @@ const MainSidebar: React.FC<MainSidebarProps> = ({
           <h1>Mercenary Support Filter</h1>
         </div>
 
-        <button
-          type="button"
-          className="sidebar-icon-button"
-          aria-label="Collapse mercenary filter"
-          title="Collapse mercenary filter"
-          onClick={onCollapse}
-        >
-          <ChevronIcon
-            className="sidebar-chevron"
-          />
-        </button>
+        <UiTooltip content="Collapse mercenary filter">
+          <CollapsibleTrigger asChild>
+            <button
+              type="button"
+              className="sidebar-icon-button"
+              aria-label="Collapse mercenary filter"
+            >
+              <ChevronIcon
+                className="sidebar-chevron"
+              />
+            </button>
+          </CollapsibleTrigger>
+        </UiTooltip>
       </header>
 
       <SavedSetupManager value={filterDraft} onLoad={setFilterDraft} />
