@@ -1,0 +1,2 @@
+export const POPOVER_COLLISION_PADDING_PX = 12
+export const POPOVER_SIDE_OFFSET_PX = 6

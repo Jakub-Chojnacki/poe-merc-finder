@@ -3,6 +3,7 @@ import type { FilterConfig } from '@/utils/filter-config/types'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import SidebarTrigger from '@/components/sidebar-trigger'
+import UiProvider from '@/components/ui/provider'
 import { createFilterConfig } from '@/utils/filter-config'
 import { getGeneratedSearchDraft } from '@/utils/generated-search-drafts'
 import { HIGHLIGHT_DELAY_MS } from './const'
@@ -60,15 +61,19 @@ export default defineContentScript({
 
         const app = document.createElement('div')
         app.className = 'extension-root'
-        container.append(app)
+        const portalContainer = document.createElement('div')
+        portalContainer.className = 'extension-portals'
+        container.append(app, portalContainer)
 
         const root = createRoot(app)
         root.render(
           <StrictMode>
-            <SidebarTrigger
-              initialFilterDraft={initialFilterDraft}
-              onApplyFilter={applyFilter}
-            />
+            <UiProvider portalContainer={portalContainer}>
+              <SidebarTrigger
+                initialFilterDraft={initialFilterDraft}
+                onApplyFilter={applyFilter}
+              />
+            </UiProvider>
           </StrictMode>,
         )
 
