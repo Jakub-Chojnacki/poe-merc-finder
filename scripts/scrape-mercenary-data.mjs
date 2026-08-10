@@ -15,6 +15,14 @@ const SUPPORT_COUNTS = {
   N: 'none',
 }
 
+const TRADE_SKILL_NAME_OVERRIDES = {
+  'Ball Lightning of Orbiting': 'Ball Lightning of Orbiting Trap',
+  'Creeping Frost': 'Creeping Frost Trap',
+  'Scorching Ray': 'Scorching Ray Totem',
+  'Storm Call': 'Stormcall',
+  'Summon Holy Relic': 'Holy Relic',
+}
+
 function normalizeText(value) {
   return value.replace(/\s+/g, ' ').trim()
 }
@@ -256,6 +264,69 @@ function parseTradeSupportGems(statGroups, exclusiveSupportGems) {
   return supportGems
 }
 
+function parseTradeSkills(statGroups) {
+  const aliasesByName = Object.entries(TRADE_SKILL_NAME_OVERRIDES).reduce(
+    (result, [alias, name]) => {
+      const aliases = result.get(name) ?? []
+
+      aliases.push(alias)
+      result.set(name, aliases)
+
+      return result
+    },
+    new Map(),
+  )
+
+  const skills = statGroups
+    .flatMap(group => group.entries)
+    .filter(entry => (
+      entry.type === 'mercenary'
+      && entry.id.startsWith('mercenary.skill_')
+    ))
+    .map(entry => ({
+      name: entry.text,
+      aliases: aliasesByName.get(entry.text) ?? [],
+      tradeStatId: entry.id,
+    }))
+    .sort((left, right) => left.name.localeCompare(right.name))
+
+  if (skills.length < 250) {
+    throw new Error(`Expected at least 250 mercenary skills, found ${skills.length}`)
+  }
+
+  return skills
+}
+
+function addTradeStatIdsToMercenaries(mercenaries, tradeSkills) {
+  const tradeSkillsByName = new Map(
+    tradeSkills.map(skill => [skill.name, skill]),
+  )
+
+  return mercenaries.map(mercenary => ({
+    ...mercenary,
+    skills: Object.fromEntries(
+      Object.entries(mercenary.skills).map(([category, skills]) => (
+        [
+          category,
+          skills.map((skill) => {
+            const tradeName = TRADE_SKILL_NAME_OVERRIDES[skill.name] ?? skill.name
+            const tradeSkill = tradeSkillsByName.get(tradeName)
+
+            if (!tradeSkill) {
+              throw new Error(`Could not find trade stat for mercenary skill: ${skill.name}`)
+            }
+
+            return {
+              ...skill,
+              tradeStatId: tradeSkill.tradeStatId,
+            }
+          }),
+        ]
+      )),
+    ),
+  }))
+}
+
 const [classesPage, mercenaryPage, tradeStatGroups] = await Promise.all([
   fetchParsedPage(MERCENARY_CLASSES_PAGE),
   fetchParsedPage(MERCENARY_PAGE),
@@ -263,9 +334,14 @@ const [classesPage, mercenaryPage, tradeStatGroups] = await Promise.all([
 ])
 
 const exclusiveSupportGems = parseExclusiveSupportGems(mercenaryPage.text)
+const tradeSkills = parseTradeSkills(tradeStatGroups)
+const mercenaries = addTradeStatIdsToMercenaries(
+  parseMercenaries(classesPage.text),
+  tradeSkills,
+)
 
 const dataset = {
-  version: 1,
+  version: 2,
   generatedAt: new Date().toISOString(),
   sources: [
     {
@@ -284,7 +360,8 @@ const dataset = {
       url: TRADE_STATS_URL,
     },
   ],
-  mercenaries: parseMercenaries(classesPage.text),
+  mercenaries,
+  skills: tradeSkills,
   supportGems: parseTradeSupportGems(tradeStatGroups, exclusiveSupportGems),
 }
 

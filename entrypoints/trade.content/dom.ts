@@ -6,6 +6,7 @@ import type {
   SupportNameEvaluation,
 } from './types'
 import type { FilterConfig, SkillRequirement } from '@/utils/filter-config/types'
+import { normalizeMercenarySkillName } from '@/utils/mercenary-data'
 import {
   BADGE_LABELS,
   BADGE_VARIANT_CLASSES,
@@ -91,7 +92,10 @@ function evaluateRequirement(
   requirement: SkillRequirement,
 ): RequirementEvaluation {
   const skill = mercenarySkills.find(
-    candidate => normalizeGemName(candidate.name) === normalizeGemName(requirement.skill),
+    candidate => (
+      normalizeMercenarySkillName(candidate.name)
+      === normalizeMercenarySkillName(requirement.skill)
+    ),
   )
 
   if (!skill) {

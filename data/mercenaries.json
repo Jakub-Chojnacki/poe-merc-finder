@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "generatedAt": "2026-08-08T12:26:45.466Z",
+  "version": 2,
+  "generatedAt": "2026-08-10T18:30:30.128Z",
   "sources": [
     {
       "page": "List of mercenary classes",
@@ -9,7 +9,7 @@
     },
     {
       "page": "Mercenary",
-      "revision": 1699850,
+      "revision": 1700172,
       "url": "https://www.poewiki.net/wiki/Mercenary#List_of_mercenary_exclusive_support_gems"
     },
     {
@@ -27,47 +27,57 @@
         "primary": [
           {
             "name": "Shield Crush",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_21201"
           },
           {
             "name": "Shield Charge",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_22850"
           }
         ],
         "secondary": [
           {
             "name": "Spectral Shield Throw of Trarthus",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_41834"
           },
           {
             "name": "Tempest Shield",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_58855"
           },
           {
             "name": "Prismplate",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_52494"
           }
         ],
         "utility": [
           {
             "name": "Determination",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_52845"
           },
           {
             "name": "Dash",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_60723"
           },
           {
             "name": "Intimidating Cry",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_38311"
           },
           {
             "name": "Physical Aegis",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_17015"
           },
           {
             "name": "Impenetrable Bastion",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_45615"
           }
         ]
       }
@@ -80,43 +90,52 @@
         "primary": [
           {
             "name": "Blade Trap",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_11054"
           },
           {
             "name": "Trarthan Agility",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_38072"
           }
         ],
         "secondary": [
           {
             "name": "Spectral Throw of Trarthus",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_62393"
           },
           {
             "name": "Spectral Helix of Trarthus",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_28988"
           }
         ],
         "utility": [
           {
             "name": "Smoke Mine",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_64528"
           },
           {
             "name": "Flame Dash",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_56180"
           },
           {
             "name": "Grace",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_2792"
           },
           {
             "name": "Summon Skitterbots",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_44296"
           },
           {
             "name": "Bear Trap",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_13711"
           }
         ]
       }
@@ -129,51 +148,62 @@
         "primary": [
           {
             "name": "Viper Strike",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_22227"
           },
           {
             "name": "Abyssal Cry",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_14992"
           }
         ],
         "secondary": [
           {
             "name": "Venom Gyre",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_59831"
           },
           {
             "name": "Profane Strike",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_36446"
           },
           {
             "name": "Cobra Lash",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_16896"
           },
           {
             "name": "Pestilent Strike",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_12262"
           }
         ],
         "utility": [
           {
             "name": "Whirling Blades",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_10823"
           },
           {
             "name": "Dash",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_60723"
           },
           {
             "name": "Malevolence",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_1516"
           },
           {
             "name": "Withering Step",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_10320"
           },
           {
             "name": "Grace",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_2792"
           }
         ]
       }
@@ -186,55 +216,67 @@
         "primary": [
           {
             "name": "Clutches of the Damned",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_26057"
           },
           {
             "name": "Bloody Warp",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_22724"
           }
         ],
         "secondary": [
           {
             "name": "Seismic Crush",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_17198"
           },
           {
             "name": "Bladefall",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_37202"
           },
           {
             "name": "Blade Vortex",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_25718"
           },
           {
             "name": "Ethereal Knives",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_50999"
           },
           {
             "name": "Bladefall of Trarthus",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_59477"
           }
         ],
         "utility": [
           {
             "name": "Dash",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_60723"
           },
           {
             "name": "Grace",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_2792"
           },
           {
             "name": "Flame Dash",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_56180"
           },
           {
             "name": "Aspect of the Spider",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_19417"
           },
           {
             "name": "Frost Shield",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_57491"
           }
         ]
       }
@@ -247,43 +289,52 @@
         "primary": [
           {
             "name": "Bloodthirst",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_60880"
           },
           {
             "name": "Blood Mortar",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_26931"
           },
           {
             "name": "Lacerate",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_8136"
           }
         ],
         "secondary": [
           {
             "name": "Bladestorm",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_12357"
           },
           {
             "name": "Perforate",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_54006"
           }
         ],
         "utility": [
           {
             "name": "Leap Slam",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_2135"
           },
           {
             "name": "Dash",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_60723"
           },
           {
             "name": "Determination",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_52845"
           },
           {
             "name": "Oil Slick",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_19268"
           }
         ]
       }
@@ -296,43 +347,52 @@
         "primary": [
           {
             "name": "Holy Hammers",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_28506"
           },
           {
             "name": "Holy Strike",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_38655"
           }
         ],
         "secondary": [
           {
             "name": "Holy Sweep",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_7395"
           },
           {
             "name": "Sanctified Strike",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_53518"
           },
           {
             "name": "Consecrated Path",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_3093"
           }
         ],
         "utility": [
           {
             "name": "Purity of Lightning",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_63233"
           },
           {
             "name": "Flame Dash",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_56180"
           },
           {
             "name": "Herald of Purity",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_34212"
           },
           {
             "name": "Wrath",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_38326"
           }
         ]
       }
@@ -345,47 +405,57 @@
         "primary": [
           {
             "name": "Inspiring Cry",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_65473"
           },
           {
             "name": "Herald of Ice",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_32807"
           }
         ],
         "secondary": [
           {
             "name": "Frost Blades",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_22105"
           },
           {
             "name": "Wild Strike",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_40957"
           },
           {
             "name": "Spectral Helix",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_37916"
           },
           {
             "name": "Static Strike",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_24931"
           }
         ],
         "utility": [
           {
             "name": "Wrath",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_38326"
           },
           {
             "name": "Dash",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_60723"
           },
           {
             "name": "Frostblink",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_40470"
           },
           {
             "name": "Purity of Ice",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_13693"
           }
         ]
       }
@@ -398,59 +468,72 @@
         "primary": [
           {
             "name": "Despair",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_56742"
           },
           {
             "name": "Void Sphere",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_52783"
           }
         ],
         "secondary": [
           {
             "name": "Dark Bargain",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_35371"
           },
           {
             "name": "Voltaxic Burst",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_52144"
           },
           {
             "name": "Soulrend of Reaping",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_10742"
           },
           {
             "name": "Forbidden Rite Totem",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_29071"
           },
           {
             "name": "Summon Seeking Void",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_54144"
           },
           {
             "name": "Profane Cascade",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_51539"
           }
         ],
         "utility": [
           {
             "name": "Zealotry",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_14498"
           },
           {
             "name": "Lightning Warp",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_28757"
           },
           {
             "name": "Frostblink",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_40470"
           },
           {
             "name": "Flame Dash",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_56180"
           },
           {
             "name": "Envy",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_17515"
           }
         ]
       }
@@ -463,55 +546,67 @@
         "primary": [
           {
             "name": "Intimidating Cry",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_38311"
           },
           {
             "name": "Leap Slam",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_2135"
           }
         ],
         "secondary": [
           {
             "name": "Vaal Ground Slam",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_10712"
           },
           {
             "name": "Ground Slam",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_53728"
           },
           {
             "name": "Earthquake of Amplification",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_41346"
           },
           {
             "name": "Sunder of Trarthus",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_17654"
           },
           {
             "name": "Tectonic Cascade",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_40527"
           }
         ],
         "utility": [
           {
             "name": "Determination",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_52845"
           },
           {
             "name": "Molten Shell",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_21036"
           },
           {
             "name": "Burrow",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_31440"
           },
           {
             "name": "Endure",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_57171"
           },
           {
             "name": "Vaal Vitality",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_14889"
           }
         ]
       }
@@ -524,55 +619,67 @@
         "primary": [
           {
             "name": "Infernal Cry",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_59259"
           },
           {
             "name": "Leap Slam",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_2135"
           },
           {
             "name": "Triggerslam",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_18149"
           }
         ],
         "secondary": [
           {
             "name": "Volcanic Fissure of Snaking",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_53235"
           },
           {
             "name": "Consecrated Path",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_3093"
           },
           {
             "name": "Tectonic Slam",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_6228"
           },
           {
             "name": "Ashen Fissure",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_42361"
           }
         ],
         "utility": [
           {
             "name": "Molten Shell",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_21036"
           },
           {
             "name": "Determination",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_52845"
           },
           {
             "name": "Purity of Fire",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_33728"
           },
           {
             "name": "Herald of Ash",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_44334"
           },
           {
             "name": "Flame Link",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_47364"
           }
         ]
       }
@@ -585,51 +692,62 @@
         "primary": [
           {
             "name": "Absolution",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_15611"
           },
           {
             "name": "Raise Spectre of Transience",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_50349"
           },
           {
             "name": "Desecrate",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_21523"
           }
         ],
         "secondary": [
           {
             "name": "Reinforce: Fallen Bishop",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_4383"
           },
           {
             "name": "Reinforce: Fallen Emperor",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_61523"
           },
           {
             "name": "Reinforce: Fallen Osseotitan",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_53527"
           }
         ],
         "utility": [
           {
             "name": "Wrath",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_38326"
           },
           {
             "name": "Zealotry",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_14498"
           },
           {
             "name": "Battlemage's Cry",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_37344"
           },
           {
             "name": "Flame Dash",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_56180"
           },
           {
             "name": "Frostblink",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_40470"
           }
         ]
       }
@@ -642,63 +760,77 @@
         "primary": [
           {
             "name": "Flame Wall",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_57450"
           },
           {
             "name": "Flammability",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_40521"
           }
         ],
         "secondary": [
           {
             "name": "Greater Flame Dash",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_24099"
           },
           {
             "name": "Flameblast",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_6446"
           },
           {
             "name": "Vaal Flameblast",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_29426"
           },
           {
             "name": "Fireball",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_324"
           },
           {
             "name": "Fireball of Impact",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_37821"
           },
           {
             "name": "Rolling Magma",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_30130"
           },
           {
             "name": "Flame Surge",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_8801"
           }
         ],
         "utility": [
           {
             "name": "Lightning Warp",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_28757"
           },
           {
             "name": "Frostblink",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_40470"
           },
           {
             "name": "Purity of Fire",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_33728"
           },
           {
             "name": "Anger",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_13235"
           },
           {
             "name": "Flame Aegis",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_50414"
           }
         ]
       }
@@ -711,55 +843,67 @@
         "primary": [
           {
             "name": "Burning Arrow",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_34665"
           },
           {
             "name": "Alchemist's Mark",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_24179"
           }
         ],
         "secondary": [
           {
             "name": "Vaal Burning Arrow",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_23512"
           },
           {
             "name": "Molten Well",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_59200"
           },
           {
             "name": "Artillery Ballista",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_35610"
           },
           {
             "name": "Explosive Arrow",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_36298"
           },
           {
             "name": "Blast Rain of Trarthus",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_18004"
           },
           {
             "name": "Conflagration",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_21962"
           }
         ],
         "utility": [
           {
             "name": "Grace",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_2792"
           },
           {
             "name": "Blink Arrow",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_10722"
           },
           {
             "name": "Dash",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_60723"
           },
           {
             "name": "Blasphemy Flammability",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_39298"
           }
         ]
       }
@@ -772,47 +916,57 @@
         "primary": [
           {
             "name": "Holy Flame Totem",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_47949"
           },
           {
             "name": "Purifying Flame",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_17763"
           }
         ],
         "secondary": [
           {
             "name": "Holy Mortar",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_1577"
           },
           {
             "name": "Wave of Conviction of Trarthus",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_4286"
           },
           {
             "name": "Scorching Ray",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_47293"
           },
           {
             "name": "Meteor",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_40723"
           }
         ],
         "utility": [
           {
             "name": "Lightning Warp",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_28757"
           },
           {
             "name": "Flame Dash",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_56180"
           },
           {
             "name": "Herald of Ash",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_44334"
           },
           {
             "name": "Anger",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_13235"
           }
         ]
       }
@@ -825,47 +979,57 @@
         "primary": [
           {
             "name": "Frost Shield",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_57491"
           },
           {
             "name": "Greater Vortex Trap",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_3493"
           }
         ],
         "secondary": [
           {
             "name": "Ice Trap",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_62997"
           },
           {
             "name": "Creeping Frost",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_9321"
           }
         ],
         "utility": [
           {
             "name": "Summon Skitterbots",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_44296"
           },
           {
             "name": "Flame Dash",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_56180"
           },
           {
             "name": "Frostblink",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_40470"
           },
           {
             "name": "Grace",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_2792"
           },
           {
             "name": "Arctic Armour",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_55367"
           },
           {
             "name": "Vaal Arctic Armour",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_44455"
           }
         ]
       }
@@ -878,63 +1042,77 @@
         "primary": [
           {
             "name": "Frost Bomb",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_10557"
           },
           {
             "name": "Frostbite",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_6479"
           }
         ],
         "secondary": [
           {
             "name": "Frost Wall",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_50009"
           },
           {
             "name": "Eye of Winter",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_57063"
           },
           {
             "name": "Vortex",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_31928"
           },
           {
             "name": "Frostbolt",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_33663"
           },
           {
             "name": "Ice Nova",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_61497"
           },
           {
             "name": "Ice Nova of Projection",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_61471"
           },
           {
             "name": "Icestorm",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_28637"
           }
         ],
         "utility": [
           {
             "name": "Lightning Warp",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_28757"
           },
           {
             "name": "Frostblink",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_40470"
           },
           {
             "name": "Flame Dash",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_56180"
           },
           {
             "name": "Purity of Ice",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_13693"
           },
           {
             "name": "Discipline",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_21708"
           }
         ]
       }
@@ -947,55 +1125,67 @@
         "primary": [
           {
             "name": "Elemental Weakness",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_5689"
           },
           {
             "name": "Flame Wall",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_57450"
           }
         ],
         "secondary": [
           {
             "name": "Kinetic Bolt",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_12583"
           },
           {
             "name": "Power Siphon",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_26705"
           },
           {
             "name": "Barrage",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_1356"
           },
           {
             "name": "Greater Kinetic Blast",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_44258"
           },
           {
             "name": "Kinetic Blast of Clustering",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_16356"
           },
           {
             "name": "Kinetic Rain of Impact",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_32089"
           }
         ],
         "utility": [
           {
             "name": "Flame Dash",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_56180"
           },
           {
             "name": "Frostblink",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_40470"
           },
           {
             "name": "Haste",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_52155"
           },
           {
             "name": "Inspiring Cry",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_65473"
           }
         ]
       }
@@ -1008,51 +1198,62 @@
         "primary": [
           {
             "name": "Ice Shot",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_11495"
           },
           {
             "name": "Vaal Grace",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_58425"
           }
         ],
         "secondary": [
           {
             "name": "Vaal Ice Shot",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_16381"
           },
           {
             "name": "Frigid Forkshot",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_18232"
           },
           {
             "name": "Icicle Rain",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_24409"
           },
           {
             "name": "Mirror Arrow",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_65447"
           }
         ],
         "utility": [
           {
             "name": "Hatred",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_24482"
           },
           {
             "name": "Frost Bomb",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_10557"
           },
           {
             "name": "Grace",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_2792"
           },
           {
             "name": "Dash",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_60723"
           },
           {
             "name": "Blink Arrow",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_10722"
           }
         ]
       }
@@ -1065,43 +1266,52 @@
         "primary": [
           {
             "name": "Elemental Hit of Ice",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_8708"
           },
           {
             "name": "Frost Bomb",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_10557"
           }
         ],
         "secondary": [
           {
             "name": "Frost Blades",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_22105"
           },
           {
             "name": "Herald of Ice",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_32807"
           },
           {
             "name": "Wild Strike",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_40957"
           }
         ],
         "utility": [
           {
             "name": "Hatred",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_24482"
           },
           {
             "name": "Purity of Ice",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_13693"
           },
           {
             "name": "Frostblink",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_40470"
           },
           {
             "name": "Dash",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_60723"
           }
         ]
       }
@@ -1114,55 +1324,67 @@
         "primary": [
           {
             "name": "Raise Zombie of Gigantism",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_52491"
           },
           {
             "name": "Desecrate",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_21523"
           }
         ],
         "secondary": [
           {
             "name": "Raise Zombie of Falling",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_57377"
           },
           {
             "name": "Summon Skeletons",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_17409"
           },
           {
             "name": "Flesh Offering",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_61730"
           },
           {
             "name": "Bone Offering",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_44467"
           },
           {
             "name": "Summon Raging Spirit",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_19108"
           }
         ],
         "utility": [
           {
             "name": "Lightning Warp",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_28757"
           },
           {
             "name": "Frostblink",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_40470"
           },
           {
             "name": "Flame Dash",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_56180"
           },
           {
             "name": "Blasphemy Enfeeble",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_26391"
           },
           {
             "name": "Relic of Binding",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_62758"
           }
         ]
       }
@@ -1175,51 +1397,62 @@
         "primary": [
           {
             "name": "Tunnelslam",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_52105"
           },
           {
             "name": "Enrage",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_62530"
           }
         ],
         "secondary": [
           {
             "name": "Cleave",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_8445"
           },
           {
             "name": "Vaal Cleave",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_12723"
           },
           {
             "name": "Chain Hook of Trarthus",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_7182"
           },
           {
             "name": "Leap Slam of Groundbreaking",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_41915"
           },
           {
             "name": "Slicing Wind",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_19808"
           }
         ],
         "utility": [
           {
             "name": "Molten Shell",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_21036"
           },
           {
             "name": "Determination",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_52845"
           },
           {
             "name": "Leap Slam",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_2135"
           },
           {
             "name": "Vitality",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_40419"
           }
         ]
       }
@@ -1232,55 +1465,67 @@
         "primary": [
           {
             "name": "Boiling Blood",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_44422"
           },
           {
             "name": "Storm Call of Trarthus",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_2187"
           },
           {
             "name": "Bodyswap",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_4927"
           }
         ],
         "secondary": [
           {
             "name": "Exsanguinate",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_40439"
           },
           {
             "name": "Vaal Reap",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_1185"
           },
           {
             "name": "Reap",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_14064"
           },
           {
             "name": "Corrupted Blade Vortex of the Scythe",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_8958"
           }
         ],
         "utility": [
           {
             "name": "Flame Dash",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_56180"
           },
           {
             "name": "Lightning Warp",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_28757"
           },
           {
             "name": "Pride",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_18793"
           },
           {
             "name": "Proximity Shield",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_16018"
           },
           {
             "name": "Vaal Vitality",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_14889"
           }
         ]
       }
@@ -1293,47 +1538,57 @@
         "primary": [
           {
             "name": "Call of Steel",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_46131"
           },
           {
             "name": "Rallying Cry",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_39265"
           },
           {
             "name": "Triggerblades",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_28026"
           }
         ],
         "secondary": [
           {
             "name": "Shattering Steel",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_12729"
           },
           {
             "name": "Splitting Steel",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_28511"
           },
           {
             "name": "Lancing Steel",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_43812"
           }
         ],
         "utility": [
           {
             "name": "Dash",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_60723"
           },
           {
             "name": "Whirling Blades",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_10823"
           },
           {
             "name": "Grace",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_2792"
           },
           {
             "name": "Brutal Teachings",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_27763"
           }
         ]
       }
@@ -1346,51 +1601,62 @@
         "primary": [
           {
             "name": "Conductivity",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_41484"
           },
           {
             "name": "Vaal Lightning Trap",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_25149"
           }
         ],
         "secondary": [
           {
             "name": "Lightning Trap",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_17037"
           },
           {
             "name": "Lightning Spire Trap",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_8075"
           },
           {
             "name": "Ball Lightning of Orbiting",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_37561"
           },
           {
             "name": "Lightning Warp",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_28757"
           }
         ],
         "utility": [
           {
             "name": "Flame Dash",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_56180"
           },
           {
             "name": "Frostblink",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_40470"
           },
           {
             "name": "Smoke Mine",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_64528"
           },
           {
             "name": "Summon Skitterbots",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_44296"
           },
           {
             "name": "Zealotry",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_14498"
           }
         ]
       }
@@ -1403,51 +1669,62 @@
         "primary": [
           {
             "name": "Punishment",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_32391"
           },
           {
             "name": "Inflame",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_8295"
           }
         ],
         "secondary": [
           {
             "name": "Vaal Molten Strike",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_42219"
           },
           {
             "name": "Infernal Blow of Immolation",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_17147"
           },
           {
             "name": "Molten Strike",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_899"
           },
           {
             "name": "Flamebolt Strike",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_19178"
           }
         ],
         "utility": [
           {
             "name": "Anger",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_13235"
           },
           {
             "name": "Leap Slam",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_2135"
           },
           {
             "name": "Molten Shell",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_21036"
           },
           {
             "name": "Flame Aegis",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_50414"
           },
           {
             "name": "Infernal Cry",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_59259"
           }
         ]
       }
@@ -1460,67 +1737,82 @@
         "primary": [
           {
             "name": "Ensnaring Arrow",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_12667"
           },
           {
             "name": "Poacher's Mark",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_27805"
           }
         ],
         "secondary": [
           {
             "name": "Greater Split Arrow",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_8546"
           },
           {
             "name": "Rain of Arrows of Saturation",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_40759"
           },
           {
             "name": "Tornado Shot",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_8030"
           },
           {
             "name": "Shrapnel Ballista",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_61903"
           },
           {
             "name": "Barrage of Volley Fire",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_12260"
           },
           {
             "name": "Siege Ballista of Trarthus",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_44144"
           },
           {
             "name": "Split Arrow",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_43202"
           },
           {
             "name": "Puncture",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_30431"
           }
         ],
         "utility": [
           {
             "name": "Grace",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_2792"
           },
           {
             "name": "Blink Arrow",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_10722"
           },
           {
             "name": "Dash",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_60723"
           },
           {
             "name": "Frenzy",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_58592"
           },
           {
             "name": "Haste",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_52155"
           }
         ]
       }
@@ -1533,67 +1825,82 @@
         "primary": [
           {
             "name": "Conductivity",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_41484"
           },
           {
             "name": "Sigil of Power",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_33661"
           }
         ],
         "secondary": [
           {
             "name": "Spark",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_5893"
           },
           {
             "name": "Arc",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_59005"
           },
           {
             "name": "Ball Lightning of Static",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_30663"
           },
           {
             "name": "Greater Shock Nova",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_50290"
           },
           {
             "name": "Greater Stormcall",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_3148"
           },
           {
             "name": "Orb of Storms",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_11879"
           },
           {
             "name": "Storm Call",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_7549"
           }
         ],
         "utility": [
           {
             "name": "Lightning Warp",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_28757"
           },
           {
             "name": "Frostblink",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_40470"
           },
           {
             "name": "Flame Dash",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_56180"
           },
           {
             "name": "Wrath",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_38326"
           },
           {
             "name": "Purity of Lightning",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_63233"
           },
           {
             "name": "Proximity Shield",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_16018"
           }
         ]
       }
@@ -1606,47 +1913,57 @@
         "primary": [
           {
             "name": "Unnerving Blast",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_19034"
           },
           {
             "name": "Wave of Conviction",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_14732"
           }
         ],
         "secondary": [
           {
             "name": "Divine Ire",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_45226"
           },
           {
             "name": "Tornado of Elemental Turbulence",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_23225"
           },
           {
             "name": "Divine Retribution",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_24685"
           },
           {
             "name": "Shockwave Totem of Shocking",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_6651"
           }
         ],
         "utility": [
           {
             "name": "Charged Dash of the Arcane",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_5673"
           },
           {
             "name": "Wrath",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_38326"
           },
           {
             "name": "Lightning Warp",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_28757"
           },
           {
             "name": "Flame Dash",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_56180"
           }
         ]
       }
@@ -1659,55 +1976,67 @@
         "primary": [
           {
             "name": "Vigilant Strike",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_4988"
           },
           {
             "name": "Enduring Cry",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_20973"
           },
           {
             "name": "Physical Aegis",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_17015"
           }
         ],
         "secondary": [
           {
             "name": "Heavy Strike of Vulnerability",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_64565"
           },
           {
             "name": "Boneshatter",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_22696"
           },
           {
             "name": "Dual Strike",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_10235"
           }
         ],
         "utility": [
           {
             "name": "Determination",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_52845"
           },
           {
             "name": "Leap Slam",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_2135"
           },
           {
             "name": "Molten Shell",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_21036"
           },
           {
             "name": "Vitality",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_40419"
           },
           {
             "name": "Vaal Ancestral Warchief",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_38521"
           },
           {
             "name": "Decoy Totem",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_38104"
           }
         ]
       }
@@ -1720,51 +2049,62 @@
         "primary": [
           {
             "name": "Cyclone of the Empire",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_46739"
           },
           {
             "name": "Rallying Cry",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_39265"
           },
           {
             "name": "Triggerblades",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_28026"
           }
         ],
         "secondary": [
           {
             "name": "Flicker Strike",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_61669"
           },
           {
             "name": "Vaal Double Strike",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_37132"
           },
           {
             "name": "Holy Sweep",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_7395"
           }
         ],
         "utility": [
           {
             "name": "Pride",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_18793"
           },
           {
             "name": "Leap Slam",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_2135"
           },
           {
             "name": "Dash",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_60723"
           },
           {
             "name": "Incite",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_59409"
           },
           {
             "name": "Steelskin Ally",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_17105"
           }
         ]
       }
@@ -1777,51 +2117,62 @@
         "primary": [
           {
             "name": "Lightning Arrow",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_41051"
           },
           {
             "name": "Assassin's Mark",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_47406"
           }
         ],
         "secondary": [
           {
             "name": "Galvanic Arrow",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_27165"
           },
           {
             "name": "Greater Lightning Arrow",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_38993"
           },
           {
             "name": "Vaal Lightning Arrow",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_22000"
           },
           {
             "name": "Storm Rain",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_17216"
           }
         ],
         "utility": [
           {
             "name": "Wrath",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_38326"
           },
           {
             "name": "Blink Arrow",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_10722"
           },
           {
             "name": "Trarthan Agility",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_38072"
           },
           {
             "name": "Precision",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_36279"
           },
           {
             "name": "Dash",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_60723"
           }
         ]
       }
@@ -1834,55 +2185,67 @@
         "primary": [
           {
             "name": "Withering Step",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_10320"
           },
           {
             "name": "Chaotic Burst",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_26913"
           },
           {
             "name": "Chaotic Shot",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_18986"
           }
         ],
         "secondary": [
           {
             "name": "Vaal Caustic Arrow",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_36274"
           },
           {
             "name": "Toxic Rain",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_38628"
           },
           {
             "name": "Scourge Arrow of Menace",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_28502"
           },
           {
             "name": "Caustic Arrow",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_58174"
           }
         ],
         "utility": [
           {
             "name": "Blink Arrow",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_10722"
           },
           {
             "name": "Malevolence",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_1516"
           },
           {
             "name": "Grace",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_2792"
           },
           {
             "name": "Dash",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_60723"
           },
           {
             "name": "Trarthan Agility",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_38072"
           }
         ]
       }
@@ -1895,51 +2258,62 @@
         "primary": [
           {
             "name": "Summon Holy Relic",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_40812"
           },
           {
             "name": "Smite",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_55917"
           }
         ],
         "secondary": [
           {
             "name": "Beacons of Faith",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_50866"
           },
           {
             "name": "Dominating Blow",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_43742"
           },
           {
             "name": "Sanctified Strike",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_53518"
           },
           {
             "name": "Raise Spectre: Holy Flame Elementals",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_47078"
           },
           {
             "name": "Touch of God",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_39732"
           }
         ],
         "utility": [
           {
             "name": "Purity of Lightning",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_63233"
           },
           {
             "name": "Flame Dash",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_56180"
           },
           {
             "name": "Consecrated Path",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_3093"
           },
           {
             "name": "Herald of Purity",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_34212"
           }
         ]
       }
@@ -1952,51 +2326,62 @@
         "primary": [
           {
             "name": "Frost Shield",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_57491"
           },
           {
             "name": "Vaal Glacial Hammer",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_47031"
           }
         ],
         "secondary": [
           {
             "name": "Ice Crash",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_11018"
           },
           {
             "name": "Glacial Hammer",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_53217"
           },
           {
             "name": "Earthquake of Winter",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_14816"
           },
           {
             "name": "Heavy Strike of Trarthus",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_38103"
           }
         ],
         "utility": [
           {
             "name": "Hatred",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_24482"
           },
           {
             "name": "Frostblink",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_40470"
           },
           {
             "name": "Frost Bomb",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_10557"
           },
           {
             "name": "Arctic Armour",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_55367"
           },
           {
             "name": "Purity of Ice",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_13693"
           }
         ]
       }
@@ -2009,66 +2394,1432 @@
         "primary": [
           {
             "name": "Bane",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_63468"
           },
           {
             "name": "Temporal Chains",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_7383"
           }
         ],
         "secondary": [
           {
             "name": "Greater Soulrend",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_11671"
           },
           {
             "name": "Scourstorm",
-            "supportCount": "medium"
+            "supportCount": "medium",
+            "tradeStatId": "mercenary.skill_13441"
           },
           {
             "name": "Blight",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_8450"
           },
           {
             "name": "Essence Drain of Wickedness",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_39669"
           },
           {
             "name": "Altar of Chaos",
-            "supportCount": "high"
+            "supportCount": "high",
+            "tradeStatId": "mercenary.skill_50670"
           }
         ],
         "utility": [
           {
             "name": "Malevolence",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_1516"
           },
           {
             "name": "Lightning Warp",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_28757"
           },
           {
             "name": "Frostblink",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_40470"
           },
           {
             "name": "Flame Dash",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_56180"
           },
           {
             "name": "Clarity",
-            "supportCount": "none"
+            "supportCount": "none",
+            "tradeStatId": "mercenary.skill_28785"
           },
           {
             "name": "Withering Step",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_10320"
           },
           {
             "name": "Wither Totem",
-            "supportCount": "low"
+            "supportCount": "low",
+            "tradeStatId": "mercenary.skill_1911"
           }
         ]
       }
+    }
+  ],
+  "skills": [
+    {
+      "name": "Absolution",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_15611"
+    },
+    {
+      "name": "Abyssal Cry",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_14992"
+    },
+    {
+      "name": "Alchemist's Mark",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_24179"
+    },
+    {
+      "name": "Altar of Chaos",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_50670"
+    },
+    {
+      "name": "Anger",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_13235"
+    },
+    {
+      "name": "Arc",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_59005"
+    },
+    {
+      "name": "Arctic Armour",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_55367"
+    },
+    {
+      "name": "Artillery Ballista",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_35610"
+    },
+    {
+      "name": "Ashen Fissure",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_42361"
+    },
+    {
+      "name": "Aspect of the Spider",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_19417"
+    },
+    {
+      "name": "Assassin's Mark",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_47406"
+    },
+    {
+      "name": "Ball Lightning of Orbiting Trap",
+      "aliases": [
+        "Ball Lightning of Orbiting"
+      ],
+      "tradeStatId": "mercenary.skill_37561"
+    },
+    {
+      "name": "Ball Lightning of Static",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_30663"
+    },
+    {
+      "name": "Bane",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_63468"
+    },
+    {
+      "name": "Barrage",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_1356"
+    },
+    {
+      "name": "Barrage of Volley Fire",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_12260"
+    },
+    {
+      "name": "Battlemage's Cry",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_37344"
+    },
+    {
+      "name": "Beacons of Faith",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_50866"
+    },
+    {
+      "name": "Bear Trap",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_13711"
+    },
+    {
+      "name": "Blade Trap",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_11054"
+    },
+    {
+      "name": "Blade Vortex",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_25718"
+    },
+    {
+      "name": "Bladefall",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_37202"
+    },
+    {
+      "name": "Bladefall of Trarthus",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_59477"
+    },
+    {
+      "name": "Bladestorm",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_12357"
+    },
+    {
+      "name": "Blasphemy Enfeeble",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_26391"
+    },
+    {
+      "name": "Blasphemy Flammability",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_39298"
+    },
+    {
+      "name": "Blast Rain of Trarthus",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_18004"
+    },
+    {
+      "name": "Blight",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_8450"
+    },
+    {
+      "name": "Blink Arrow",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_10722"
+    },
+    {
+      "name": "Blood Mortar",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_26931"
+    },
+    {
+      "name": "Bloodthirst",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_60880"
+    },
+    {
+      "name": "Bloody Warp",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_22724"
+    },
+    {
+      "name": "Bodyswap",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_4927"
+    },
+    {
+      "name": "Boiling Blood",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_44422"
+    },
+    {
+      "name": "Bone Offering",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_44467"
+    },
+    {
+      "name": "Boneshatter",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_22696"
+    },
+    {
+      "name": "Brutal Teachings",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_27763"
+    },
+    {
+      "name": "Burning Arrow",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_34665"
+    },
+    {
+      "name": "Burrow",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_31440"
+    },
+    {
+      "name": "Call of Steel",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_46131"
+    },
+    {
+      "name": "Caustic Arrow",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_58174"
+    },
+    {
+      "name": "Chain Hook of Trarthus",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_7182"
+    },
+    {
+      "name": "Chaotic Burst",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_26913"
+    },
+    {
+      "name": "Chaotic Shot",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_18986"
+    },
+    {
+      "name": "Charged Dash of the Arcane",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_5673"
+    },
+    {
+      "name": "Clarity",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_28785"
+    },
+    {
+      "name": "Cleave",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_8445"
+    },
+    {
+      "name": "Clutches of the Damned",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_26057"
+    },
+    {
+      "name": "Cobra Lash",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_16896"
+    },
+    {
+      "name": "Conductivity",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_41484"
+    },
+    {
+      "name": "Conflagration",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_21962"
+    },
+    {
+      "name": "Consecrated Path",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_3093"
+    },
+    {
+      "name": "Corrupted Blade Vortex of the Scythe",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_8958"
+    },
+    {
+      "name": "Creeping Frost Trap",
+      "aliases": [
+        "Creeping Frost"
+      ],
+      "tradeStatId": "mercenary.skill_9321"
+    },
+    {
+      "name": "Cyclone of the Empire",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_46739"
+    },
+    {
+      "name": "Dark Bargain",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_35371"
+    },
+    {
+      "name": "Dash",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_60723"
+    },
+    {
+      "name": "Decoy Totem",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_38104"
+    },
+    {
+      "name": "Desecrate",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_21523"
+    },
+    {
+      "name": "Despair",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_56742"
+    },
+    {
+      "name": "Determination",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_52845"
+    },
+    {
+      "name": "Discipline",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_21708"
+    },
+    {
+      "name": "Divine Ire",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_45226"
+    },
+    {
+      "name": "Divine Retribution",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_24685"
+    },
+    {
+      "name": "Dominating Blow",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_43742"
+    },
+    {
+      "name": "Dual Strike",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_10235"
+    },
+    {
+      "name": "Earthquake of Amplification",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_41346"
+    },
+    {
+      "name": "Earthquake of Winter",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_14816"
+    },
+    {
+      "name": "Elemental Hit of Ice",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_8708"
+    },
+    {
+      "name": "Elemental Weakness",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_5689"
+    },
+    {
+      "name": "Endure",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_57171"
+    },
+    {
+      "name": "Enduring Cry",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_20973"
+    },
+    {
+      "name": "Enrage",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_62530"
+    },
+    {
+      "name": "Ensnaring Arrow",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_12667"
+    },
+    {
+      "name": "Envy",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_17515"
+    },
+    {
+      "name": "Essence Drain of Wickedness",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_39669"
+    },
+    {
+      "name": "Ethereal Knives",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_50999"
+    },
+    {
+      "name": "Explosive Arrow",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_36298"
+    },
+    {
+      "name": "Exsanguinate",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_40439"
+    },
+    {
+      "name": "Eye of Winter",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_57063"
+    },
+    {
+      "name": "Fireball",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_324"
+    },
+    {
+      "name": "Fireball of Impact",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_37821"
+    },
+    {
+      "name": "Flame Aegis",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_50414"
+    },
+    {
+      "name": "Flame Dash",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_56180"
+    },
+    {
+      "name": "Flame Link",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_47364"
+    },
+    {
+      "name": "Flame Surge",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_8801"
+    },
+    {
+      "name": "Flame Wall",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_57450"
+    },
+    {
+      "name": "Flameblast",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_6446"
+    },
+    {
+      "name": "Flamebolt Strike",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_19178"
+    },
+    {
+      "name": "Flammability",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_40521"
+    },
+    {
+      "name": "Flesh Offering",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_61730"
+    },
+    {
+      "name": "Flicker Strike",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_61669"
+    },
+    {
+      "name": "Forbidden Rite Totem",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_29071"
+    },
+    {
+      "name": "Frenzy",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_58592"
+    },
+    {
+      "name": "Frigid Forkshot",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_18232"
+    },
+    {
+      "name": "Frost Blades",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_22105"
+    },
+    {
+      "name": "Frost Bomb",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_10557"
+    },
+    {
+      "name": "Frost Shield",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_57491"
+    },
+    {
+      "name": "Frost Wall",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_50009"
+    },
+    {
+      "name": "Frostbite",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_6479"
+    },
+    {
+      "name": "Frostblink",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_40470"
+    },
+    {
+      "name": "Frostbolt",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_33663"
+    },
+    {
+      "name": "Galvanic Arrow",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_27165"
+    },
+    {
+      "name": "Glacial Hammer",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_53217"
+    },
+    {
+      "name": "Grace",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_2792"
+    },
+    {
+      "name": "Greater Flame Dash",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_24099"
+    },
+    {
+      "name": "Greater Kinetic Blast",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_44258"
+    },
+    {
+      "name": "Greater Lightning Arrow",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_38993"
+    },
+    {
+      "name": "Greater Shock Nova",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_50290"
+    },
+    {
+      "name": "Greater Soulrend",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_11671"
+    },
+    {
+      "name": "Greater Split Arrow",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_8546"
+    },
+    {
+      "name": "Greater Stormcall",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_3148"
+    },
+    {
+      "name": "Greater Vortex Trap",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_3493"
+    },
+    {
+      "name": "Ground Slam",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_53728"
+    },
+    {
+      "name": "Haste",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_52155"
+    },
+    {
+      "name": "Hatred",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_24482"
+    },
+    {
+      "name": "Heavy Strike of Trarthus",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_38103"
+    },
+    {
+      "name": "Heavy Strike of Vulnerability",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_64565"
+    },
+    {
+      "name": "Herald of Ash",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_44334"
+    },
+    {
+      "name": "Herald of Ice",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_32807"
+    },
+    {
+      "name": "Herald of Purity",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_34212"
+    },
+    {
+      "name": "Holy Flame Totem",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_47949"
+    },
+    {
+      "name": "Holy Hammers",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_28506"
+    },
+    {
+      "name": "Holy Mortar",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_1577"
+    },
+    {
+      "name": "Holy Relic",
+      "aliases": [
+        "Summon Holy Relic"
+      ],
+      "tradeStatId": "mercenary.skill_40812"
+    },
+    {
+      "name": "Holy Strike",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_38655"
+    },
+    {
+      "name": "Holy Sweep",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_7395"
+    },
+    {
+      "name": "Ice Crash",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_11018"
+    },
+    {
+      "name": "Ice Nova",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_61497"
+    },
+    {
+      "name": "Ice Nova of Projection",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_61471"
+    },
+    {
+      "name": "Ice Shot",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_11495"
+    },
+    {
+      "name": "Ice Trap",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_62997"
+    },
+    {
+      "name": "Icestorm",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_28637"
+    },
+    {
+      "name": "Icicle Rain",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_24409"
+    },
+    {
+      "name": "Impenetrable Bastion",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_45615"
+    },
+    {
+      "name": "Incite",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_59409"
+    },
+    {
+      "name": "Infernal Blow of Immolation",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_17147"
+    },
+    {
+      "name": "Infernal Cry",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_59259"
+    },
+    {
+      "name": "Inflame",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_8295"
+    },
+    {
+      "name": "Inspiring Cry",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_65473"
+    },
+    {
+      "name": "Intimidating Cry",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_38311"
+    },
+    {
+      "name": "Kinetic Blast of Clustering",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_16356"
+    },
+    {
+      "name": "Kinetic Bolt",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_12583"
+    },
+    {
+      "name": "Kinetic Rain of Impact",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_32089"
+    },
+    {
+      "name": "Lacerate",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_8136"
+    },
+    {
+      "name": "Lancing Steel",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_43812"
+    },
+    {
+      "name": "Leap Slam",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_2135"
+    },
+    {
+      "name": "Leap Slam of Groundbreaking",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_41915"
+    },
+    {
+      "name": "Lightning Arrow",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_41051"
+    },
+    {
+      "name": "Lightning Spire Trap",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_8075"
+    },
+    {
+      "name": "Lightning Trap",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_17037"
+    },
+    {
+      "name": "Lightning Warp",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_28757"
+    },
+    {
+      "name": "Lightning Warp Trap",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_5247"
+    },
+    {
+      "name": "Malevolence",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_1516"
+    },
+    {
+      "name": "Meteor",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_40723"
+    },
+    {
+      "name": "Mirror Arrow",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_65447"
+    },
+    {
+      "name": "Molten Shell",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_21036"
+    },
+    {
+      "name": "Molten Strike",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_899"
+    },
+    {
+      "name": "Molten Well",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_59200"
+    },
+    {
+      "name": "Oil Slick",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_19268"
+    },
+    {
+      "name": "Orb of Storms",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_11879"
+    },
+    {
+      "name": "Perforate",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_54006"
+    },
+    {
+      "name": "Pestilent Strike",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_12262"
+    },
+    {
+      "name": "Physical Aegis",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_17015"
+    },
+    {
+      "name": "Poacher's Mark",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_27805"
+    },
+    {
+      "name": "Power Siphon",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_26705"
+    },
+    {
+      "name": "Precision",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_36279"
+    },
+    {
+      "name": "Pride",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_18793"
+    },
+    {
+      "name": "Prismplate",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_52494"
+    },
+    {
+      "name": "Profane Cascade",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_51539"
+    },
+    {
+      "name": "Profane Strike",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_36446"
+    },
+    {
+      "name": "Proximity Shield",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_16018"
+    },
+    {
+      "name": "Puncture",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_30431"
+    },
+    {
+      "name": "Punishment",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_32391"
+    },
+    {
+      "name": "Purifying Flame",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_17763"
+    },
+    {
+      "name": "Purity of Fire",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_33728"
+    },
+    {
+      "name": "Purity of Ice",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_13693"
+    },
+    {
+      "name": "Purity of Lightning",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_63233"
+    },
+    {
+      "name": "Rain of Arrows of Saturation",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_40759"
+    },
+    {
+      "name": "Raise Spectre of Transience",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_50349"
+    },
+    {
+      "name": "Raise Spectre: Holy Flame Elementals",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_47078"
+    },
+    {
+      "name": "Raise Zombie of Falling",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_57377"
+    },
+    {
+      "name": "Raise Zombie of Gigantism",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_52491"
+    },
+    {
+      "name": "Rallying Cry",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_39265"
+    },
+    {
+      "name": "Reap",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_14064"
+    },
+    {
+      "name": "Reinforce: Fallen Bishop",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_4383"
+    },
+    {
+      "name": "Reinforce: Fallen Emperor",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_61523"
+    },
+    {
+      "name": "Reinforce: Fallen Osseotitan",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_53527"
+    },
+    {
+      "name": "Relic of Binding",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_62758"
+    },
+    {
+      "name": "Rolling Magma",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_30130"
+    },
+    {
+      "name": "Sanctified Strike",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_53518"
+    },
+    {
+      "name": "Scorching Ray Totem",
+      "aliases": [
+        "Scorching Ray"
+      ],
+      "tradeStatId": "mercenary.skill_47293"
+    },
+    {
+      "name": "Scourge Arrow of Menace",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_28502"
+    },
+    {
+      "name": "Scourstorm",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_13441"
+    },
+    {
+      "name": "Seismic Crush",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_17198"
+    },
+    {
+      "name": "Shattering Steel",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_12729"
+    },
+    {
+      "name": "Shield Charge",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_22850"
+    },
+    {
+      "name": "Shield Crush",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_21201"
+    },
+    {
+      "name": "Shockwave Totem of Shocking",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_6651"
+    },
+    {
+      "name": "Shrapnel Ballista",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_61903"
+    },
+    {
+      "name": "Siege Ballista of Trarthus",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_44144"
+    },
+    {
+      "name": "Sigil of Power",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_33661"
+    },
+    {
+      "name": "Slicing Wind",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_19808"
+    },
+    {
+      "name": "Smite",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_55917"
+    },
+    {
+      "name": "Smoke Mine",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_64528"
+    },
+    {
+      "name": "Soulrend of Reaping",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_10742"
+    },
+    {
+      "name": "Spark",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_5893"
+    },
+    {
+      "name": "Spectral Helix",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_37916"
+    },
+    {
+      "name": "Spectral Helix of Trarthus",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_28988"
+    },
+    {
+      "name": "Spectral Shield Throw of Trarthus",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_41834"
+    },
+    {
+      "name": "Spectral Throw of Trarthus",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_62393"
+    },
+    {
+      "name": "Split Arrow",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_43202"
+    },
+    {
+      "name": "Splitting Steel",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_28511"
+    },
+    {
+      "name": "Static Strike",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_24931"
+    },
+    {
+      "name": "Steelskin Ally",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_17105"
+    },
+    {
+      "name": "Storm Call of Trarthus",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_2187"
+    },
+    {
+      "name": "Storm Rain",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_17216"
+    },
+    {
+      "name": "Stormcall",
+      "aliases": [
+        "Storm Call"
+      ],
+      "tradeStatId": "mercenary.skill_7549"
+    },
+    {
+      "name": "Summon Raging Spirit",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_19108"
+    },
+    {
+      "name": "Summon Seeking Void",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_54144"
+    },
+    {
+      "name": "Summon Skeletons",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_17409"
+    },
+    {
+      "name": "Summon Skitterbots",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_44296"
+    },
+    {
+      "name": "Sunder of Trarthus",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_17654"
+    },
+    {
+      "name": "Tectonic Cascade",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_40527"
+    },
+    {
+      "name": "Tectonic Slam",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_6228"
+    },
+    {
+      "name": "Tempest Shield",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_58855"
+    },
+    {
+      "name": "Temporal Chains",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_7383"
+    },
+    {
+      "name": "Tornado of Elemental Turbulence",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_23225"
+    },
+    {
+      "name": "Tornado Shot",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_8030"
+    },
+    {
+      "name": "Touch of God",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_39732"
+    },
+    {
+      "name": "Toxic Rain",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_38628"
+    },
+    {
+      "name": "Trarthan Agility",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_38072"
+    },
+    {
+      "name": "Triggerblades",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_28026"
+    },
+    {
+      "name": "Triggerslam",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_18149"
+    },
+    {
+      "name": "Tunnelslam",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_52105"
+    },
+    {
+      "name": "Unnerving Blast",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_19034"
+    },
+    {
+      "name": "Vaal Ancestral Warchief",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_38521"
+    },
+    {
+      "name": "Vaal Arctic Armour",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_44455"
+    },
+    {
+      "name": "Vaal Burning Arrow",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_23512"
+    },
+    {
+      "name": "Vaal Caustic Arrow",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_36274"
+    },
+    {
+      "name": "Vaal Cleave",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_12723"
+    },
+    {
+      "name": "Vaal Double Strike",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_37132"
+    },
+    {
+      "name": "Vaal Flameblast",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_29426"
+    },
+    {
+      "name": "Vaal Glacial Hammer",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_47031"
+    },
+    {
+      "name": "Vaal Grace",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_58425"
+    },
+    {
+      "name": "Vaal Ground Slam",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_10712"
+    },
+    {
+      "name": "Vaal Ice Shot",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_16381"
+    },
+    {
+      "name": "Vaal Lightning Arrow",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_22000"
+    },
+    {
+      "name": "Vaal Lightning Trap",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_25149"
+    },
+    {
+      "name": "Vaal Molten Strike",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_42219"
+    },
+    {
+      "name": "Vaal Reap",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_1185"
+    },
+    {
+      "name": "Vaal Vitality",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_14889"
+    },
+    {
+      "name": "Venom Gyre",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_59831"
+    },
+    {
+      "name": "Vigilant Strike",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_4988"
+    },
+    {
+      "name": "Viper Strike",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_22227"
+    },
+    {
+      "name": "Vitality",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_40419"
+    },
+    {
+      "name": "Void Sphere",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_52783"
+    },
+    {
+      "name": "Volcanic Fissure of Snaking",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_53235"
+    },
+    {
+      "name": "Voltaxic Burst",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_52144"
+    },
+    {
+      "name": "Vortex",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_31928"
+    },
+    {
+      "name": "Wave of Conviction",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_14732"
+    },
+    {
+      "name": "Wave of Conviction of Trarthus",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_4286"
+    },
+    {
+      "name": "Whirling Blades",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_10823"
+    },
+    {
+      "name": "Wild Strike",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_40957"
+    },
+    {
+      "name": "Wither Totem",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_1911"
+    },
+    {
+      "name": "Withering Step",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_10320"
+    },
+    {
+      "name": "Wrath",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_38326"
+    },
+    {
+      "name": "Zealotry",
+      "aliases": [],
+      "tradeStatId": "mercenary.skill_14498"
     }
   ],
   "supportGems": [
