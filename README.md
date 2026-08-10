@@ -13,6 +13,8 @@ gem, but it cannot require those supports to be linked to a specific skill. This
 
 - Filter mercenaries by skill and the support gems linked to that skill.
 - Separate required supports from optional, nice-to-have supports.
+- Generate an official trade search where every required support is linked to
+  its configured skill.
 - Highlight matching skills and supports directly in each trade listing.
 - Mark listings as perfect matches, partial matches, or failures and show match
   counts.
@@ -31,12 +33,18 @@ gem, but it cannot require those supports to be linked to a specific skill. This
 2. Open the PoE Merc Finder panel on the right side of the page.
 3. Optionally choose a mercenary class to narrow the skill suggestions.
 4. Add one or more skills and enter their required or optional linked supports.
-5. Select **Apply filters** to evaluate the visible trade listings.
-6. Optionally give the configuration a name and select **Save current** to use
+5. Select **Apply filters** to evaluate the visible trade listings, or select
+   **Generate search link** to create a new Instant Buyout search for the
+   configured skills and required supports.
+6. Open or copy the generated link. When opened in the same browser profile,
+   the extension restores the optional supports and local highlighting rules.
+7. Optionally give the configuration a name and select **Save current** to use
    it again later.
 
-Saved setups and panel preferences are stored locally by the extension. They
-are not transmitted to an external service.
+Saved setups, recent generated-search configurations, and panel preferences are
+stored locally by the extension. Generating a link sends the required skill and
+support criteria directly to the Path of Exile Trade search API; the extension
+does not send them anywhere else.
 
 See the [privacy policy](PRIVACY.md) for complete details about local data
 handling and extension permissions.
