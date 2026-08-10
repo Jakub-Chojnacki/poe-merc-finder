@@ -1,4 +1,5 @@
 import type { FilterActionsProps } from './types'
+import UiTooltip from '@/components/ui/tooltip'
 import { useTradeSearchLink } from '@/hooks/use-trade-search-link'
 import {
   COPY_LINK_BUTTON_LABELS,
@@ -33,15 +34,16 @@ const FilterActions: React.FC<FilterActionsProps> = ({
           {APPLY_BUTTON_LABELS[applyStatus]}
         </button>
 
-        <button
-          type="button"
-          className="filter-actions__generate"
-          disabled={status === 'generating'}
-          onClick={() => generateLink()}
-          title="Required supports are included; optional supports stay local."
-        >
-          {GENERATE_LINK_BUTTON_LABELS[status]}
-        </button>
+        <UiTooltip content="Required supports are included; optional supports stay local.">
+          <button
+            type="button"
+            className="filter-actions__generate"
+            disabled={status === 'generating'}
+            onClick={() => generateLink()}
+          >
+            {GENERATE_LINK_BUTTON_LABELS[status]}
+          </button>
+        </UiTooltip>
       </div>
 
       {generatedLink && (
