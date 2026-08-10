@@ -1,0 +1,2 @@
+export const SELECT_COLLISION_PADDING_PX = 12
+export const SELECT_SIDE_OFFSET_PX = 6
