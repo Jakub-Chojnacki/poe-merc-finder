@@ -1,13 +1,18 @@
 import type { SavedSetupManagerProps } from './types'
+import type { ImportedSavedSetup } from '@/utils/saved-setup-code/types'
 import { useId, useMemo, useState } from 'react'
+import CheckIcon from '@/components/icons/check'
+import TrashIcon from '@/components/icons/trash'
 import {
   CollapsibleContent,
   CollapsibleRoot,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible'
+import IconButton from '@/components/ui/icon-button'
 import UiSelect from '@/components/ui/select'
 import { useSavedSetups } from '@/hooks/use-saved-setups'
 import { SETUP_NAME_MAX_LENGTH } from './const'
+import SetupCodeDialog from './setup-code-dialog'
 
 const SavedSetupManager: React.FC<SavedSetupManagerProps> = ({
   onLoad,
@@ -80,6 +85,25 @@ const SavedSetupManager: React.FC<SavedSetupManagerProps> = ({
     }
   }
 
+  const handleImport = async (
+    importedSetup: ImportedSavedSetup,
+  ): Promise<void> => {
+    setIsMutating(true)
+
+    try {
+      const savedSetup = await saveSetup(
+        importedSetup.name,
+        importedSetup.filterDraft,
+      )
+
+      setSetupName(savedSetup.name)
+      setSelectedSetupId(savedSetup.id)
+    }
+    finally {
+      setIsMutating(false)
+    }
+  }
+
   const isBusy = isLoading || isMutating
 
   return (
@@ -144,22 +168,39 @@ const SavedSetupManager: React.FC<SavedSetupManagerProps> = ({
               }}
             />
 
-            <button
-              type="button"
-              className="button"
-              disabled={isBusy || !selectedSetup}
-              onClick={handleLoad}
+            <div
+              className="saved-setups__actions"
+              role="group"
+              aria-label="Saved setup actions"
             >
-              Load
-            </button>
-            <button
-              type="button"
-              className="button saved-setups__delete-button"
-              disabled={isBusy || !selectedSetup}
-              onClick={() => handleDelete()}
-            >
-              Delete
-            </button>
+              <IconButton
+                label="Load selected setup"
+                disabled={isBusy || !selectedSetup}
+                onClick={handleLoad}
+              >
+                <CheckIcon />
+              </IconButton>
+
+              <SetupCodeDialog
+                mode="import"
+                disabled={isBusy}
+                onImport={handleImport}
+              />
+              <SetupCodeDialog
+                mode="export"
+                disabled={isBusy}
+                setup={selectedSetup}
+              />
+
+              <IconButton
+                label="Delete selected setup"
+                variant="danger"
+                disabled={isBusy || !selectedSetup}
+                onClick={() => handleDelete()}
+              >
+                <TrashIcon />
+              </IconButton>
+            </div>
           </div>
         </div>
 

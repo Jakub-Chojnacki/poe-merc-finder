@@ -23,6 +23,7 @@ gem, but it cannot require those supports to be linked to a specific skill. This
   searchable multi-selects for support gems.
 - Save configurations locally under custom names, then load, update, or delete
   them later.
+- Export saved setups as portable codes and import codes shared by other users.
 - Collapse the extension panel when it is not needed.
 - Automatically move alongside the Better Trading panel when both extensions
   are active.
@@ -40,11 +41,15 @@ gem, but it cannot require those supports to be linked to a specific skill. This
    the extension restores the optional supports and local highlighting rules.
 7. Optionally give the configuration a name and select **Save current** to use
    it again later.
+8. Select a saved setup and use **Export** to copy a portable code, or use
+   **Import** to save a code from another user. Importing a code with an
+   existing setup name updates that setup.
 
 Saved setups, recent generated-search configurations, and panel preferences are
 stored locally by the extension. Generating a link sends the required skill and
 support criteria directly to the Path of Exile Trade search API; the extension
-does not send them anywhere else.
+does not send them anywhere else. Setup codes are generated and read entirely
+in the browser; they contain the setup name and its filter configuration.
 
 See the [privacy policy](PRIVACY.md) for complete details about local data
 handling and extension permissions.
