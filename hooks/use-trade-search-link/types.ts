@@ -8,7 +8,6 @@ export interface UseTradeSearchLinkResult {
   errorMessage: string | undefined
   generateLink: () => Promise<void>
   generatedLink: string | undefined
-  resetLink: () => void
   status: TradeSearchLinkStatus
   warningMessage: string | undefined
 }

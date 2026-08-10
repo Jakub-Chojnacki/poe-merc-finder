@@ -1,9 +1,10 @@
 import type { SidebarStyle, SidebarTriggerProps } from './types'
 import { useCallback, useEffect, useState } from 'react'
+import AppIcon from '@/components/icons/app'
+import ChevronIcon from '@/components/icons/chevron'
 import MainSidebar from '@/components/main-sidebar'
 import { useBetterTradingOffset } from '@/hooks/use-better-trading-offset'
 import {
-  APP_ICON_PATH,
   COLLAPSED_STORAGE_KEY,
   PAGE_CLASS,
   PAGE_OPEN_CLASS,
@@ -77,19 +78,12 @@ const SidebarTrigger: React.FC<SidebarTriggerProps> = ({
         title="Open mercenary support filter"
         onClick={() => updateCollapsed(false)}
       >
-        <img
+        <AppIcon
           className="sidebar-expand-button__icon"
-          src={browser.runtime.getURL(APP_ICON_PATH)}
-          alt=""
-          aria-hidden="true"
         />
-        <svg
+        <ChevronIcon
           className="sidebar-chevron sidebar-chevron--left"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path d="m9 6 6 6-6 6" />
-        </svg>
+        />
       </button>
     </div>
   )

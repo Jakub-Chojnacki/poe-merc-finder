@@ -3,7 +3,7 @@ import type {
   UseTradeSearchLinkResult,
 } from './types'
 import type { FilterDraft } from '@/utils/filter-draft/types'
-import { useCallback, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { createFilterConfig } from '@/utils/filter-config'
 import { saveGeneratedSearchDraft } from '@/utils/generated-search-drafts'
 import { generateTradeSearchLink } from '@/utils/trade-search-link'
@@ -18,30 +18,20 @@ function getErrorMessage(error: unknown): string {
 export function useTradeSearchLink(
   filterDraft: FilterDraft,
 ): UseTradeSearchLinkResult {
-  const filterDraftKey = JSON.stringify(filterDraft)
   const requestIdRef = useRef(0)
-
-  const [activeDraftKey, setActiveDraftKey] = useState<string>()
   const [status, setStatus] = useState<TradeSearchLinkStatus>('idle')
   const [generatedLink, setGeneratedLink] = useState<string>()
   const [errorMessage, setErrorMessage] = useState<string>()
   const [warningMessage, setWarningMessage] = useState<string>()
 
-  const resetLink = useCallback((): void => {
+  useEffect(() => () => {
     requestIdRef.current += 1
-
-    setActiveDraftKey(undefined)
-    setStatus('idle')
-    setGeneratedLink(undefined)
-    setErrorMessage(undefined)
-    setWarningMessage(undefined)
   }, [])
 
   const generateLink = useCallback(async (): Promise<void> => {
     const requestId = requestIdRef.current + 1
 
     requestIdRef.current = requestId
-    setActiveDraftKey(filterDraftKey)
     setStatus('generating')
     setGeneratedLink(undefined)
     setErrorMessage(undefined)
@@ -82,36 +72,31 @@ export function useTradeSearchLink(
       setErrorMessage(getErrorMessage(error))
       setStatus('error')
     }
-  }, [filterDraft, filterDraftKey])
-
-  const isCurrentDraft = activeDraftKey === filterDraftKey
-  const currentGeneratedLink = isCurrentDraft ? generatedLink : undefined
-  const currentStatus = isCurrentDraft ? status : 'idle'
+  }, [filterDraft])
 
   const copyLink = useCallback(async (): Promise<void> => {
-    if (!currentGeneratedLink) {
+    if (!generatedLink) {
       return
     }
 
     setErrorMessage(undefined)
 
     try {
-      await navigator.clipboard.writeText(currentGeneratedLink)
+      await navigator.clipboard.writeText(generatedLink)
       setStatus('copied')
     }
     catch {
       setErrorMessage(TRADE_SEARCH_LINK_UI_MESSAGES.copyFailed)
       setStatus('error')
     }
-  }, [currentGeneratedLink])
+  }, [generatedLink])
 
   return {
     copyLink,
-    errorMessage: isCurrentDraft ? errorMessage : undefined,
+    errorMessage,
     generateLink,
-    generatedLink: currentGeneratedLink,
-    resetLink,
-    status: currentStatus,
-    warningMessage: isCurrentDraft ? warningMessage : undefined,
+    generatedLink,
+    status,
+    warningMessage,
   }
 }

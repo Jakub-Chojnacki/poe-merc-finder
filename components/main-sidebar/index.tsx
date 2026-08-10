@@ -1,5 +1,6 @@
 import type { MainSidebarProps } from './types'
 import FilterEditor from '@/components/filter-editor'
+import ChevronIcon from '@/components/icons/chevron'
 import SavedSetupManager from '@/components/saved-setup-manager'
 import { useTradePageFilter } from '@/hooks/use-trade-page-filter'
 
@@ -30,13 +31,9 @@ const MainSidebar: React.FC<MainSidebarProps> = ({
           title="Collapse mercenary filter"
           onClick={onCollapse}
         >
-          <svg
+          <ChevronIcon
             className="sidebar-chevron"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-          >
-            <path d="m9 6 6 6-6 6" />
-          </svg>
+          />
         </button>
       </header>
 
