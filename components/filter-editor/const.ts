@@ -1,8 +1,13 @@
+import type { SelectOption } from '@/components/select-field/types'
 import type { FilterApplyStatus } from '@/hooks/use-trade-page-filter/types'
+import { MERCENARY_OPTIONS } from '@/utils/mercenary-data'
 
-export const MERCENARY_CLASS_OPTIONS_ID = 'mercenary-class-options'
-export const MERCENARY_SKILL_OPTIONS_ID = 'mercenary-skill-options'
-export const MERCENARY_SUPPORT_OPTIONS_ID = 'mercenary-support-options'
+export const MERCENARY_CLASS_OPTIONS: SelectOption[] = MERCENARY_OPTIONS.map(
+  mercenary => ({
+    label: mercenary.attribute,
+    value: mercenary.name,
+  }),
+)
 
 export const APPLY_BUTTON_LABELS = {
   applied: 'Applied',

@@ -1,19 +1,12 @@
 import type { SkillRequirementUpdates } from './skill-requirement/types'
 import type { FilterEditorProps } from './types'
-import ClearableDatalistField from '@/components/clearable-datalist-field'
+import SelectField from '@/components/select-field'
 import { createEmptySkillRequirement } from '@/utils/filter-draft'
+import { getMercenarySkillOptions } from '@/utils/mercenary-data'
 import {
-  getMercenarySkillOptions,
-  MERCENARY_OPTIONS,
-  SUPPORT_GEM_NAMES,
-} from '@/utils/mercenary-data'
-import {
-  APPLY_BUTTON_LABELS,
-  MERCENARY_CLASS_OPTIONS_ID,
-  MERCENARY_SKILL_OPTIONS_ID,
-  MERCENARY_SUPPORT_OPTIONS_ID,
+  MERCENARY_CLASS_OPTIONS,
 } from './const'
-import GeneratedSearch from './generated-search'
+import FilterActions from './filter-actions'
 import SkillRequirementEditor from './skill-requirement'
 
 const FilterEditor: React.FC<FilterEditorProps> = ({
@@ -22,7 +15,12 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
   onChange,
   value,
 }) => {
-  const skillOptions = getMercenarySkillOptions(value.mercenaryClass)
+  const skillOptions = getMercenarySkillOptions(value.mercenaryClass).map(
+    skill => ({
+      label: skill.label,
+      value: skill.name,
+    }),
+  )
 
   const updateRequirement = (
     id: string,
@@ -59,54 +57,30 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
   return (
     <section className="filter-editor" aria-labelledby="filter-editor-title">
       <header className="section-header">
-        <div>
-          <p className="section-kicker">Manual configuration</p>
-          <h2 id="filter-editor-title">Skill requirements</h2>
-        </div>
+        <h2 id="filter-editor-title">Skill requirements</h2>
 
-        <button type="button" className="button" onClick={addRequirement}>
-          Add skill
+        <button type="button" className="add-skill-button" onClick={addRequirement}>
+          + Add skill
         </button>
       </header>
 
-      <ClearableDatalistField
+      <SelectField
         label="Mercenary class"
-        clearLabel="Clear"
-        optionsId={MERCENARY_CLASS_OPTIONS_ID}
+        emptyLabel="All mercenary classes"
+        options={MERCENARY_CLASS_OPTIONS}
         value={value.mercenaryClass}
         onChange={mercenaryClass => onChange({
           ...value,
           mercenaryClass,
         })}
-        placeholder="Stormhand"
-        hint="Choose a class to narrow the skill suggestions, or type manually."
       />
-
-      <datalist id={MERCENARY_CLASS_OPTIONS_ID}>
-        {MERCENARY_OPTIONS.map(mercenary => (
-          <option key={mercenary.name} value={mercenary.name}>
-            {mercenary.attribute}
-          </option>
-        ))}
-      </datalist>
-
-      <datalist id={MERCENARY_SKILL_OPTIONS_ID}>
-        {skillOptions.map(skill => (
-          <option key={skill.name} value={skill.name} label={skill.label} />
-        ))}
-      </datalist>
-
-      <datalist id={MERCENARY_SUPPORT_OPTIONS_ID}>
-        {SUPPORT_GEM_NAMES.map(supportName => (
-          <option key={supportName} value={supportName} />
-        ))}
-      </datalist>
 
       <div className="skill-groups">
         {value.requirements.map((requirement, index) => (
           <SkillRequirementEditor
             key={requirement.id}
             index={index}
+            skillOptions={skillOptions}
             value={requirement}
             onChange={updates => updateRequirement(requirement.id, updates)}
             onRemove={() => removeRequirement(requirement.id)}
@@ -124,17 +98,12 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
         <span>Hide listings missing required skills or supports</span>
       </label>
 
-      <button
-        type="button"
-        className="button apply-button"
-        aria-live="polite"
-        disabled={applyStatus === 'applying'}
-        onClick={() => onApply()}
-      >
-        {APPLY_BUTTON_LABELS[applyStatus]}
-      </button>
-
-      <GeneratedSearch filterDraft={value} />
+      <FilterActions
+        key={JSON.stringify(value)}
+        applyStatus={applyStatus}
+        filterDraft={value}
+        onApply={onApply}
+      />
     </section>
   )
 }

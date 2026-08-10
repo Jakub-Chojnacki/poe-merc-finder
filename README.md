@@ -19,8 +19,8 @@ gem, but it cannot require those supports to be linked to a specific skill. This
 - Mark listings as perfect matches, partial matches, or failures and show match
   counts.
 - Optionally hide listings that are missing required skills or supports.
-- Choose mercenary classes, skills, and support gems from suggestions while
-  retaining manual input as a fallback.
+- Choose mercenary classes and skills from the scraped dataset, with compact
+  searchable multi-selects for support gems.
 - Save configurations locally under custom names, then load, update, or delete
   them later.
 - Collapse the extension panel when it is not needed.
