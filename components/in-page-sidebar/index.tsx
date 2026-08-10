@@ -8,7 +8,10 @@ import {
   PAGE_OPEN_CLASS,
 } from './const'
 
-const InPageSidebar: React.FC<InPageSidebarProps> = ({ onApplyFilter }) => {
+const InPageSidebar: React.FC<InPageSidebarProps> = ({
+  initialFilterDraft,
+  onApplyFilter,
+}) => {
   const [isCollapsed, setIsCollapsed] = useState(false)
   const betterTradingOffset = useBetterTradingOffset()
 
@@ -60,6 +63,7 @@ const InPageSidebar: React.FC<InPageSidebarProps> = ({ onApplyFilter }) => {
         inert={isCollapsed}
       >
         <MainSidebar
+          initialFilterDraft={initialFilterDraft}
           onApplyFilter={onApplyFilter}
           onCollapse={() => updateCollapsed(true)}
         />

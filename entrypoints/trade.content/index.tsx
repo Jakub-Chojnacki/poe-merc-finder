@@ -3,6 +3,8 @@ import type { FilterConfig } from '@/utils/filter-config/types'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import InPageSidebar from '@/components/in-page-sidebar'
+import { createFilterConfig } from '@/utils/filter-config'
+import { getGeneratedSearchDraft } from '@/utils/generated-search-drafts'
 import { HIGHLIGHT_DELAY_MS } from './const'
 import {
   applyTradeFilter,
@@ -16,11 +18,15 @@ export default defineContentScript({
   matches: ['https://*.pathofexile.com/trade/search/*'],
   async main(ctx) {
     let highlightTimeoutId: number | undefined
+    const initialFilterDraft = await getGeneratedSearchDraft(window.location.href)
+      .catch(() => undefined)
 
-    let activeFilter: FilterConfig = {
-      requirements: [],
-      hideFailures: false,
-    }
+    let activeFilter: FilterConfig = initialFilterDraft
+      ? createFilterConfig(initialFilterDraft)
+      : {
+          requirements: [],
+          hideFailures: false,
+        }
 
     const applyHighlights = (): void => {
       applyTradeFilter(activeFilter)
@@ -59,7 +65,10 @@ export default defineContentScript({
         const root = createRoot(app)
         root.render(
           <StrictMode>
-            <InPageSidebar onApplyFilter={applyFilter} />
+            <InPageSidebar
+              initialFilterDraft={initialFilterDraft}
+              onApplyFilter={applyFilter}
+            />
           </StrictMode>,
         )
 
@@ -71,6 +80,7 @@ export default defineContentScript({
     })
 
     ui.mount()
+    applyHighlights()
 
     const observer = new MutationObserver((mutations) => {
       const listingsChanged = mutations.some(mutation => (
