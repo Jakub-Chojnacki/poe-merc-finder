@@ -1,6 +1,11 @@
 import type { FilterEditorProps, UpdatesToRequirement } from './types'
 import ClearableDatalistField from '@/components/clearable-datalist-field'
 import GemListField from '@/components/gem-list-field'
+import { useTradeSearchLink } from '@/hooks/use-trade-search-link'
+import {
+  COPY_LINK_BUTTON_LABELS,
+  GENERATE_LINK_BUTTON_LABELS,
+} from '@/hooks/use-trade-search-link/const'
 import { createEmptySkillRequirement } from '@/utils/filter-draft'
 import {
   getMercenarySkillOptions,
@@ -21,9 +26,23 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
   value,
 }) => {
   const skillOptions = getMercenarySkillOptions(value.mercenaryClass)
+  const {
+    copyLink,
+    errorMessage: linkErrorMessage,
+    generateLink,
+    generatedLink,
+    resetLink,
+    status: linkStatus,
+    warningMessage: linkWarningMessage,
+  } = useTradeSearchLink(value)
+
+  const updateValue = (nextValue: FilterEditorProps['value']): void => {
+    resetLink()
+    onChange(nextValue)
+  }
 
   const updateRequirement = (id: string, updates: UpdatesToRequirement): void => {
-    onChange({
+    updateValue({
       ...value,
       requirements: value.requirements.map(requirement =>
         requirement.id === id ? { ...requirement, ...updates } : requirement,
@@ -32,7 +51,7 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
   }
 
   const addRequirement = (): void => {
-    onChange({
+    updateValue({
       ...value,
       requirements: [...value.requirements, createEmptySkillRequirement()],
     })
@@ -43,7 +62,7 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
       requirement => requirement.id !== id,
     )
 
-    onChange({
+    updateValue({
       ...value,
       requirements: requirements.length
         ? requirements
@@ -69,7 +88,7 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
         clearLabel="Clear"
         optionsId={MERCENARY_CLASS_OPTIONS_ID}
         value={value.mercenaryClass}
-        onChange={mercenaryClass => onChange({
+        onChange={mercenaryClass => updateValue({
           ...value,
           mercenaryClass,
         })}
@@ -114,7 +133,7 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
                   {index + 1}
                 </h3>
 
-                {value.requirements.length > 1 && (
+                {!!value.requirements.length && (
                   <button
                     type="button"
                     className="remove-button"
@@ -173,7 +192,7 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
           type="checkbox"
           checked={value.hideFailures}
           onChange={event =>
-            onChange({ ...value, hideFailures: event.target.checked })}
+            updateValue({ ...value, hideFailures: event.target.checked })}
         />
         <span>Hide listings missing required skills or supports</span>
       </label>
@@ -187,6 +206,67 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
       >
         {APPLY_BUTTON_LABELS[applyStatus]}
       </button>
+
+      <section
+        className="generated-search"
+        aria-labelledby="generated-search-title"
+      >
+        <div>
+          <p className="section-kicker">Path of Exile query</p>
+          <h3 id="generated-search-title">Linked search</h3>
+        </div>
+
+        <p className="generated-search__description">
+          Generate an Instant Buyout search requiring each skill and its required linked supports. Optional supports stay in the local matcher.
+        </p>
+
+        <button
+          type="button"
+          className="button generate-link-button"
+          disabled={linkStatus === 'generating'}
+          onClick={() => generateLink()}
+        >
+          {GENERATE_LINK_BUTTON_LABELS[linkStatus]}
+        </button>
+
+        {generatedLink && (
+          <div className="generated-search__result">
+            <p className="generated-search__url" title={generatedLink}>
+              {generatedLink}
+            </p>
+
+            <div className="generated-search__actions">
+              <a
+                className="button generated-search__open"
+                href={generatedLink}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open search
+              </a>
+              <button
+                type="button"
+                className="button"
+                onClick={() => copyLink()}
+              >
+                {COPY_LINK_BUTTON_LABELS[linkStatus]}
+              </button>
+            </div>
+          </div>
+        )}
+
+        {linkWarningMessage && (
+          <p className="generated-search__warning" role="status">
+            {linkWarningMessage}
+          </p>
+        )}
+
+        {linkErrorMessage && (
+          <p className="generated-search__error" role="alert">
+            {linkErrorMessage}
+          </p>
+        )}
+      </section>
     </section>
   )
 }
