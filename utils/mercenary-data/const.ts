@@ -27,12 +27,38 @@ export const SUPPORT_GEM_NAMES = mercenaryData.supportGems.map(
   support => support.name,
 )
 
-export const ALL_SKILL_OPTIONS: MercenarySkillOption[] = [...new Set(
-  mercenaryData.mercenaries.flatMap(mercenary => (
+function normalizeStatName(value: string): string {
+  return value.trim().toLocaleLowerCase()
+}
+
+export const MERCENARY_SKILL_STAT_IDS = new Map<string, string>([
+  ...mercenaryData.skills.flatMap(skill => (
+    [skill.name, ...skill.aliases].map(name => (
+      [normalizeStatName(name), skill.tradeStatId] as const
+    ))
+  )),
+  ...mercenaryData.mercenaries.flatMap(mercenary => (
+    SKILL_CATEGORIES.flatMap(category => (
+      mercenary.skills[category].map(skill => (
+        [normalizeStatName(skill.name), skill.tradeStatId] as const
+      ))
+    ))
+  )),
+])
+
+export const MERCENARY_SUPPORT_STAT_IDS = new Map(
+  mercenaryData.supportGems.map(support => (
+    [normalizeStatName(support.name), support.tradeStatId] as const
+  )),
+)
+
+export const ALL_SKILL_OPTIONS: MercenarySkillOption[] = [...new Set([
+  ...mercenaryData.skills.map(skill => skill.name),
+  ...mercenaryData.mercenaries.flatMap(mercenary => (
     SKILL_CATEGORIES.flatMap(category => (
       mercenary.skills[category].map(skill => skill.name)
     ))
   )),
-)]
+])]
   .sort((left, right) => left.localeCompare(right))
   .map(name => ({ name, label: '' }))

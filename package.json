@@ -16,6 +16,7 @@
     "data:update": "node scripts/scrape-mercenary-data.mjs",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "test": "vitest run",
     "postinstall": "wxt prepare"
   },
   "dependencies": {
@@ -32,6 +33,7 @@
     "eslint": "^10.8.1",
     "eslint-plugin-react-refresh": "^0.5.3",
     "typescript": "^5.9.3",
+    "vitest": "^4.1.10",
     "web-ext": "^10.5.0",
     "wxt": "^0.21.3"
   }

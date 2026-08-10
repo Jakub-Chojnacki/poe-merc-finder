@@ -8,5 +8,9 @@ export default defineConfig({
     description: 'Filter Path of Exile mercenary trade listings by skills and their linked support gems.',
     minimum_chrome_version: '114',
     permissions: ['storage'],
+    web_accessible_resources: [{
+      resources: ['icon/32.png'],
+      matches: ['https://*.pathofexile.com/*'],
+    }],
   },
 })

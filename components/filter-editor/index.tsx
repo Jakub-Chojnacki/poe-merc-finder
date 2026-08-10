@@ -1,6 +1,6 @@
-import type { FilterEditorProps, UpdatesToRequirement } from './types'
+import type { SkillRequirementUpdates } from './skill-requirement/types'
+import type { FilterEditorProps } from './types'
 import ClearableDatalistField from '@/components/clearable-datalist-field'
-import GemListField from '@/components/gem-list-field'
 import { createEmptySkillRequirement } from '@/utils/filter-draft'
 import {
   getMercenarySkillOptions,
@@ -13,6 +13,8 @@ import {
   MERCENARY_SKILL_OPTIONS_ID,
   MERCENARY_SUPPORT_OPTIONS_ID,
 } from './const'
+import GeneratedSearch from './generated-search'
+import SkillRequirementEditor from './skill-requirement'
 
 const FilterEditor: React.FC<FilterEditorProps> = ({
   applyStatus,
@@ -22,7 +24,10 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
 }) => {
   const skillOptions = getMercenarySkillOptions(value.mercenaryClass)
 
-  const updateRequirement = (id: string, updates: UpdatesToRequirement): void => {
+  const updateRequirement = (
+    id: string,
+    updates: SkillRequirementUpdates,
+  ): void => {
     onChange({
       ...value,
       requirements: value.requirements.map(requirement =>
@@ -98,74 +103,15 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
       </datalist>
 
       <div className="skill-groups">
-        {value.requirements.map((requirement, index) => {
-          const titleId = `skill-requirement-${requirement.id}-title`
-
-          return (
-            <section
-              className="skill-group"
-              key={requirement.id}
-              aria-labelledby={titleId}
-            >
-              <header className="skill-group__header">
-                <h3 id={titleId} className="skill-group__title">
-                  Skill
-                  {' '}
-                  {index + 1}
-                </h3>
-
-                {value.requirements.length > 1 && (
-                  <button
-                    type="button"
-                    className="remove-button"
-                    onClick={() => removeRequirement(requirement.id)}
-                    aria-label={`Remove skill ${index + 1}`}
-                    title={`Remove skill ${index + 1}`}
-                  >
-                    <svg
-                      className="remove-button__icon"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path d="M6 6 18 18M18 6 6 18" />
-                    </svg>
-                  </button>
-                )}
-              </header>
-
-              <div className="skill-group__content">
-                <ClearableDatalistField
-                  label="Skill name"
-                  clearLabel="Clear"
-                  optionsId={MERCENARY_SKILL_OPTIONS_ID}
-                  value={requirement.skill}
-                  onChange={skill => updateRequirement(requirement.id, { skill })}
-                  placeholder="Kinetic Blast of Clustering"
-                />
-
-                <GemListField
-                  label="Required supports"
-                  value={requirement.requiredSupports}
-                  onChange={requiredSupports =>
-                    updateRequirement(requirement.id, { requiredSupports })}
-                  optionsId={MERCENARY_SUPPORT_OPTIONS_ID}
-                  placeholder={'Return\nGreater Multiple Projectiles'}
-                  hint="Every support must be linked to this skill. The list remains manually editable."
-                />
-
-                <GemListField
-                  label="Optional supports"
-                  value={requirement.optionalSupports}
-                  onChange={optionalSupports =>
-                    updateRequirement(requirement.id, { optionalSupports })}
-                  optionsId={MERCENARY_SUPPORT_OPTIONS_ID}
-                  placeholder={'Greater Pierce\nChain'}
-                  hint="These improve the match but are not required. The list remains manually editable."
-                />
-              </div>
-            </section>
-          )
-        })}
+        {value.requirements.map((requirement, index) => (
+          <SkillRequirementEditor
+            key={requirement.id}
+            index={index}
+            value={requirement}
+            onChange={updates => updateRequirement(requirement.id, updates)}
+            onRemove={() => removeRequirement(requirement.id)}
+          />
+        ))}
       </div>
 
       <label className="checkbox-field">
@@ -187,6 +133,8 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
       >
         {APPLY_BUTTON_LABELS[applyStatus]}
       </button>
+
+      <GeneratedSearch filterDraft={value} />
     </section>
   )
 }

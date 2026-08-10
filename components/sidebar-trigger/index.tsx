@@ -1,5 +1,7 @@
-import type { InPageSidebarProps, SidebarStyle } from './types'
+import type { SidebarStyle, SidebarTriggerProps } from './types'
 import { useCallback, useEffect, useState } from 'react'
+import AppIcon from '@/components/icons/app'
+import ChevronIcon from '@/components/icons/chevron'
 import MainSidebar from '@/components/main-sidebar'
 import { useBetterTradingOffset } from '@/hooks/use-better-trading-offset'
 import {
@@ -8,7 +10,10 @@ import {
   PAGE_OPEN_CLASS,
 } from './const'
 
-const InPageSidebar: React.FC<InPageSidebarProps> = ({ onApplyFilter }) => {
+const SidebarTrigger: React.FC<SidebarTriggerProps> = ({
+  initialFilterDraft,
+  onApplyFilter,
+}) => {
   const [isCollapsed, setIsCollapsed] = useState(false)
   const betterTradingOffset = useBetterTradingOffset()
 
@@ -44,8 +49,8 @@ const InPageSidebar: React.FC<InPageSidebarProps> = ({ onApplyFilter }) => {
   }, [])
 
   const sidebarClassName = isCollapsed
-    ? 'in-page-sidebar in-page-sidebar--collapsed'
-    : 'in-page-sidebar'
+    ? 'sidebar-trigger sidebar-trigger--collapsed'
+    : 'sidebar-trigger'
 
   const sidebarStyle: SidebarStyle = {
     '--sidebar-right-offset': `${betterTradingOffset}px`,
@@ -60,6 +65,7 @@ const InPageSidebar: React.FC<InPageSidebarProps> = ({ onApplyFilter }) => {
         inert={isCollapsed}
       >
         <MainSidebar
+          initialFilterDraft={initialFilterDraft}
           onApplyFilter={onApplyFilter}
           onCollapse={() => updateCollapsed(true)}
         />
@@ -72,17 +78,15 @@ const InPageSidebar: React.FC<InPageSidebarProps> = ({ onApplyFilter }) => {
         title="Open mercenary support filter"
         onClick={() => updateCollapsed(false)}
       >
-        <span className="sidebar-expand-button__mark" aria-hidden="true">M</span>
-        <svg
+        <AppIcon
+          className="sidebar-expand-button__icon"
+        />
+        <ChevronIcon
           className="sidebar-chevron sidebar-chevron--left"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path d="m9 6 6 6-6 6" />
-        </svg>
+        />
       </button>
     </div>
   )
 }
 
-export default InPageSidebar
+export default SidebarTrigger

@@ -1,5 +1,5 @@
 import type { FilterApplyStatus } from '@/hooks/use-trade-page-filter/types'
-import type { FilterDraft, SkillRequirementDraft } from '@/utils/filter-draft/types'
+import type { FilterDraft } from '@/utils/filter-draft/types'
 
 export interface FilterEditorProps {
   applyStatus: FilterApplyStatus
@@ -7,5 +7,3 @@ export interface FilterEditorProps {
   value: FilterDraft
   onChange: (value: FilterDraft) => void
 }
-
-export type UpdatesToRequirement = Partial<Omit<SkillRequirementDraft, 'id'>>

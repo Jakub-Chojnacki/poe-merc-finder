@@ -10,11 +10,14 @@ import { createEmptyFilterDraft } from '@/utils/filter-draft'
 
 export function useTradePageFilter(
   onApplyFilter: ApplyTradePageFilter,
+  initialFilterDraft?: FilterDraft,
 ): UseTradePageFilterResult {
   const [filterApplyStatus, setFilterApplyStatus]
-    = useState<FilterApplyStatus>('idle')
+    = useState<FilterApplyStatus>(initialFilterDraft ? 'applied' : 'idle')
 
-  const [filterDraft, setFilterDraft] = useState(createEmptyFilterDraft)
+  const [filterDraft, setFilterDraft] = useState(
+    () => initialFilterDraft ?? createEmptyFilterDraft(),
+  )
 
   const applyFilter = useCallback(async () => {
     setFilterApplyStatus('applying')
