@@ -2,6 +2,7 @@ import type { SkillRequirementEditorProps } from './types'
 import CloseIcon from '@/components/icons/close'
 import MultiSelectField from '@/components/multi-select-field'
 import SelectField from '@/components/select-field'
+import UiTooltip from '@/components/ui/tooltip'
 import { SUPPORT_GEM_NAMES } from '@/utils/mercenary-data'
 
 const SkillRequirementEditor: React.FC<SkillRequirementEditorProps> = ({
@@ -32,17 +33,18 @@ const SkillRequirementEditor: React.FC<SkillRequirementEditorProps> = ({
           />
         </div>
 
-        <button
-          type="button"
-          className="remove-button"
-          onClick={onRemove}
-          aria-label={`Remove skill ${skillNumber}`}
-          title={`Remove skill ${skillNumber}`}
-        >
-          <CloseIcon
-            className="remove-button__icon"
-          />
-        </button>
+        <UiTooltip content={`Remove skill ${skillNumber}`}>
+          <button
+            type="button"
+            className="remove-button"
+            onClick={onRemove}
+            aria-label={`Remove skill ${skillNumber}`}
+          >
+            <CloseIcon
+              className="remove-button__icon"
+            />
+          </button>
+        </UiTooltip>
       </header>
 
       <div className="skill-group__content">

@@ -1,15 +1,17 @@
-import type { SelectFieldProps, SelectOption } from './types'
-import { useId, useMemo, useRef, useState } from 'react'
+import type { SelectFieldProps } from './types'
+import { useId, useMemo, useState } from 'react'
 import ChevronIcon from '@/components/icons/chevron'
-
-function includeCurrentOption(
-  options: SelectOption[],
-  value: string,
-): SelectOption[] {
-  return value && !options.some(option => option.value === value)
-    ? [{ value }, ...options]
-    : options
-}
+import {
+  PopoverContent,
+  PopoverRoot,
+  PopoverTrigger,
+} from '@/components/ui/popover'
+import {
+  ToggleGroupItem,
+  ToggleGroupRoot,
+} from '@/components/ui/toggle-group'
+import UiVisuallyHidden from '@/components/ui/visually-hidden'
+import { getAvailableSelectOptions } from './utils'
 
 const SelectField: React.FC<SelectFieldProps> = ({
   emptyLabel,
@@ -22,49 +24,56 @@ const SelectField: React.FC<SelectFieldProps> = ({
 }) => {
   const labelId = useId()
   const searchId = useId()
-  const detailsRef = useRef<HTMLDetailsElement>(null)
+  const [isOpen, setIsOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
-  const allOptions = includeCurrentOption(options, value)
-  const availableOptions = useMemo(() => {
-    const normalizedQuery = searchQuery.trim().toLocaleLowerCase()
-
-    return allOptions.filter(option => (
-      option.value.toLocaleLowerCase().includes(normalizedQuery)
-      || option.label?.toLocaleLowerCase().includes(normalizedQuery)
-    ))
-  }, [allOptions, searchQuery])
+  const availableOptions = useMemo(
+    () => getAvailableSelectOptions(options, value, searchQuery),
+    [options, searchQuery, value],
+  )
 
   const selectOption = (optionValue: string): void => {
     onChange(optionValue)
-    detailsRef.current?.removeAttribute('open')
+    setIsOpen(false)
+  }
+
+  const updateOpen = (open: boolean): void => {
+    setIsOpen(open)
+
+    if (!open) {
+      setSearchQuery('')
+    }
   }
 
   return (
     <div className="field">
-      <span className={hideLabel ? 'visually-hidden' : undefined} id={labelId}>
-        {label}
-      </span>
+      {hideLabel
+        ? (
+            <UiVisuallyHidden asChild>
+              <span id={labelId}>{label}</span>
+            </UiVisuallyHidden>
+          )
+        : <span id={labelId}>{label}</span>}
 
-      <details
-        ref={detailsRef}
-        className="select-field"
-        onToggle={(event) => {
-          if (!event.currentTarget.open) {
-            setSearchQuery('')
-          }
-        }}
-      >
-        <summary aria-labelledby={labelId}>
-          <span>{value || emptyLabel}</span>
-          <ChevronIcon className="select-field__chevron" />
-        </summary>
+      <PopoverRoot open={isOpen} onOpenChange={updateOpen}>
+        <PopoverTrigger asChild>
+          <button
+            type="button"
+            className="select-field__trigger"
+            aria-labelledby={labelId}
+          >
+            <span>{value || emptyLabel}</span>
+            <ChevronIcon className="select-field__chevron" />
+          </button>
+        </PopoverTrigger>
 
-        <div className="select-field__panel">
-          <label className="visually-hidden" htmlFor={searchId}>
-            Search
-            {' '}
-            {label}
-          </label>
+        <PopoverContent className="select-field__panel">
+          <UiVisuallyHidden asChild>
+            <label htmlFor={searchId}>
+              Search
+              {' '}
+              {label}
+            </label>
+          </UiVisuallyHidden>
           <input
             id={searchId}
             type="search"
@@ -73,17 +82,17 @@ const SelectField: React.FC<SelectFieldProps> = ({
             placeholder={`Search ${label.toLocaleLowerCase()}`}
           />
 
-          <div
+          <ToggleGroupRoot
             className="select-field__options"
-            role="listbox"
-            aria-labelledby={labelId}
+            type="single"
+            value={value}
+            onValueChange={selectOption}
           >
             {!searchQuery && (
               <button
                 type="button"
                 className="select-field__option"
-                role="option"
-                aria-selected={!value}
+                data-state={value ? 'off' : 'on'}
                 onClick={() => selectOption('')}
               >
                 {emptyLabel}
@@ -91,25 +100,22 @@ const SelectField: React.FC<SelectFieldProps> = ({
             )}
 
             {availableOptions.map(option => (
-              <button
-                type="button"
+              <ToggleGroupItem
                 className="select-field__option"
                 key={option.value}
-                role="option"
-                aria-selected={value === option.value}
-                onClick={() => selectOption(option.value)}
+                value={option.value}
               >
                 <span>{option.value}</span>
                 {option.label && <small>{option.label}</small>}
-              </button>
+              </ToggleGroupItem>
             ))}
 
             {availableOptions.length === 0 && (
               <p className="select-field__empty">No matching options</p>
             )}
-          </div>
-        </div>
-      </details>
+          </ToggleGroupRoot>
+        </PopoverContent>
+      </PopoverRoot>
 
       {hint && <small>{hint}</small>}
     </div>

@@ -3,6 +3,12 @@ import { useCallback, useEffect, useState } from 'react'
 import AppIcon from '@/components/icons/app'
 import ChevronIcon from '@/components/icons/chevron'
 import MainSidebar from '@/components/main-sidebar'
+import {
+  CollapsibleContent,
+  CollapsibleRoot,
+  CollapsibleTrigger,
+} from '@/components/ui/collapsible'
+import UiTooltip from '@/components/ui/tooltip'
 import { useBetterTradingOffset } from '@/hooks/use-better-trading-offset'
 import {
   COLLAPSED_STORAGE_KEY,
@@ -43,49 +49,56 @@ const SidebarTrigger: React.FC<SidebarTriggerProps> = ({
     return () => document.body.classList.remove(PAGE_OPEN_CLASS)
   }, [isCollapsed])
 
-  const updateCollapsed = useCallback((collapsed: boolean) => {
+  const updateOpen = useCallback((open: boolean) => {
+    const collapsed = !open
+
     setIsCollapsed(collapsed)
     browser.storage.local.set({ [COLLAPSED_STORAGE_KEY]: collapsed })
   }, [])
-
-  const sidebarClassName = isCollapsed
-    ? 'sidebar-trigger sidebar-trigger--collapsed'
-    : 'sidebar-trigger'
 
   const sidebarStyle: SidebarStyle = {
     '--sidebar-right-offset': `${betterTradingOffset}px`,
   }
 
   return (
-    <div className={sidebarClassName} style={sidebarStyle}>
-      <aside
-        className="sidebar-panel"
-        aria-label="Mercenary support filter"
-        aria-hidden={isCollapsed}
-        inert={isCollapsed}
-      >
-        <MainSidebar
-          initialFilterDraft={initialFilterDraft}
-          onApplyFilter={onApplyFilter}
-          onCollapse={() => updateCollapsed(true)}
-        />
-      </aside>
+    <CollapsibleRoot
+      asChild
+      open={!isCollapsed}
+      onOpenChange={updateOpen}
+    >
+      <div className="sidebar-trigger" style={sidebarStyle}>
+        <CollapsibleContent forceMount asChild>
+          <aside
+            className="sidebar-panel"
+            aria-label="Mercenary support filter"
+            aria-hidden={isCollapsed}
+            inert={isCollapsed}
+          >
+            <MainSidebar
+              initialFilterDraft={initialFilterDraft}
+              onApplyFilter={onApplyFilter}
+            />
+          </aside>
+        </CollapsibleContent>
 
-      <button
-        type="button"
-        className="sidebar-expand-button"
-        aria-label="Open mercenary support filter"
-        title="Open mercenary support filter"
-        onClick={() => updateCollapsed(false)}
-      >
-        <AppIcon
-          className="sidebar-expand-button__icon"
-        />
-        <ChevronIcon
-          className="sidebar-chevron sidebar-chevron--left"
-        />
-      </button>
-    </div>
+        <UiTooltip content="Open mercenary support filter">
+          <CollapsibleTrigger asChild>
+            <button
+              type="button"
+              className="sidebar-expand-button"
+              aria-label="Open mercenary support filter"
+            >
+              <AppIcon
+                className="sidebar-expand-button__icon"
+              />
+              <ChevronIcon
+                className="sidebar-chevron sidebar-chevron--left"
+              />
+            </button>
+          </CollapsibleTrigger>
+        </UiTooltip>
+      </div>
+    </CollapsibleRoot>
   )
 }
 

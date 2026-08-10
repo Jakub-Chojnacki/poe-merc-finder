@@ -1,5 +1,11 @@
 import type { SavedSetupManagerProps } from './types'
 import { useId, useMemo, useState } from 'react'
+import {
+  CollapsibleContent,
+  CollapsibleRoot,
+  CollapsibleTrigger,
+} from '@/components/ui/collapsible'
+import UiSelect from '@/components/ui/select'
 import { useSavedSetups } from '@/hooks/use-saved-setups'
 import { SETUP_NAME_MAX_LENGTH } from './const'
 
@@ -77,16 +83,18 @@ const SavedSetupManager: React.FC<SavedSetupManagerProps> = ({
   const isBusy = isLoading || isMutating
 
   return (
-    <details
+    <CollapsibleRoot
       className="saved-setups"
       open={isExpanded}
-      onToggle={event => setIsExpanded(event.currentTarget.open)}
+      onOpenChange={setIsExpanded}
     >
-      <summary className="saved-setups__header">
-        <h2 id="saved-setups-title">Saved setups</h2>
-      </summary>
+      <CollapsibleTrigger asChild>
+        <button type="button" className="saved-setups__header">
+          <h2 id="saved-setups-title">Saved setups</h2>
+        </button>
+      </CollapsibleTrigger>
 
-      <div className="saved-setups__content">
+      <CollapsibleContent className="saved-setups__content">
         <div className="field">
           <label htmlFor={nameFieldId}>Setup name</label>
           <div className="saved-setups__save-row">
@@ -113,30 +121,28 @@ const SavedSetupManager: React.FC<SavedSetupManagerProps> = ({
         <div className="field">
           <label htmlFor={setupFieldId}>Saved setup</label>
           <div className="saved-setups__load-row">
-            <div className="saved-setups__select">
-              <select
-                id={setupFieldId}
-                value={selectedSetupId}
-                disabled={isBusy || savedSetups.length === 0}
-                onChange={(event) => {
-                  const setupId = event.target.value
-                  const setup = savedSetups.find(candidate => candidate.id === setupId)
+            <UiSelect
+              id={setupFieldId}
+              className="saved-setups__select"
+              value={selectedSetupId}
+              disabled={isBusy || savedSetups.length === 0}
+              options={savedSetups.map(setup => ({
+                label: setup.name,
+                value: setup.id,
+              }))}
+              placeholder={isLoading ? 'Loading…' : 'Choose a setup'}
+              onChange={(setupId) => {
+                const setup = savedSetups.find(
+                  candidate => candidate.id === setupId,
+                )
 
-                  setSelectedSetupId(setupId)
+                setSelectedSetupId(setupId)
 
-                  if (setup) {
-                    setSetupName(setup.name)
-                  }
-                }}
-              >
-                <option value="">
-                  {isLoading ? 'Loading…' : 'Choose a setup'}
-                </option>
-                {savedSetups.map(setup => (
-                  <option key={setup.id} value={setup.id}>{setup.name}</option>
-                ))}
-              </select>
-            </div>
+                if (setup) {
+                  setSetupName(setup.name)
+                }
+              }}
+            />
 
             <button
               type="button"
@@ -160,8 +166,8 @@ const SavedSetupManager: React.FC<SavedSetupManagerProps> = ({
         {errorMessage && (
           <p className="saved-setups__error" role="alert">{errorMessage}</p>
         )}
-      </div>
-    </details>
+      </CollapsibleContent>
+    </CollapsibleRoot>
   )
 }
 
