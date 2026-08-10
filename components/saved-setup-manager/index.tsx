@@ -83,10 +83,7 @@ const SavedSetupManager: React.FC<SavedSetupManagerProps> = ({
       onToggle={event => setIsExpanded(event.currentTarget.open)}
     >
       <summary className="saved-setups__header">
-        <div>
-          <p className="section-kicker">Reusable configurations</p>
-          <h2 id="saved-setups-title">Saved setups</h2>
-        </div>
+        <h2 id="saved-setups-title">Saved setups</h2>
       </summary>
 
       <div className="saved-setups__content">

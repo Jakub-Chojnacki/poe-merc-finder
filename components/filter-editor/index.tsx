@@ -4,10 +4,9 @@ import SelectField from '@/components/select-field'
 import { createEmptySkillRequirement } from '@/utils/filter-draft'
 import { getMercenarySkillOptions } from '@/utils/mercenary-data'
 import {
-  APPLY_BUTTON_LABELS,
   MERCENARY_CLASS_OPTIONS,
 } from './const'
-import GeneratedSearch from './generated-search'
+import FilterActions from './filter-actions'
 import SkillRequirementEditor from './skill-requirement'
 
 const FilterEditor: React.FC<FilterEditorProps> = ({
@@ -58,13 +57,10 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
   return (
     <section className="filter-editor" aria-labelledby="filter-editor-title">
       <header className="section-header">
-        <div>
-          <p className="section-kicker">Mercenary configuration</p>
-          <h2 id="filter-editor-title">Skill requirements</h2>
-        </div>
+        <h2 id="filter-editor-title">Skill requirements</h2>
 
-        <button type="button" className="button" onClick={addRequirement}>
-          Add skill
+        <button type="button" className="add-skill-button" onClick={addRequirement}>
+          + Add skill
         </button>
       </header>
 
@@ -77,7 +73,6 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
           ...value,
           mercenaryClass,
         })}
-        hint="Choose a class to narrow the available skills."
       />
 
       <div className="skill-groups">
@@ -103,17 +98,12 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
         <span>Hide listings missing required skills or supports</span>
       </label>
 
-      <button
-        type="button"
-        className="button apply-button"
-        aria-live="polite"
-        disabled={applyStatus === 'applying'}
-        onClick={() => onApply()}
-      >
-        {APPLY_BUTTON_LABELS[applyStatus]}
-      </button>
-
-      <GeneratedSearch filterDraft={value} />
+      <FilterActions
+        key={JSON.stringify(value)}
+        applyStatus={applyStatus}
+        filterDraft={value}
+        onApply={onApply}
+      />
     </section>
   )
 }

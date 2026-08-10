@@ -13,6 +13,7 @@ function includeCurrentOption(
 
 const SelectField: React.FC<SelectFieldProps> = ({
   emptyLabel,
+  hideLabel = false,
   hint,
   label,
   onChange,
@@ -40,7 +41,9 @@ const SelectField: React.FC<SelectFieldProps> = ({
 
   return (
     <div className="field">
-      <span id={labelId}>{label}</span>
+      <span className={hideLabel ? 'visually-hidden' : undefined} id={labelId}>
+        {label}
+      </span>
 
       <details
         ref={detailsRef}

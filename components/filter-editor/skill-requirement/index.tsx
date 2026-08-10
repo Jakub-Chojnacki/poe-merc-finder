@@ -11,17 +11,26 @@ const SkillRequirementEditor: React.FC<SkillRequirementEditorProps> = ({
   skillOptions,
   value,
 }) => {
-  const titleId = `skill-requirement-${value.id}-title`
   const skillNumber = index + 1
+  const skillLabel = `Skill ${skillNumber}`
 
   return (
-    <section className="skill-group" aria-labelledby={titleId}>
+    <section className="skill-group" aria-label={skillLabel}>
       <header className="skill-group__header">
-        <h3 id={titleId} className="skill-group__title">
-          Skill
-          {' '}
-          {skillNumber}
-        </h3>
+        <span className="skill-group__index" aria-hidden="true">
+          {String(skillNumber).padStart(2, '0')}
+        </span>
+
+        <div className="skill-group__skill-select">
+          <SelectField
+            hideLabel
+            label={skillLabel}
+            emptyLabel="Choose a skill"
+            options={skillOptions}
+            value={value.skill}
+            onChange={skill => onChange({ skill })}
+          />
+        </div>
 
         <button
           type="button"
@@ -37,21 +46,13 @@ const SkillRequirementEditor: React.FC<SkillRequirementEditorProps> = ({
       </header>
 
       <div className="skill-group__content">
-        <SelectField
-          label="Skill name"
-          emptyLabel="Choose a skill"
-          options={skillOptions}
-          value={value.skill}
-          onChange={skill => onChange({ skill })}
-        />
-
         <MultiSelectField
           label="Required supports"
           value={value.requiredSupports}
           onChange={requiredSupports => onChange({ requiredSupports })}
           options={SUPPORT_GEM_NAMES}
           placeholder="Choose required supports"
-          hint="Every selected support must be linked to this skill."
+          hint="All must be linked."
         />
 
         <MultiSelectField
@@ -60,7 +61,6 @@ const SkillRequirementEditor: React.FC<SkillRequirementEditorProps> = ({
           onChange={optionalSupports => onChange({ optionalSupports })}
           options={SUPPORT_GEM_NAMES}
           placeholder="Choose optional supports"
-          hint="These improve the match but are not required."
         />
       </div>
     </section>
