@@ -1,17 +1,11 @@
 import type { SkillRequirementUpdates } from './skill-requirement/types'
 import type { FilterEditorProps } from './types'
-import ClearableDatalistField from '@/components/clearable-datalist-field'
+import SelectField from '@/components/select-field'
 import { createEmptySkillRequirement } from '@/utils/filter-draft'
-import {
-  getMercenarySkillOptions,
-  MERCENARY_OPTIONS,
-  SUPPORT_GEM_NAMES,
-} from '@/utils/mercenary-data'
+import { getMercenarySkillOptions } from '@/utils/mercenary-data'
 import {
   APPLY_BUTTON_LABELS,
-  MERCENARY_CLASS_OPTIONS_ID,
-  MERCENARY_SKILL_OPTIONS_ID,
-  MERCENARY_SUPPORT_OPTIONS_ID,
+  MERCENARY_CLASS_OPTIONS,
 } from './const'
 import GeneratedSearch from './generated-search'
 import SkillRequirementEditor from './skill-requirement'
@@ -22,7 +16,12 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
   onChange,
   value,
 }) => {
-  const skillOptions = getMercenarySkillOptions(value.mercenaryClass)
+  const skillOptions = getMercenarySkillOptions(value.mercenaryClass).map(
+    skill => ({
+      label: skill.label,
+      value: skill.name,
+    }),
+  )
 
   const updateRequirement = (
     id: string,
@@ -60,7 +59,7 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
     <section className="filter-editor" aria-labelledby="filter-editor-title">
       <header className="section-header">
         <div>
-          <p className="section-kicker">Manual configuration</p>
+          <p className="section-kicker">Mercenary configuration</p>
           <h2 id="filter-editor-title">Skill requirements</h2>
         </div>
 
@@ -69,44 +68,24 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
         </button>
       </header>
 
-      <ClearableDatalistField
+      <SelectField
         label="Mercenary class"
-        clearLabel="Clear"
-        optionsId={MERCENARY_CLASS_OPTIONS_ID}
+        emptyLabel="All mercenary classes"
+        options={MERCENARY_CLASS_OPTIONS}
         value={value.mercenaryClass}
         onChange={mercenaryClass => onChange({
           ...value,
           mercenaryClass,
         })}
-        placeholder="Stormhand"
-        hint="Choose a class to narrow the skill suggestions, or type manually."
+        hint="Choose a class to narrow the available skills."
       />
-
-      <datalist id={MERCENARY_CLASS_OPTIONS_ID}>
-        {MERCENARY_OPTIONS.map(mercenary => (
-          <option key={mercenary.name} value={mercenary.name}>
-            {mercenary.attribute}
-          </option>
-        ))}
-      </datalist>
-
-      <datalist id={MERCENARY_SKILL_OPTIONS_ID}>
-        {skillOptions.map(skill => (
-          <option key={skill.name} value={skill.name} label={skill.label} />
-        ))}
-      </datalist>
-
-      <datalist id={MERCENARY_SUPPORT_OPTIONS_ID}>
-        {SUPPORT_GEM_NAMES.map(supportName => (
-          <option key={supportName} value={supportName} />
-        ))}
-      </datalist>
 
       <div className="skill-groups">
         {value.requirements.map((requirement, index) => (
           <SkillRequirementEditor
             key={requirement.id}
             index={index}
+            skillOptions={skillOptions}
             value={requirement}
             onChange={updates => updateRequirement(requirement.id, updates)}
             onRemove={() => removeRequirement(requirement.id)}

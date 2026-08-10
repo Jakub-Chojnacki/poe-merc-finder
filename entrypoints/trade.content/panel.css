@@ -478,7 +478,6 @@
 }
 
 .field input,
-.field textarea,
 .field select {
   width: 100%;
   padding: var(--space-2) var(--space-3);
@@ -489,30 +488,161 @@
   outline: none;
 }
 
-.field textarea {
-  resize: vertical;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
-.clearable-datalist-field,
-.gem-picker {
+.multi-select,
+.select-field {
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+.multi-select summary,
+.select-field summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 36px;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-background);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  list-style: none;
+}
+
+.multi-select summary::-webkit-details-marker,
+.select-field summary::-webkit-details-marker {
+  display: none;
+}
+
+.multi-select summary span,
+.select-field summary span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.multi-select[open] summary,
+.select-field[open] summary {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--color-accent-soft);
+}
+
+.multi-select__chevron,
+.select-field__chevron {
+  flex: 0 0 auto;
+  width: var(--space-3-5);
+  height: var(--space-3-5);
+  fill: none;
+  stroke: currentcolor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  transform: rotate(90deg);
+  transition: transform 180ms ease;
+}
+
+.multi-select[open] .multi-select__chevron,
+.select-field[open] .select-field__chevron {
+  transform: rotate(270deg);
+}
+
+.multi-select__panel,
+.select-field__panel {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
   gap: var(--space-2);
+  margin-top: var(--space-2);
+  padding: var(--space-2);
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
 }
 
-.clearable-datalist-field .button,
-.gem-picker .button {
+.multi-select__options,
+.select-field__options {
+  display: grid;
+  max-height: 13.5rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--color-background);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.multi-select__option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-2-5);
+  cursor: pointer;
+}
+
+.multi-select__option + .multi-select__option {
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+.multi-select__option:hover {
+  background: var(--color-accent-soft);
+}
+
+.select-field__option {
+  display: grid;
+  gap: var(--space-0-5);
+  padding: var(--space-2) var(--space-2-5);
+  color: var(--color-text);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.select-field__option + .select-field__option {
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+.select-field__option:hover,
+.select-field__option[aria-selected="true"] {
+  background: var(--color-accent-soft);
+}
+
+.select-field__option small {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.field .multi-select__option input {
+  flex: 0 0 auto;
+  width: auto;
+  padding: 0;
+  accent-color: var(--color-accent);
+  box-shadow: none;
+}
+
+.multi-select__empty,
+.select-field__empty {
+  margin: 0;
+  padding: var(--space-3);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.multi-select__clear {
+  justify-self: end;
   background: var(--color-background);
 }
 
-.clearable-datalist-field .button:disabled,
-.gem-picker .button:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
 .field input:focus,
-.field textarea:focus,
 .field select:focus {
   border-color: var(--color-accent);
   box-shadow: 0 0 0 var(--focus-ring-width) var(--color-accent-soft);
@@ -542,6 +672,9 @@
 }
 
 .button:focus-visible,
+.multi-select summary:focus-visible,
+.select-field summary:focus-visible,
+.select-field__option:focus-visible,
 .remove-button:focus-visible,
 .saved-setups__header:focus-visible,
 .sidebar-icon-button:focus-visible,
@@ -553,6 +686,8 @@
 @media (prefers-reduced-motion: reduce) {
   .sidebar-panel,
   .sidebar-expand-button,
+  .multi-select__chevron,
+  .select-field__chevron,
   .saved-setups__header::after,
   .sidebar-trigger {
     transition: none;

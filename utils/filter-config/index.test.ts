@@ -10,14 +10,14 @@ describe('filter config', () => {
         {
           id: 'one',
           skill: '  Shield Crush  ',
-          requiredSupports: 'Return, Chain\nReturn',
-          optionalSupports: ' Multiple Projectiles, Chain ',
+          requiredSupports: ['Return', 'Chain', 'Return'],
+          optionalSupports: ['Multiple Projectiles', 'Chain'],
         },
         {
           id: 'two',
           skill: '   ',
-          requiredSupports: 'Return',
-          optionalSupports: '',
+          requiredSupports: ['Return'],
+          optionalSupports: [],
         },
       ],
     })

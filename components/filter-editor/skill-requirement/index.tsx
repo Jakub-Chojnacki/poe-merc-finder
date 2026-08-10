@@ -1,16 +1,14 @@
 import type { SkillRequirementEditorProps } from './types'
-import ClearableDatalistField from '@/components/clearable-datalist-field'
-import GemListField from '@/components/gem-list-field'
 import CloseIcon from '@/components/icons/close'
-import {
-  MERCENARY_SKILL_OPTIONS_ID,
-  MERCENARY_SUPPORT_OPTIONS_ID,
-} from '../const'
+import MultiSelectField from '@/components/multi-select-field'
+import SelectField from '@/components/select-field'
+import { SUPPORT_GEM_NAMES } from '@/utils/mercenary-data'
 
 const SkillRequirementEditor: React.FC<SkillRequirementEditorProps> = ({
   index,
   onChange,
   onRemove,
+  skillOptions,
   value,
 }) => {
   const titleId = `skill-requirement-${value.id}-title`
@@ -39,31 +37,30 @@ const SkillRequirementEditor: React.FC<SkillRequirementEditorProps> = ({
       </header>
 
       <div className="skill-group__content">
-        <ClearableDatalistField
+        <SelectField
           label="Skill name"
-          clearLabel="Clear"
-          optionsId={MERCENARY_SKILL_OPTIONS_ID}
+          emptyLabel="Choose a skill"
+          options={skillOptions}
           value={value.skill}
           onChange={skill => onChange({ skill })}
-          placeholder="Kinetic Blast of Clustering"
         />
 
-        <GemListField
+        <MultiSelectField
           label="Required supports"
           value={value.requiredSupports}
           onChange={requiredSupports => onChange({ requiredSupports })}
-          optionsId={MERCENARY_SUPPORT_OPTIONS_ID}
-          placeholder={'Return\nGreater Multiple Projectiles'}
-          hint="Every support must be linked to this skill. The list remains manually editable."
+          options={SUPPORT_GEM_NAMES}
+          placeholder="Choose required supports"
+          hint="Every selected support must be linked to this skill."
         />
 
-        <GemListField
+        <MultiSelectField
           label="Optional supports"
           value={value.optionalSupports}
           onChange={optionalSupports => onChange({ optionalSupports })}
-          optionsId={MERCENARY_SUPPORT_OPTIONS_ID}
-          placeholder={'Greater Pierce\nChain'}
-          hint="These improve the match but are not required. The list remains manually editable."
+          options={SUPPORT_GEM_NAMES}
+          placeholder="Choose optional supports"
+          hint="These improve the match but are not required."
         />
       </div>
     </section>
