@@ -99,7 +99,7 @@ const SavedSetupManager: React.FC<SavedSetupManagerProps> = ({
               value={setupName}
               maxLength={SETUP_NAME_MAX_LENGTH}
               onChange={event => setSetupName(event.target.value)}
-              placeholder="Lightning farmer"
+              placeholder="Kineticist Endgame"
             />
             <button
               type="button"
