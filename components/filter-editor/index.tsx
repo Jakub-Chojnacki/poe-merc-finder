@@ -1,6 +1,8 @@
 import type { SkillRequirementUpdates } from './skill-requirement/types'
 import type { FilterEditorProps } from './types'
+import { useId } from 'react'
 import SelectField from '@/components/select-field'
+import UiCheckbox from '@/components/ui/checkbox'
 import { createEmptySkillRequirement } from '@/utils/filter-draft'
 import { getMercenarySkillOptions } from '@/utils/mercenary-data'
 import {
@@ -15,6 +17,7 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
   onChange,
   value,
 }) => {
+  const hideFailuresId = useId()
   const skillOptions = getMercenarySkillOptions(value.mercenaryClass).map(
     skill => ({
       label: skill.label,
@@ -88,15 +91,19 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
         ))}
       </div>
 
-      <label className="checkbox-field">
-        <input
-          type="checkbox"
+      <div className="checkbox-field">
+        <UiCheckbox
+          id={hideFailuresId}
           checked={value.hideFailures}
-          onChange={event =>
-            onChange({ ...value, hideFailures: event.target.checked })}
+          onCheckedChange={checked => onChange({
+            ...value,
+            hideFailures: checked === true,
+          })}
         />
-        <span>Hide listings missing required skills or supports</span>
-      </label>
+        <label htmlFor={hideFailuresId}>
+          Hide listings missing required skills or supports
+        </label>
+      </div>
 
       <FilterActions
         key={JSON.stringify(value)}
