@@ -2,7 +2,7 @@ import type { Root } from 'react-dom/client'
 import type { FilterConfig } from '@/utils/filter-config/types'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import InPageSidebar from '@/components/in-page-sidebar'
+import SidebarTrigger from '@/components/sidebar-trigger'
 import { createFilterConfig } from '@/utils/filter-config'
 import { getGeneratedSearchDraft } from '@/utils/generated-search-drafts'
 import { HIGHLIGHT_DELAY_MS } from './const'
@@ -65,7 +65,7 @@ export default defineContentScript({
         const root = createRoot(app)
         root.render(
           <StrictMode>
-            <InPageSidebar
+            <SidebarTrigger
               initialFilterDraft={initialFilterDraft}
               onApplyFilter={applyFilter}
             />

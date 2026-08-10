@@ -1,14 +1,15 @@
-import type { InPageSidebarProps, SidebarStyle } from './types'
+import type { SidebarStyle, SidebarTriggerProps } from './types'
 import { useCallback, useEffect, useState } from 'react'
 import MainSidebar from '@/components/main-sidebar'
 import { useBetterTradingOffset } from '@/hooks/use-better-trading-offset'
 import {
+  APP_ICON_PATH,
   COLLAPSED_STORAGE_KEY,
   PAGE_CLASS,
   PAGE_OPEN_CLASS,
 } from './const'
 
-const InPageSidebar: React.FC<InPageSidebarProps> = ({
+const SidebarTrigger: React.FC<SidebarTriggerProps> = ({
   initialFilterDraft,
   onApplyFilter,
 }) => {
@@ -47,8 +48,8 @@ const InPageSidebar: React.FC<InPageSidebarProps> = ({
   }, [])
 
   const sidebarClassName = isCollapsed
-    ? 'in-page-sidebar in-page-sidebar--collapsed'
-    : 'in-page-sidebar'
+    ? 'sidebar-trigger sidebar-trigger--collapsed'
+    : 'sidebar-trigger'
 
   const sidebarStyle: SidebarStyle = {
     '--sidebar-right-offset': `${betterTradingOffset}px`,
@@ -76,7 +77,12 @@ const InPageSidebar: React.FC<InPageSidebarProps> = ({
         title="Open mercenary support filter"
         onClick={() => updateCollapsed(false)}
       >
-        <span className="sidebar-expand-button__mark" aria-hidden="true">M</span>
+        <img
+          className="sidebar-expand-button__icon"
+          src={browser.runtime.getURL(APP_ICON_PATH)}
+          alt=""
+          aria-hidden="true"
+        />
         <svg
           className="sidebar-chevron sidebar-chevron--left"
           viewBox="0 0 24 24"
@@ -89,4 +95,4 @@ const InPageSidebar: React.FC<InPageSidebarProps> = ({
   )
 }
 
-export default InPageSidebar
+export default SidebarTrigger

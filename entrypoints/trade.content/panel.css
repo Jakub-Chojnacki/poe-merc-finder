@@ -55,7 +55,7 @@
   font: inherit;
 }
 
-.in-page-sidebar {
+.sidebar-trigger {
   position: fixed;
   z-index: 1100;
   inset: 0 var(--sidebar-right-offset) 0 auto;
@@ -79,7 +79,7 @@
   pointer-events: auto;
 }
 
-.in-page-sidebar--collapsed .sidebar-panel {
+.sidebar-trigger--collapsed .sidebar-panel {
   visibility: hidden;
   transform: translateX(100%);
   pointer-events: none;
@@ -110,22 +110,16 @@
   pointer-events: none;
 }
 
-.in-page-sidebar--collapsed .sidebar-expand-button {
+.sidebar-trigger--collapsed .sidebar-expand-button {
   opacity: 1;
   transform: translate(0, -50%);
   pointer-events: auto;
 }
 
-.sidebar-expand-button__mark {
-  display: grid;
-  place-items: center;
-  width: var(--space-5);
-  height: var(--space-5);
-  color: var(--color-background);
-  background: var(--color-accent);
-  border-radius: var(--radius-pill);
-  font-size: var(--font-size-xs);
-  font-weight: 800;
+.sidebar-expand-button__icon {
+  width: var(--space-6);
+  height: var(--space-6);
+  object-fit: contain;
 }
 
 .panel-shell {
@@ -560,7 +554,7 @@
   .sidebar-panel,
   .sidebar-expand-button,
   .saved-setups__header::after,
-  .in-page-sidebar {
+  .sidebar-trigger {
     transition: none;
   }
 }
