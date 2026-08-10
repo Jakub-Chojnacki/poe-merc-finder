@@ -28,6 +28,10 @@ preferences are stored with Chrome's local extension storage. The information
 is used only to provide the extension's filtering, highlighting, search-link,
 saved-setup, and interface features.
 
+Saved setup import and export codes are generated and read locally. A code
+contains the setup name and filter configuration so the user can copy and share
+it. The extension does not transmit these codes.
+
 Users can delete individual named setups from the extension. Removing the
 extension also removes data stored by the extension from Chrome.
 
