@@ -17,7 +17,10 @@ export default defineConfig({
     },
     permissions: ['storage'],
     web_accessible_resources: [{
-      resources: ['icons/houses/*.png'],
+      resources: [
+        'icons/houses/*.png',
+        'icons/mercenary-warrant.png',
+      ],
       matches: ['https://*.pathofexile.com/*'],
     }],
   },
