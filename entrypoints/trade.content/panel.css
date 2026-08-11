@@ -67,7 +67,7 @@
   pointer-events: auto;
 }
 
-.sidebar-trigger {
+.sidebar-container {
   position: fixed;
   z-index: 1100;
   inset: 0 var(--sidebar-right-offset) 0 auto;
@@ -91,47 +91,10 @@
   pointer-events: auto;
 }
 
-.sidebar-trigger[data-state="closed"] .sidebar-panel {
+.sidebar-container[data-state="closed"] .sidebar-panel {
   visibility: hidden;
   transform: translateX(100%);
   pointer-events: none;
-}
-
-.sidebar-expand-button {
-  position: fixed;
-  top: 50%;
-  right: var(--sidebar-right-offset);
-  display: flex;
-  align-items: center;
-  gap: var(--space-1-5);
-  min-width: 44px;
-  min-height: 44px;
-  padding: var(--space-2);
-  color: var(--color-text);
-  background: var(--color-surface);
-  border: var(--border-width) solid var(--color-accent);
-  border-right: 0;
-  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
-  box-shadow: calc(-1 * var(--space-1)) 0 var(--space-3) rgb(0 0 0 / 35%);
-  opacity: 0;
-  transform: translate(100%, -50%);
-  transition:
-    opacity 180ms ease,
-    transform 180ms ease;
-  cursor: pointer;
-  pointer-events: none;
-}
-
-.sidebar-trigger[data-state="closed"] .sidebar-expand-button {
-  opacity: 1;
-  transform: translate(0, -50%);
-  pointer-events: auto;
-}
-
-.sidebar-expand-button__icon {
-  width: var(--space-6);
-  height: var(--space-6);
-  object-fit: contain;
 }
 
 .panel-shell {
@@ -184,10 +147,6 @@
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 2;
-}
-
-.sidebar-chevron--left {
-  transform: rotate(180deg);
 }
 
 .sidebar-icon-button:hover {
@@ -1086,19 +1045,17 @@
 .ui-icon-button:focus-visible,
 .remove-button:focus-visible,
 .saved-setups__header:focus-visible,
-.sidebar-icon-button:focus-visible,
-.sidebar-expand-button:focus-visible {
+.sidebar-icon-button:focus-visible {
   outline: var(--focus-ring-width) solid var(--color-accent);
   outline-offset: var(--space-0-5);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .sidebar-panel,
-  .sidebar-expand-button,
   .multi-select__chevron,
   .select-field__chevron,
   .saved-setups__header::after,
-  .sidebar-trigger {
+  .sidebar-container {
     transition: none;
   }
 }

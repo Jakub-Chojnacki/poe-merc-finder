@@ -1,34 +1,35 @@
-import type { SidebarStyle, SidebarTriggerProps } from './types'
-import { useCallback, useEffect, useState } from 'react'
-import AppIcon from '@/components/icons/app'
-import ChevronIcon from '@/components/icons/chevron'
+import type { SidebarPanelProps, SidebarPanelStyle } from './types'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import MainSidebar from '@/components/main-sidebar'
 import {
   CollapsibleContent,
   CollapsibleRoot,
-  CollapsibleTrigger,
 } from '@/components/ui/collapsible'
-import UiTooltip from '@/components/ui/tooltip'
 import { useBetterTradingOffset } from '@/hooks/use-better-trading-offset'
 import {
   COLLAPSED_STORAGE_KEY,
   PAGE_CLASS,
   PAGE_OPEN_CLASS,
+  TOGGLE_SIDEBAR_MESSAGE,
 } from './const'
 
-const SidebarTrigger: React.FC<SidebarTriggerProps> = ({
+const SidebarPanel: React.FC<SidebarPanelProps> = ({
   initialFilterDraft,
   onApplyFilter,
 }) => {
-  const [isCollapsed, setIsCollapsed] = useState(false)
+  const [isCollapsed, setIsCollapsed] = useState(true)
+  const isCollapsedRef = useRef(true)
   const betterTradingOffset = useBetterTradingOffset()
 
   useEffect(() => {
     let isActive = true
 
     browser.storage.local.get(COLLAPSED_STORAGE_KEY).then((storedState) => {
-      if (isActive && storedState[COLLAPSED_STORAGE_KEY] === true) {
-        setIsCollapsed(true)
+      const storedCollapsed = storedState[COLLAPSED_STORAGE_KEY]
+
+      if (isActive && typeof storedCollapsed === 'boolean') {
+        isCollapsedRef.current = storedCollapsed
+        setIsCollapsed(storedCollapsed)
       }
     })
 
@@ -52,11 +53,29 @@ const SidebarTrigger: React.FC<SidebarTriggerProps> = ({
   const updateOpen = useCallback((open: boolean) => {
     const collapsed = !open
 
+    isCollapsedRef.current = collapsed
     setIsCollapsed(collapsed)
-    browser.storage.local.set({ [COLLAPSED_STORAGE_KEY]: collapsed })
+    void browser.storage.local.set({ [COLLAPSED_STORAGE_KEY]: collapsed })
   }, [])
 
-  const sidebarStyle: SidebarStyle = {
+  useEffect(() => {
+    const handleMessage = (message: unknown): void => {
+      if (
+        typeof message === 'object'
+        && message !== null
+        && 'type' in message
+        && message.type === TOGGLE_SIDEBAR_MESSAGE
+      ) {
+        updateOpen(isCollapsedRef.current)
+      }
+    }
+
+    browser.runtime.onMessage.addListener(handleMessage)
+
+    return () => browser.runtime.onMessage.removeListener(handleMessage)
+  }, [updateOpen])
+
+  const sidebarStyle: SidebarPanelStyle = {
     '--sidebar-right-offset': `${betterTradingOffset}px`,
   }
 
@@ -66,7 +85,7 @@ const SidebarTrigger: React.FC<SidebarTriggerProps> = ({
       open={!isCollapsed}
       onOpenChange={updateOpen}
     >
-      <div className="sidebar-trigger" style={sidebarStyle}>
+      <div className="sidebar-container" style={sidebarStyle}>
         <CollapsibleContent forceMount asChild>
           <aside
             className="sidebar-panel"
@@ -80,26 +99,9 @@ const SidebarTrigger: React.FC<SidebarTriggerProps> = ({
             />
           </aside>
         </CollapsibleContent>
-
-        <UiTooltip content="Open mercenary support filter">
-          <CollapsibleTrigger asChild>
-            <button
-              type="button"
-              className="sidebar-expand-button"
-              aria-label="Open mercenary support filter"
-            >
-              <AppIcon
-                className="sidebar-expand-button__icon"
-              />
-              <ChevronIcon
-                className="sidebar-chevron sidebar-chevron--left"
-              />
-            </button>
-          </CollapsibleTrigger>
-        </UiTooltip>
       </div>
     </CollapsibleRoot>
   )
 }
 
-export default SidebarTrigger
+export default SidebarPanel
