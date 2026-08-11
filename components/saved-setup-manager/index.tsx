@@ -205,7 +205,7 @@ const SavedSetupManager: React.FC<SavedSetupManagerProps> = ({
         </div>
 
         {errorMessage && (
-          <p className="saved-setups__error" role="alert">{errorMessage}</p>
+          <p className="ui-form-error" role="alert">{errorMessage}</p>
         )}
       </CollapsibleContent>
     </CollapsibleRoot>

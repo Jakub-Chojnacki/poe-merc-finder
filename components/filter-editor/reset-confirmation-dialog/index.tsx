@@ -18,21 +18,21 @@ const ResetConfirmationDialog: React.FC<ResetConfirmationDialogProps> = ({
     open
     onOpenChange={open => !open && onCancel()}
   >
-    <DialogContent className="reset-confirmation-dialog">
-      <DialogTitle className="reset-confirmation-dialog__title">
+    <DialogContent className="form-dialog">
+      <DialogTitle className="form-dialog__title">
         {title}
       </DialogTitle>
-      <DialogDescription className="reset-confirmation-dialog__description">
+      <DialogDescription className="form-dialog__description">
         {description}
       </DialogDescription>
 
-      <div className="reset-confirmation-dialog__actions">
+      <div className="form-dialog__actions">
         <DialogClose asChild>
           <button type="button" className="button">Cancel</button>
         </DialogClose>
         <button
           type="button"
-          className="button reset-confirmation-dialog__confirm"
+          className="button form-dialog__primary"
           onClick={onConfirm}
         >
           {confirmLabel}

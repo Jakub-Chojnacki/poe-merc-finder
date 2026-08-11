@@ -1,0 +1,98 @@
+.ui-tooltip__content {
+  z-index: 60;
+  padding: var(--space-1-5) var(--space-2);
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 var(--space-2) var(--space-4) rgb(0 0 0 / 35%);
+  font-size: var(--font-size-xs);
+  line-height: 1.3;
+}
+
+.ui-dialog__overlay {
+  position: fixed;
+  z-index: 70;
+  inset: 0;
+  background: rgb(0 0 0 / 58%);
+  backdrop-filter: blur(2px);
+}
+
+.ui-dialog__content {
+  position: fixed;
+  z-index: 71;
+  top: 50%;
+  left: 50%;
+  width: min(360px, calc(100vw - var(--space-6) * 2));
+  max-height: calc(100vh - var(--space-6) * 2);
+  overflow-y: auto;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 var(--space-6) 48px rgb(0 0 0 / 55%);
+  transform: translate(-50%, -50%);
+  outline: none;
+}
+
+.form-dialog {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-5);
+}
+
+.form-dialog__title {
+  margin: 0;
+  font-size: var(--font-size-lg);
+}
+
+.form-dialog__description {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+
+.form-dialog__description--header {
+  margin: var(--space-1) 0 0;
+  line-height: 1.4;
+}
+
+.form-dialog__description strong {
+  color: var(--color-text);
+}
+
+.form-dialog__close {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: var(--space-6);
+  height: var(--space-6);
+  color: var(--color-text-muted);
+}
+
+.form-dialog__close:hover,
+.form-dialog__close:focus-visible {
+  color: var(--color-text);
+}
+
+.form-dialog textarea {
+  min-height: 8rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: var(--font-size-xs);
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.form-dialog__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2);
+}
+
+.form-dialog__primary {
+  color: var(--color-background);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  font-weight: 700;
+}

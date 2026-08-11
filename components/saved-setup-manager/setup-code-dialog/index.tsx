@@ -107,13 +107,13 @@ const SetupCodeDialog: React.FC<SetupCodeDialogProps> = (props) => {
         </IconButton>
       </DialogTrigger>
 
-      <DialogContent className="setup-code-dialog">
-        <header className="setup-code-dialog__header">
+      <DialogContent className="form-dialog setup-code-dialog">
+        <header className="ui-split-header">
           <div>
-            <DialogTitle className="setup-code-dialog__title">
+            <DialogTitle className="form-dialog__title">
               {isExport ? 'Export setup' : 'Import setup'}
             </DialogTitle>
-            <DialogDescription className="setup-code-dialog__description">
+            <DialogDescription className="form-dialog__description form-dialog__description--header">
               {isExport
                 ? 'Copy this code to share the selected setup.'
                 : 'Paste a setup code. An existing setup with the same name will be updated.'}
@@ -123,10 +123,10 @@ const SetupCodeDialog: React.FC<SetupCodeDialogProps> = (props) => {
           <DialogClose asChild>
             <button
               type="button"
-              className="setup-code-dialog__close"
+              className="form-dialog__close"
               aria-label="Close setup code dialog"
             >
-              <CloseIcon className="setup-code-dialog__close-icon" />
+              <CloseIcon className="ui-icon-sm" />
             </button>
           </DialogClose>
         </header>
@@ -146,12 +146,12 @@ const SetupCodeDialog: React.FC<SetupCodeDialogProps> = (props) => {
         </label>
 
         {errorMessage && (
-          <p className="setup-code-dialog__error" role="alert">
+          <p className="ui-form-error" role="alert">
             {errorMessage}
           </p>
         )}
 
-        <div className="setup-code-dialog__actions">
+        <div className="form-dialog__actions">
           <DialogClose asChild>
             <button type="button" className="button">Cancel</button>
           </DialogClose>
@@ -160,7 +160,7 @@ const SetupCodeDialog: React.FC<SetupCodeDialogProps> = (props) => {
             ? (
                 <button
                   type="button"
-                  className="button setup-code-dialog__primary"
+                  className="button form-dialog__primary"
                   disabled={copyStatus === 'copying'}
                   onClick={() => handleCopy()}
                 >
@@ -170,7 +170,7 @@ const SetupCodeDialog: React.FC<SetupCodeDialogProps> = (props) => {
             : (
                 <button
                   type="button"
-                  className="button setup-code-dialog__primary"
+                  className="button form-dialog__primary"
                   disabled={isImporting || !importCode.trim()}
                   onClick={() => handleImport()}
                 >
