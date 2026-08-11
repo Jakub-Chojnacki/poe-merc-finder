@@ -16,7 +16,7 @@ import panelStyles from './panel.css?inline'
 import './style.css'
 
 export default defineContentScript({
-  matches: ['https://*.pathofexile.com/trade/search/*'],
+  matches: ['https://*.pathofexile.com/*'],
   async main(ctx) {
     let highlightTimeoutId: number | undefined
     const initialFilterDraft = await getGeneratedSearchDraft(window.location.href)
