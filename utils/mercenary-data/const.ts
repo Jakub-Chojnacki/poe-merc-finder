@@ -61,6 +61,26 @@ export const MERCENARY_SUPPORT_STAT_IDS = new Map(
   )),
 )
 
+export const MERCENARY_SUPPORT_NAMES_BY_STAT_ID = new Map(
+  mercenaryData.supportGems.map(support => (
+    [support.tradeStatId, support.name] as const
+  )),
+)
+
+export const MERCENARY_SUPPORT_STAT_IDS_BY_SKILL_STAT_ID = new Map(
+  mercenaryData.skills.flatMap((skill) => {
+    const allowedSupportTradeStatIds
+      = 'allowedSupportTradeStatIds' in skill
+        && Array.isArray(skill.allowedSupportTradeStatIds)
+        ? skill.allowedSupportTradeStatIds
+        : undefined
+
+    return allowedSupportTradeStatIds
+      ? [[skill.tradeStatId, allowedSupportTradeStatIds] as const]
+      : []
+  }),
+)
+
 export const ALL_SKILL_OPTIONS: MercenarySkillOption[] = [...new Set([
   ...mercenaryData.skills.map(skill => skill.name),
   ...mercenaryData.mercenaries.flatMap(mercenary => (

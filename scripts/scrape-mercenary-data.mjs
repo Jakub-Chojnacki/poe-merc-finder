@@ -3,11 +3,14 @@ import { resolve } from 'node:path'
 import { load } from 'cheerio'
 
 const API_URL = 'https://www.poewiki.net/w/api.php'
+const POEDB_BASE_URL = 'https://poedb.tw/us/'
+const TRADE_STATS_URL = 'https://www.pathofexile.com/api/trade/data/stats'
+const POEDB_MERCENARIES_URL = new URL('Mercenaries', POEDB_BASE_URL).href
+
 const MERCENARY_CLASSES_PAGE = 'List of mercenary classes'
 const MERCENARY_PAGE = 'Mercenary'
 const HOUSE_ICON_OUTPUT_DIRECTORY = resolve('public/icons/houses')
 const OUTPUT_PATH = resolve('data/mercenaries.json')
-const TRADE_STATS_URL = 'https://www.pathofexile.com/api/trade/data/stats'
 
 const EXPECTED_HOUSES = new Set([
   'Azadi',
@@ -33,6 +36,7 @@ const SUPPORT_COUNTS = {
   N: 'none',
 }
 
+// Some skills are named differently on the trade site vs poewiki
 const TRADE_SKILL_NAME_OVERRIDES = {
   'Ball Lightning of Orbiting': 'Ball Lightning of Orbiting Trap',
   'Creeping Frost': 'Creeping Frost Trap',
@@ -112,6 +116,34 @@ async function fetchTradeStats() {
   }
 
   return result.result
+}
+
+async function fetchPoedbPage(url) {
+  const response = await fetch(url, {
+    headers: {
+      'User-Agent': 'PoEMercFinder/0.1 (offline dataset generator)',
+    },
+  })
+
+  if (!response.ok) {
+    throw new Error(
+      `Could not fetch PoEDB page ${url}: ${response.status} ${response.statusText}`,
+    )
+  }
+
+  return response.text()
+}
+
+async function mapInBatches(items, batchSize, callback) {
+  const results = []
+
+  for (let index = 0; index < items.length; index += batchSize) {
+    results.push(...await Promise.all(
+      items.slice(index, index + batchSize).map(callback),
+    ))
+  }
+
+  return results
 }
 
 function parseSkillCell($, cell, housesByName) {
@@ -425,24 +457,194 @@ function addTradeStatIdsToMercenaries(mercenaries, tradeSkills) {
   }))
 }
 
-const [classesPage, mercenaryPage, tradeStatGroups] = await Promise.all([
+function parsePoedbMercenaryUrls(html, mercenaries) {
+  const $ = load(html)
+
+  return mercenaries.map((mercenary) => {
+    const matchingLinks = $('a').filter((_, link) => (
+      normalizeText($(link).text()) === mercenary.name
+    ))
+
+    if (matchingLinks.length !== 1) {
+      throw new Error(
+        `Expected one PoEDB page for ${mercenary.name}, found ${matchingLinks.length}`,
+      )
+    }
+
+    const href = matchingLinks.first().attr('href')
+
+    if (!href) {
+      throw new Error(`PoEDB page for ${mercenary.name} has no URL`)
+    }
+
+    return {
+      mercenaryName: mercenary.name,
+      url: new URL(href, POEDB_BASE_URL).href,
+    }
+  })
+}
+
+function parsePoedbSkillSupports(html, sourceUrl) {
+  const $ = load(html)
+  const skills = []
+
+  $('div.border.mb-2').each((_, card) => {
+    const name = normalizeText($(card).find('.lc').first().text())
+    const supportGrid = $(card).find(
+      '.row.row-cols-1.row-cols-lg-3.g-2.bg-dark',
+    ).first()
+
+    if (!name || supportGrid.length === 0) {
+      return
+    }
+
+    const supports = supportGrid.children('.col').map((_, column) => {
+      const content = $(column).find('.flex-grow-1.ms-2').first()
+      const tierLabel = normalizeText(content.children('span').first().text())
+      const tier = { I: 1, II: 2, III: 3 }[tierLabel]
+      const nameContent = content.clone()
+
+      nameContent.children('span, .explicitMod').remove()
+
+      const supportName = normalizeText(nameContent.text())
+
+      if (!supportName || !tier) {
+        throw new Error(
+          `Could not parse a support for ${name} from ${sourceUrl}`,
+        )
+      }
+
+      return { name: supportName, tier }
+    }).get()
+
+    skills.push({ name, supports })
+  })
+
+  if (skills.length === 0) {
+    throw new Error(`Could not find skill compatibility data at ${sourceUrl}`)
+  }
+
+  return skills
+}
+
+function addAllowedSupportsToTradeSkills(
+  tradeSkills,
+  supportGems,
+  mercenaries,
+  poedbPages,
+) {
+  const tradeSkillsByName = new Map(
+    tradeSkills.flatMap(skill => (
+      [skill.name, ...skill.aliases].map(name => [name, skill])
+    )),
+  )
+  const supportGemsByNameAndTier = new Map(
+    supportGems.map(support => (
+      [`${support.name}|${support.tier}`, support]
+    )),
+  )
+  const supportIdsBySkillId = new Map()
+
+  poedbPages.forEach(({ html, url }) => {
+    parsePoedbSkillSupports(html, url).forEach((skill) => {
+      if (skill.name.startsWith('[DNT]')) {
+        return
+      }
+
+      const tradeSkill = tradeSkillsByName.get(skill.name)
+
+      if (!tradeSkill) {
+        throw new Error(
+          `Could not match PoEDB skill to trade metadata: ${skill.name}`,
+        )
+      }
+
+      const supportIds = skill.supports.map((support) => {
+        const key = `${support.name}|${support.tier}`
+        const supportGem = supportGemsByNameAndTier.get(key)
+
+        if (!supportGem) {
+          throw new Error(
+            `Could not match PoEDB support to trade metadata: ${key}`,
+          )
+        }
+
+        return supportGem.tradeStatId
+      }).sort((left, right) => left.localeCompare(right))
+      const existingSupportIds = supportIdsBySkillId.get(tradeSkill.tradeStatId)
+
+      if (
+        existingSupportIds
+        && JSON.stringify(existingSupportIds) !== JSON.stringify(supportIds)
+      ) {
+        throw new Error(
+          `PoEDB returned conflicting supports for ${tradeSkill.name}`,
+        )
+      }
+
+      supportIdsBySkillId.set(tradeSkill.tradeStatId, supportIds)
+    })
+  })
+
+  const assignedSkillIds = new Set(
+    mercenaries.flatMap(mercenary => (
+      Object.values(mercenary.skills).flatMap(skills => (
+        skills.map(skill => skill.tradeStatId)
+      ))
+    )),
+  )
+  const missingSkills = tradeSkills.filter(skill => (
+    assignedSkillIds.has(skill.tradeStatId)
+    && !supportIdsBySkillId.has(skill.tradeStatId)
+  ))
+
+  if (missingSkills.length > 0) {
+    throw new Error(
+      `PoEDB compatibility data is missing assigned skills: ${missingSkills.map(skill => skill.name).join(', ')}`,
+    )
+  }
+
+  return tradeSkills.map(skill => ({
+    ...skill,
+    allowedSupportTradeStatIds: supportIdsBySkillId.get(skill.tradeStatId) ?? null,
+  }))
+}
+
+const [classesPage, mercenaryPage, tradeStatGroups, poedbMercenariesPage] = await Promise.all([
   fetchParsedPage(MERCENARY_CLASSES_PAGE),
   fetchParsedPage(MERCENARY_PAGE),
   fetchTradeStats(),
+  fetchPoedbPage(POEDB_MERCENARIES_URL),
 ])
 
 const exclusiveSupportGems = parseExclusiveSupportGems(mercenaryPage.text)
 const tradeSkills = parseTradeSkills(tradeStatGroups)
 const parsedMercenaries = parseMercenaries(classesPage.text)
+const supportGems = parseTradeSupportGems(tradeStatGroups, exclusiveSupportGems)
 const mercenaries = addTradeStatIdsToMercenaries(
   parsedMercenaries.mercenaries,
   tradeSkills,
+)
+const poedbMercenaryUrls = parsePoedbMercenaryUrls(
+  poedbMercenariesPage,
+  mercenaries,
+)
+const poedbPages = await mapInBatches(
+  poedbMercenaryUrls,
+  5,
+  async ({ url }) => ({ url, html: await fetchPoedbPage(url) }),
+)
+const skills = addAllowedSupportsToTradeSkills(
+  tradeSkills,
+  supportGems,
+  mercenaries,
+  poedbPages,
 )
 
 await writeHouseIcons(parsedMercenaries.houses)
 
 const dataset = {
-  version: 3,
+  version: 4,
   generatedAt: new Date().toISOString(),
   sources: [
     {
@@ -460,15 +662,20 @@ const dataset = {
       revision: null,
       url: TRADE_STATS_URL,
     },
+    {
+      page: 'PoEDB mercenary skill support compatibility',
+      revision: null,
+      url: POEDB_MERCENARIES_URL,
+    },
   ],
   houses: parsedMercenaries.houses,
   mercenaries,
-  skills: tradeSkills,
-  supportGems: parseTradeSupportGems(tradeStatGroups, exclusiveSupportGems),
+  skills,
+  supportGems,
 }
 
 await writeFile(OUTPUT_PATH, `${JSON.stringify(dataset, null, 2)}\n`)
 
 console.log(
-  `Wrote ${dataset.mercenaries.length} mercenaries, ${dataset.supportGems.length} support gems, and ${dataset.houses.length} house icons to ${OUTPUT_PATH}`,
+  `Wrote ${dataset.mercenaries.length} mercenaries, ${dataset.supportGems.length} support gems, ${dataset.skills.filter(skill => skill.allowedSupportTradeStatIds !== null).length} skill support mappings, and ${dataset.houses.length} house icons to ${OUTPUT_PATH}`,
 )

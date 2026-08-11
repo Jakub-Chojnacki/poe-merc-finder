@@ -3,9 +3,9 @@ import {
   getMercenarySkillOptions,
   getMercenarySkillTradeStatId,
   getMercenarySupportTradeStatId,
-  MERCENARY_OPTIONS,
   normalizeMercenarySkillName,
 } from '.'
+import { MERCENARY_OPTIONS } from './const'
 
 describe('mercenary skill options', () => {
   it('limits skills to the selected mercenary class', () => {
