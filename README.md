@@ -24,14 +24,14 @@ gem, but it cannot require those supports to be linked to a specific skill. This
 - Save configurations locally under custom names, then load, update, or delete
   them later.
 - Export saved setups as portable codes and import codes shared by other users.
-- Collapse the extension panel when it is not needed.
+- Open or close the extension panel from the browser toolbar.
 - Automatically move alongside the Better Trading panel when both extensions
   are active.
 
 ## Usage
 
 1. Open a mercenary search on the Path of Exile Trade website.
-2. Open the PoE Merc Finder panel on the right side of the page.
+2. Open the PoE Merc Finder panel from the browser toolbar.
 3. Optionally choose a mercenary class to narrow the skill suggestions.
 4. Add one or more skills and enter their required or optional linked supports.
 5. Select **Apply filters** to evaluate the visible trade listings, or select

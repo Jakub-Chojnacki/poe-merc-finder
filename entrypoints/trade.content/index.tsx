@@ -2,7 +2,7 @@ import type { Root } from 'react-dom/client'
 import type { FilterConfig } from '@/utils/filter-config/types'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import SidebarTrigger from '@/components/sidebar-trigger'
+import SidebarPanel from '@/components/sidebar-panel'
 import UiProvider from '@/components/ui/provider'
 import { createFilterConfig } from '@/utils/filter-config'
 import { getGeneratedSearchDraft } from '@/utils/generated-search-drafts'
@@ -69,7 +69,7 @@ export default defineContentScript({
         root.render(
           <StrictMode>
             <UiProvider portalContainer={portalContainer}>
-              <SidebarTrigger
+              <SidebarPanel
                 initialFilterDraft={initialFilterDraft}
                 onApplyFilter={applyFilter}
               />
