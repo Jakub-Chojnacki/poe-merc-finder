@@ -4,6 +4,7 @@ import ChevronIcon from '@/components/icons/chevron'
 import SavedSetupManager from '@/components/saved-setup-manager'
 import { CollapsibleTrigger } from '@/components/ui/collapsible'
 import UiTooltip from '@/components/ui/tooltip'
+import WarrantImportDialog from '@/components/warrant-import-dialog'
 import { useTradePageFilter } from '@/hooks/use-trade-page-filter'
 
 const MainSidebar: React.FC<MainSidebarProps> = ({
@@ -39,6 +40,13 @@ const MainSidebar: React.FC<MainSidebarProps> = ({
           </CollapsibleTrigger>
         </UiTooltip>
       </header>
+
+      <WarrantImportDialog
+        onImport={filter => setFilterDraft({
+          ...filterDraft,
+          ...filter,
+        })}
+      />
 
       <SavedSetupManager value={filterDraft} onLoad={setFilterDraft} />
 
