@@ -105,6 +105,17 @@ describe('parseMercenaryWarrant', () => {
     expect(result.requirements[0]?.requiredSupports[0]).toBe('Added Cold')
   })
 
+  it('ignores the Infamous modifier before the mercenary build', () => {
+    const result = parseMercenaryWarrant(
+      EXAMPLE_WARRANT.replace(
+        'Build: Mysterious Diver',
+        'Build: Infamous Mysterious Diver',
+      ),
+    )
+
+    expect(result.mercenaryClass).toBe('Mysterious Diver')
+  })
+
   it('rejects text that is not a warrant', () => {
     expect(() => parseMercenaryWarrant('Elemental Hit of Ice'))
       .toThrow('does not look like a copied Mercenary Warrant')
