@@ -1,6 +1,6 @@
 {
-  "version": 2,
-  "generatedAt": "2026-08-10T18:30:30.128Z",
+  "version": 3,
+  "generatedAt": "2026-08-11T16:26:08.081Z",
   "sources": [
     {
       "page": "List of mercenary classes",
@@ -9,7 +9,7 @@
     },
     {
       "page": "Mercenary",
-      "revision": 1700172,
+      "revision": 1700545,
       "url": "https://www.poewiki.net/wiki/Mercenary#List_of_mercenary_exclusive_support_gems"
     },
     {
@@ -18,10 +18,33 @@
       "url": "https://www.pathofexile.com/api/trade/data/stats"
     }
   ],
+  "houses": [
+    {
+      "name": "Azadi",
+      "iconPath": "/icons/houses/azadi.png",
+      "sourceUrl": "https://www.poewiki.net/images/9/9f/House_Azadi_skill_icon.png"
+    },
+    {
+      "name": "Bardiya",
+      "iconPath": "/icons/houses/bardiya.png",
+      "sourceUrl": "https://www.poewiki.net/images/0/06/House_Bardiya_skill_icon.png"
+    },
+    {
+      "name": "Cyaxan",
+      "iconPath": "/icons/houses/cyaxan.png",
+      "sourceUrl": "https://www.poewiki.net/images/4/48/House_Cyaxan_skill_icon.png"
+    },
+    {
+      "name": "Keita",
+      "iconPath": "/icons/houses/keita.png",
+      "sourceUrl": "https://www.poewiki.net/images/0/0d/House_Keita_skill_icon.png"
+    }
+  ],
   "mercenaries": [
     {
       "name": "Bastion",
       "attribute": "Str/Dex",
+      "house": "Azadi",
       "infamous": true,
       "skills": {
         "primary": [
@@ -85,6 +108,7 @@
     {
       "name": "Blade Ambusher",
       "attribute": "Dex/Int",
+      "house": "Azadi",
       "infamous": true,
       "skills": {
         "primary": [
@@ -143,6 +167,7 @@
     {
       "name": "Bladebitter",
       "attribute": "Dex/Int",
+      "house": "Azadi",
       "infamous": true,
       "skills": {
         "primary": [
@@ -211,6 +236,7 @@
     {
       "name": "Bladecaster",
       "attribute": "Dex/Int",
+      "house": "Azadi",
       "infamous": true,
       "skills": {
         "primary": [
@@ -284,6 +310,7 @@
     {
       "name": "Bloodletter",
       "attribute": "Str/Dex",
+      "house": "Azadi",
       "infamous": true,
       "skills": {
         "primary": [
@@ -342,6 +369,7 @@
     {
       "name": "Cardinal",
       "attribute": "Str/Int",
+      "house": "Keita",
       "infamous": true,
       "skills": {
         "primary": [
@@ -400,6 +428,7 @@
     {
       "name": "Combatant",
       "attribute": "Str/Dex",
+      "house": "Azadi",
       "infamous": true,
       "skills": {
         "primary": [
@@ -463,6 +492,7 @@
     {
       "name": "Cruel Mistress",
       "attribute": "Int",
+      "house": "Cyaxan",
       "infamous": true,
       "skills": {
         "primary": [
@@ -541,6 +571,7 @@
     {
       "name": "Earthshaker",
       "attribute": "Str",
+      "house": "Keita",
       "infamous": true,
       "skills": {
         "primary": [
@@ -614,6 +645,7 @@
     {
       "name": "Eruptor",
       "attribute": "Str",
+      "house": "Keita",
       "infamous": true,
       "skills": {
         "primary": [
@@ -687,6 +719,7 @@
     {
       "name": "Fallen Reverend",
       "attribute": "Str/Int",
+      "house": "Keita",
       "infamous": true,
       "skills": {
         "primary": [
@@ -755,6 +788,7 @@
     {
       "name": "Flamehand",
       "attribute": "Int",
+      "house": "Cyaxan",
       "infamous": false,
       "skills": {
         "primary": [
@@ -838,6 +872,7 @@
     {
       "name": "Flamequiver",
       "attribute": "Dex",
+      "house": "Cyaxan",
       "infamous": true,
       "skills": {
         "primary": [
@@ -911,6 +946,7 @@
     {
       "name": "Flaming Charlatan",
       "attribute": "Str/Int",
+      "house": "Keita",
       "infamous": false,
       "skills": {
         "primary": [
@@ -974,6 +1010,7 @@
     {
       "name": "Frost Ambusher",
       "attribute": "Dex/Int",
+      "house": "Azadi",
       "infamous": false,
       "skills": {
         "primary": [
@@ -1037,6 +1074,7 @@
     {
       "name": "Frosthand",
       "attribute": "Int",
+      "house": "Cyaxan",
       "infamous": true,
       "skills": {
         "primary": [
@@ -1120,6 +1158,7 @@
     {
       "name": "Kineticist",
       "attribute": "Str/Dex/Int",
+      "house": "Bardiya",
       "infamous": true,
       "skills": {
         "primary": [
@@ -1193,6 +1232,7 @@
     {
       "name": "Manyshot",
       "attribute": "Dex",
+      "house": "Cyaxan",
       "infamous": true,
       "skills": {
         "primary": [
@@ -1261,6 +1301,7 @@
     {
       "name": "Mysterious Diver",
       "attribute": "Str/Dex",
+      "house": "Azadi",
       "infamous": true,
       "skills": {
         "primary": [
@@ -1319,6 +1360,7 @@
     {
       "name": "Reanimator",
       "attribute": "Int",
+      "house": "Cyaxan",
       "infamous": true,
       "skills": {
         "primary": [
@@ -1392,6 +1434,7 @@
     {
       "name": "Ripper",
       "attribute": "Str",
+      "house": "Keita",
       "infamous": true,
       "skills": {
         "primary": [
@@ -1460,6 +1503,7 @@
     {
       "name": "Sanguimancer",
       "attribute": "Str/Dex/Int",
+      "house": "Bardiya",
       "infamous": true,
       "skills": {
         "primary": [
@@ -1533,6 +1577,7 @@
     {
       "name": "Shattersword",
       "attribute": "Str/Dex",
+      "house": "Azadi",
       "infamous": false,
       "skills": {
         "primary": [
@@ -1596,6 +1641,7 @@
     {
       "name": "Shock Ambusher",
       "attribute": "Dex/Int",
+      "house": "Azadi",
       "infamous": true,
       "skills": {
         "primary": [
@@ -1664,6 +1710,7 @@
     {
       "name": "Smoulderstrike",
       "attribute": "Str",
+      "house": "Keita",
       "infamous": false,
       "skills": {
         "primary": [
@@ -1732,6 +1779,7 @@
     {
       "name": "Sniper",
       "attribute": "Dex",
+      "house": "Cyaxan",
       "infamous": true,
       "skills": {
         "primary": [
@@ -1820,6 +1868,7 @@
     {
       "name": "Stormhand",
       "attribute": "Int",
+      "house": "Cyaxan",
       "infamous": true,
       "skills": {
         "primary": [
@@ -1908,6 +1957,7 @@
     {
       "name": "Storming Zealot",
       "attribute": "Str/Int",
+      "house": "Keita",
       "infamous": true,
       "skills": {
         "primary": [
@@ -1971,6 +2021,7 @@
     {
       "name": "Striker",
       "attribute": "Str",
+      "house": "Keita",
       "infamous": true,
       "skills": {
         "primary": [
@@ -2044,6 +2095,7 @@
     {
       "name": "Swiftblade",
       "attribute": "Str/Dex",
+      "house": "Azadi",
       "infamous": true,
       "skills": {
         "primary": [
@@ -2112,6 +2164,7 @@
     {
       "name": "Thunderquiver",
       "attribute": "Dex",
+      "house": "Cyaxan",
       "infamous": false,
       "skills": {
         "primary": [
@@ -2180,6 +2233,7 @@
     {
       "name": "Toxicologist",
       "attribute": "Dex",
+      "house": "Cyaxan",
       "infamous": true,
       "skills": {
         "primary": [
@@ -2253,6 +2307,7 @@
     {
       "name": "Warpriest",
       "attribute": "Str/Int",
+      "house": "Keita",
       "infamous": true,
       "skills": {
         "primary": [
@@ -2321,6 +2376,7 @@
     {
       "name": "Winter Deacon",
       "attribute": "Str/Int",
+      "house": "Keita",
       "infamous": false,
       "skills": {
         "primary": [
@@ -2389,6 +2445,7 @@
     {
       "name": "Withertouch",
       "attribute": "Int",
+      "house": "Cyaxan",
       "infamous": true,
       "skills": {
         "primary": [

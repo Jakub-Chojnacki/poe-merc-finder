@@ -1,3 +1,4 @@
+import type { PublicPath } from 'wxt/browser'
 import type {
   MercenaryOption,
   MercenarySkillOption,
@@ -17,10 +18,18 @@ export const SKILL_CATEGORY_LABELS = {
   utility: 'Utility',
 } as const satisfies Record<SkillCategory, string>
 
+export const HOUSE_ICON_PATHS = new Map<string, PublicPath>(
+  mercenaryData.houses.map(house => (
+    [house.name, house.iconPath as PublicPath]
+  )),
+)
+
 export const MERCENARY_OPTIONS: MercenaryOption[]
   = mercenaryData.mercenaries.map(mercenary => ({
-    name: mercenary.name,
     attribute: mercenary.attribute,
+    iconPath: HOUSE_ICON_PATHS.get(mercenary.house)!,
+    house: mercenary.house,
+    name: mercenary.name,
   }))
 
 export const SUPPORT_GEM_NAMES = mercenaryData.supportGems.map(

@@ -435,10 +435,24 @@
   cursor: pointer;
 }
 
-.select-field__trigger span {
+.select-field__value {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.select-field__value span {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.select-field__icon {
+  flex: 0 0 auto;
+  width: var(--space-5);
+  height: var(--space-5);
+  object-fit: contain;
 }
 
 .select-field__trigger[data-state="open"] {
@@ -653,6 +667,13 @@
 .select-field__option small {
   color: var(--color-text-muted);
   font-size: var(--font-size-xs);
+}
+
+.select-field__option-value {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
 }
 
 .multi-select__empty,

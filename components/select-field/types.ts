@@ -1,4 +1,7 @@
+import type { PublicPath } from 'wxt/browser'
+
 export interface SelectOption {
+  iconPath?: PublicPath
   label?: string
   value: string
 }

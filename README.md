@@ -21,6 +21,9 @@ gem, but it cannot require those supports to be linked to a specific skill. This
 - Optionally hide listings that are missing required skills or supports.
 - Choose mercenary classes and skills from the scraped dataset, with compact
   searchable multi-selects for support gems.
+- Limit skill choices to the selected mercenary class, with a confirmation
+  before changing class when configured skills or supports would be reset.
+- Show each mercenary's house crest alongside its class in the selector.
 - Save configurations locally under custom names, then load, update, or delete
   them later.
 - Export saved setups as portable codes and import codes shared by other users.
@@ -79,15 +82,18 @@ pnpm data:update
 
 ## Mercenary data
 
-The checked-in `data/mercenaries.json` file contains mercenary classes and
-skill pools parsed from [PoE Wiki](https://www.poewiki.net/wiki/Mercenary), plus
-exact support labels from the official
+The checked-in `data/mercenaries.json` file contains mercenary classes and skill
+pools parsed from
+[PoE Wiki](https://www.poewiki.net/wiki/Mercenary), plus exact support labels
+from the official
 [Path of Exile trade metadata](https://www.pathofexile.com/api/trade/data/stats).
+The four house crests are downloaded from the wiki and bundled with the
+extension; it does not fetch them while the user browses trade listings.
 
 Run `pnpm data:update` to refresh the dataset after either source changes. The
-generator validates minimum class and support counts before replacing the JSON
-file, so a source markup change fails instead of silently producing an empty
-dataset.
+generator validates minimum class and support counts and requires all four
+house crests before replacing generated files, so a source markup change fails
+instead of silently producing incomplete data.
 
 ## Disclaimer
 This extension is not affiliated with, endorsed by, 

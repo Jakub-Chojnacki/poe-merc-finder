@@ -1,12 +1,30 @@
-import { writeFile } from 'node:fs/promises'
+import { mkdir, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { load } from 'cheerio'
 
 const API_URL = 'https://www.poewiki.net/w/api.php'
 const MERCENARY_CLASSES_PAGE = 'List of mercenary classes'
 const MERCENARY_PAGE = 'Mercenary'
+const HOUSE_ICON_OUTPUT_DIRECTORY = resolve('public/icons/houses')
 const OUTPUT_PATH = resolve('data/mercenaries.json')
 const TRADE_STATS_URL = 'https://www.pathofexile.com/api/trade/data/stats'
+
+const EXPECTED_HOUSES = new Set([
+  'Azadi',
+  'Bardiya',
+  'Cyaxan',
+  'Keita',
+])
+
+const HOUSE_BY_ATTRIBUTE = {
+  'Dex': 'Cyaxan',
+  'Dex/Int': 'Azadi',
+  'Int': 'Cyaxan',
+  'Str': 'Keita',
+  'Str/Dex': 'Azadi',
+  'Str/Dex/Int': 'Bardiya',
+  'Str/Int': 'Keita',
+}
 
 const SUPPORT_COUNTS = {
   H: 'high',
@@ -25,6 +43,25 @@ const TRADE_SKILL_NAME_OVERRIDES = {
 
 function normalizeText(value) {
   return value.replace(/\s+/g, ' ').trim()
+}
+
+function parseHouseIcon(activator) {
+  const sourcePath = activator.find('img').first().attr('src') ?? ''
+  const match = sourcePath.match(
+    /^\/images\/thumb\/([^/]+\/[^/]+\/House_([^/]+)_skill_icon\.png)\//,
+  )
+
+  if (!match) {
+    return undefined
+  }
+
+  const name = match[2]
+
+  return {
+    name,
+    iconPath: `/icons/houses/${name.toLowerCase()}.png`,
+    sourceUrl: new URL(`/images/${match[1]}`, 'https://www.poewiki.net').href,
+  }
 }
 
 async function fetchParsedPage(page) {
@@ -77,7 +114,7 @@ async function fetchTradeStats() {
   return result.result
 }
 
-function parseSkillCell($, cell) {
+function parseSkillCell($, cell, housesByName) {
   const hoverboxes = $(cell).find('.hoverbox').toArray()
   const supportCodes = [...$(cell).text().matchAll(/\(([HLMN])\)/g)]
 
@@ -88,13 +125,17 @@ function parseSkillCell($, cell) {
   }
 
   return hoverboxes.map((hoverbox, index) => {
-    const name = normalizeText(
-      $(hoverbox).find('.hoverbox__activator').first().text(),
-    )
+    const activator = $(hoverbox).find('.hoverbox__activator').first()
+    const name = normalizeText(activator.text())
     const supportCode = supportCodes[index][1]
+    const house = parseHouseIcon(activator)
 
     if (!name || !(supportCode in SUPPORT_COUNTS)) {
       throw new Error(`Could not parse mercenary skill: ${$(hoverbox).text()}`)
+    }
+
+    if (house) {
+      housesByName.set(house.name, house)
     }
 
     return {
@@ -106,6 +147,7 @@ function parseSkillCell($, cell) {
 
 function parseMercenaries(html) {
   const $ = load(html)
+  const housesByName = new Map()
   const mercenaries = []
 
   $('table.wikitable.sortable').each((_, table) => {
@@ -136,14 +178,22 @@ function parseMercenaries(html) {
         return
       }
 
+      const attribute = normalizeText($(cells[classCellIndex + 1]).text())
+      const house = HOUSE_BY_ATTRIBUTE[attribute]
+
+      if (!house) {
+        throw new Error(`Could not determine house for ${name}: ${attribute}`)
+      }
+
       mercenaries.push({
         name,
-        attribute: normalizeText($(cells[classCellIndex + 1]).text()),
+        attribute,
+        house,
         infamous: rawName.endsWith('*'),
         skills: {
-          primary: parseSkillCell($, cells[classCellIndex + 4]),
-          secondary: parseSkillCell($, cells[classCellIndex + 5]),
-          utility: parseSkillCell($, cells[classCellIndex + 6]),
+          primary: parseSkillCell($, cells[classCellIndex + 4], housesByName),
+          secondary: parseSkillCell($, cells[classCellIndex + 5], housesByName),
+          utility: parseSkillCell($, cells[classCellIndex + 6], housesByName),
         },
       })
     })
@@ -153,7 +203,55 @@ function parseMercenaries(html) {
     throw new Error(`Expected at least 30 mercenary classes, found ${mercenaries.length}`)
   }
 
-  return mercenaries.sort((left, right) => left.name.localeCompare(right.name))
+  const houses = [...housesByName.values()].sort(
+    (left, right) => left.name.localeCompare(right.name),
+  )
+  const missingHouses = [...EXPECTED_HOUSES].filter(
+    house => !housesByName.has(house),
+  )
+
+  if (missingHouses.length > 0 || houses.length !== EXPECTED_HOUSES.size) {
+    throw new Error(
+      `Expected house icons for ${[...EXPECTED_HOUSES].join(', ')}, found ${houses.map(house => house.name).join(', ')}`,
+    )
+  }
+
+  return {
+    houses,
+    mercenaries: mercenaries.sort(
+      (left, right) => left.name.localeCompare(right.name),
+    ),
+  }
+}
+
+async function writeHouseIcons(houses) {
+  const icons = await Promise.all(houses.map(async (house) => {
+    const response = await fetch(house.sourceUrl, {
+      headers: {
+        'User-Agent': 'PoEMercFinder/0.1 (offline dataset generator)',
+      },
+    })
+
+    if (!response.ok) {
+      throw new Error(
+        `Could not fetch ${house.name} house icon: ${response.status} ${response.statusText}`,
+      )
+    }
+
+    return {
+      data: new Uint8Array(await response.arrayBuffer()),
+      house,
+    }
+  }))
+
+  await mkdir(HOUSE_ICON_OUTPUT_DIRECTORY, { recursive: true })
+
+  await Promise.all(icons.map(({ data, house }) => (
+    writeFile(
+      resolve('public', house.iconPath.slice(1)),
+      data,
+    )
+  )))
 }
 
 function parseTier(rawName) {
@@ -335,13 +433,16 @@ const [classesPage, mercenaryPage, tradeStatGroups] = await Promise.all([
 
 const exclusiveSupportGems = parseExclusiveSupportGems(mercenaryPage.text)
 const tradeSkills = parseTradeSkills(tradeStatGroups)
+const parsedMercenaries = parseMercenaries(classesPage.text)
 const mercenaries = addTradeStatIdsToMercenaries(
-  parseMercenaries(classesPage.text),
+  parsedMercenaries.mercenaries,
   tradeSkills,
 )
 
+await writeHouseIcons(parsedMercenaries.houses)
+
 const dataset = {
-  version: 2,
+  version: 3,
   generatedAt: new Date().toISOString(),
   sources: [
     {
@@ -360,6 +461,7 @@ const dataset = {
       url: TRADE_STATS_URL,
     },
   ],
+  houses: parsedMercenaries.houses,
   mercenaries,
   skills: tradeSkills,
   supportGems: parseTradeSupportGems(tradeStatGroups, exclusiveSupportGems),
@@ -368,5 +470,5 @@ const dataset = {
 await writeFile(OUTPUT_PATH, `${JSON.stringify(dataset, null, 2)}\n`)
 
 console.log(
-  `Wrote ${dataset.mercenaries.length} mercenaries and ${dataset.supportGems.length} support gems to ${OUTPUT_PATH}`,
+  `Wrote ${dataset.mercenaries.length} mercenaries, ${dataset.supportGems.length} support gems, and ${dataset.houses.length} house icons to ${OUTPUT_PATH}`,
 )
