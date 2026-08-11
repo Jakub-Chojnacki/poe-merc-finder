@@ -33,7 +33,7 @@ const UiSelect: React.FC<UiSelectProps> = ({
         className={triggerClassName}
         aria-labelledby={labelledBy}
       >
-        <Select.Value placeholder={placeholder} />
+        <Select.Value className="ui-truncate" placeholder={placeholder} />
         <Select.Icon asChild>
           <ChevronIcon className="ui-select__chevron" />
         </Select.Icon>

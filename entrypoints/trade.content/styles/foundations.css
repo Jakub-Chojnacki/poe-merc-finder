@@ -1,0 +1,116 @@
+:host {
+  --color-background: #101014;
+  --color-surface: #18181d;
+  --color-border: #2c2c34;
+  --color-text: #f2f2f5;
+  --color-text-muted: #9898a3;
+  --color-accent: #d6ad5c;
+  --color-accent-soft: rgb(214 173 92 / 14%);
+  --color-danger: #ef8b8b;
+
+  --font-size-xs: 11px;
+  --font-size-sm: 12px;
+  --font-size-lg: 16px;
+  --font-size-xl: 20px;
+
+  --space-0-5: 2px;
+  --space-1: 4px;
+  --space-1-5: 6px;
+  --space-2: 8px;
+  --space-2-5: 10px;
+  --space-3: 12px;
+  --space-3-5: 14px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+
+  --border-width: 1px;
+  --focus-ring-width: 2px;
+  --radius-sm: 4px;
+  --radius-pill: 9999px;
+  --sidebar-width: min(400px, 100vw);
+}
+
+:where(.extension-root, .extension-portals),
+:where(.extension-root, .extension-portals) * {
+  box-sizing: border-box;
+}
+
+.extension-root,
+.extension-portals {
+  color: var(--color-text);
+  font-size: 16px;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+:where(.extension-root, .extension-portals) :where(button, input, textarea, select) {
+  font: inherit;
+}
+
+:where(.extension-root, .extension-portals) button {
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+:where(.extension-root, .extension-portals) svg {
+  fill: none;
+  stroke: currentcolor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ui-icon-sm {
+  width: var(--space-3-5);
+  height: var(--space-3-5);
+  stroke-width: 2;
+}
+
+.ui-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ui-split-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.ui-form-error {
+  margin: 0;
+  color: var(--color-danger);
+  font-size: var(--font-size-sm);
+}
+
+.extension-portals {
+  position: relative;
+  z-index: 1200;
+  pointer-events: auto;
+}
+
+:where(.extension-root, .extension-portals) :where(button, a):focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-accent);
+  outline-offset: var(--space-0-5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(
+    .sidebar-panel,
+    .multi-select__chevron,
+    .select-field__chevron,
+    .saved-setups__header::after,
+    .sidebar-container
+  ) {
+    transition: none;
+  }
+}

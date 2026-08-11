@@ -14,13 +14,20 @@ import { parseMercenaryWarrant } from '@/utils/warrant-import'
 
 const WARRANT_ICON_PATH = '/icons/mercenary-warrant.png' as PublicPath
 
+function formatCount(count: number, label: string): string {
+  return `${count} ${label}${count === 1 ? '' : 's'}`
+}
+
 const WarrantImportDialog: React.FC<WarrantImportDialogProps> = ({
+  confirmReplacement,
   onImport,
 }) => {
   const warrantFieldId = useId()
   const [isOpen, setIsOpen] = useState(false)
   const [warrantText, setWarrantText] = useState('')
   const [errorMessage, setErrorMessage] = useState<string>()
+  const [pendingFilter, setPendingFilter]
+    = useState<ReturnType<typeof parseMercenaryWarrant>>()
 
   const updateOpen = (open: boolean): void => {
     setIsOpen(open)
@@ -28,15 +35,29 @@ const WarrantImportDialog: React.FC<WarrantImportDialogProps> = ({
     if (!open) {
       setWarrantText('')
       setErrorMessage(undefined)
+      setPendingFilter(undefined)
     }
+  }
+
+  const completeImport = (
+    filter: ReturnType<typeof parseMercenaryWarrant>,
+  ): void => {
+    onImport(filter)
+    updateOpen(false)
   }
 
   const handleImport = (): void => {
     setErrorMessage(undefined)
 
     try {
-      onImport(parseMercenaryWarrant(warrantText))
-      updateOpen(false)
+      const filter = parseMercenaryWarrant(warrantText)
+
+      if (confirmReplacement) {
+        setPendingFilter(filter)
+        return
+      }
+
+      completeImport(filter)
     }
     catch (error) {
       setErrorMessage(
@@ -46,6 +67,12 @@ const WarrantImportDialog: React.FC<WarrantImportDialogProps> = ({
       )
     }
   }
+
+  const skillCount = pendingFilter?.requirements.length ?? 0
+  const supportCount = pendingFilter?.requirements.reduce(
+    (count, requirement) => count + requirement.requiredSupports.length,
+    0,
+  ) ?? 0
 
   return (
     <DialogRoot open={isOpen} onOpenChange={updateOpen}>
@@ -66,59 +93,109 @@ const WarrantImportDialog: React.FC<WarrantImportDialogProps> = ({
         </button>
       </DialogTrigger>
 
-      <DialogContent className="setup-code-dialog warrant-import-dialog">
-        <header className="setup-code-dialog__header">
+      <DialogContent className="form-dialog warrant-import-dialog">
+        <header className="ui-split-header">
           <div>
-            <DialogTitle className="setup-code-dialog__title">
-              Import Mercenary Warrant
+            <DialogTitle className="form-dialog__title">
+              {pendingFilter
+                ? 'Replace current filter?'
+                : 'Import Mercenary Warrant'}
             </DialogTitle>
-            <DialogDescription className="setup-code-dialog__description">
-              Copy the warrant in-game and paste it below. Its build, skills,
-              and linked supports will replace the current requirements.
+            <DialogDescription className="form-dialog__description form-dialog__description--header">
+              {pendingFilter
+                ? (
+                    <>
+                      Importing
+                      {' '}
+                      <strong>{pendingFilter.mercenaryClass}</strong>
+                      {' '}
+                      with
+                      {' '}
+                      {formatCount(skillCount, 'skill')}
+                      {' '}
+                      and
+                      {' '}
+                      {formatCount(supportCount, 'linked support')}
+                      {' '}
+                      will replace every configured skill and
+                      support. This cannot be undone.
+                    </>
+                  )
+                : (
+                    <>
+                      Copy the warrant in-game and paste it below. Its build,
+                      skills, and linked supports will fill the filter.
+                    </>
+                  )}
             </DialogDescription>
           </div>
 
           <DialogClose asChild>
             <button
               type="button"
-              className="setup-code-dialog__close"
+              className="form-dialog__close"
               aria-label="Close warrant import dialog"
             >
-              <CloseIcon className="setup-code-dialog__close-icon" />
+              <CloseIcon className="ui-icon-sm" />
             </button>
           </DialogClose>
         </header>
 
-        <label className="field" htmlFor={warrantFieldId}>
-          <span>Warrant text</span>
-          <textarea
-            id={warrantFieldId}
-            value={warrantText}
-            rows={12}
-            spellCheck={false}
-            placeholder="Item Class: Map Fragments…"
-            onChange={event => setWarrantText(event.target.value)}
-          />
-        </label>
+        {!pendingFilter && (
+          <label className="field" htmlFor={warrantFieldId}>
+            <span>Warrant text</span>
+            <textarea
+              id={warrantFieldId}
+              value={warrantText}
+              rows={12}
+              spellCheck={false}
+              placeholder="Item Class: Map Fragments…"
+              onChange={event => setWarrantText(event.target.value)}
+            />
+          </label>
+        )}
 
-        {errorMessage && (
-          <p className="setup-code-dialog__error" role="alert">
+        {!pendingFilter && errorMessage && (
+          <p className="ui-form-error" role="alert">
             {errorMessage}
           </p>
         )}
 
-        <div className="setup-code-dialog__actions">
-          <DialogClose asChild>
-            <button type="button" className="button">Cancel</button>
-          </DialogClose>
-          <button
-            type="button"
-            className="button setup-code-dialog__primary"
-            disabled={!warrantText.trim()}
-            onClick={handleImport}
-          >
-            Import warrant
-          </button>
+        <div className="form-dialog__actions">
+          {pendingFilter
+            ? (
+                <>
+                  <button
+                    type="button"
+                    className="button"
+                    onClick={() => setPendingFilter(undefined)}
+                  >
+                    Back
+                  </button>
+                  <button
+                    type="button"
+                    className="button form-dialog__primary"
+                    onClick={() => completeImport(pendingFilter)}
+                  >
+                    Replace filter
+                  </button>
+                </>
+              )
+            : (
+                <>
+                  <DialogClose asChild>
+                    <button type="button" className="button">Cancel</button>
+                  </DialogClose>
+                  <button
+                    type="button"
+                    className="button form-dialog__primary"
+                    disabled={!warrantText.trim()}
+                    onClick={handleImport}
+                  >
+                    {confirmReplacement ? 'Continue' : 'Import warrant'}
+                  </button>
+                </>
+              )}
         </div>
       </DialogContent>
     </DialogRoot>

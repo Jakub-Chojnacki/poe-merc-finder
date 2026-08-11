@@ -71,7 +71,7 @@ const SelectField: React.FC<SelectFieldProps> = ({
                   alt={selectedOption.iconAlt}
                 />
               )}
-              <span>{value || emptyLabel}</span>
+              <span className="ui-truncate">{value || emptyLabel}</span>
             </span>
             <ChevronIcon className="select-field__chevron" />
           </button>

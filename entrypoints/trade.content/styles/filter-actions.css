@@ -1,0 +1,105 @@
+.filter-actions {
+  position: sticky;
+  z-index: 20;
+  bottom: calc(-1 * var(--space-5));
+  display: grid;
+  gap: var(--space-2);
+  margin: 0 calc(-1 * var(--space-5)) calc(-1 * var(--space-5));
+  padding: var(--space-3) var(--space-5) var(--space-5);
+  background:
+    linear-gradient(to bottom, rgb(16 16 20 / 88%), var(--color-background) 35%);
+  border-top: var(--border-width) solid var(--color-border);
+  backdrop-filter: blur(8px);
+}
+
+.filter-actions__buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+}
+
+.filter-actions__apply,
+.filter-actions__generate {
+  min-height: 38px;
+  padding: var(--space-2) var(--space-3);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+}
+
+.filter-actions__apply {
+  color: var(--color-background);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.filter-actions__generate {
+  color: var(--color-text);
+}
+
+.filter-actions__apply:hover {
+  filter: brightness(1.08);
+}
+
+.filter-actions__generate:hover {
+  border-color: var(--color-accent);
+}
+
+.filter-actions__apply:disabled,
+.filter-actions__generate:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.filter-actions__result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.filter-actions__result-buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.filter-actions__result button,
+.filter-actions__result a {
+  padding: var(--space-1) 0;
+  color: var(--color-accent);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.filter-actions__warning,
+.filter-actions__error {
+  margin: 0;
+  font-size: var(--font-size-xs);
+  line-height: 1.4;
+}
+
+.filter-actions__warning {
+  color: var(--color-accent);
+}
+
+.filter-actions__error {
+  color: var(--color-danger);
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.4;
+}
+
+.checkbox-field label {
+  cursor: pointer;
+}

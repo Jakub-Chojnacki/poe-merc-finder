@@ -1,0 +1,62 @@
+.warrant-import {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.warrant-import-button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: var(--space-3);
+  padding: var(--space-2-5) var(--space-3);
+  color: var(--color-text);
+  background: var(--color-accent-soft);
+  border: var(--border-width) solid rgb(214 173 92 / 28%);
+  border-radius: var(--radius-sm);
+  text-align: left;
+}
+
+.warrant-import-button:hover {
+  border-color: var(--color-accent);
+  background: rgb(214 173 92 / 20%);
+}
+
+.warrant-import-button__icon {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+}
+
+.warrant-import-button__label {
+  display: grid;
+  flex: 1;
+  gap: var(--space-0-5);
+  min-width: 0;
+}
+
+.warrant-import-button__label strong {
+  font-size: var(--font-size-sm);
+}
+
+.warrant-import-button__label small {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  line-height: 1.35;
+}
+
+.warrant-import-button__arrow {
+  flex: 0 0 auto;
+  color: var(--color-accent);
+  font-size: var(--font-size-lg);
+}
+
+.warrant-import-dialog textarea {
+  min-height: 16rem;
+}
+
+.warrant-import__status {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  line-height: 1.4;
+}

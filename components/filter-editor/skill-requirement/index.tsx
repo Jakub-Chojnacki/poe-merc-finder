@@ -77,9 +77,7 @@ const SkillRequirementEditor: React.FC<SkillRequirementEditorProps> = ({
             onClick={onRemove}
             aria-label={`Remove skill ${skillNumber}`}
           >
-            <CloseIcon
-              className="remove-button__icon"
-            />
+            <CloseIcon className="ui-icon-sm" />
           </button>
         </UiTooltip>
       </header>

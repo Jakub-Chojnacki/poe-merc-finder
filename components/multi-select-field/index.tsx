@@ -55,7 +55,7 @@ const MultiSelectField: React.FC<MultiSelectFieldProps> = ({
             <div className="multi-select__selection">
               {value.map(option => (
                 <span className="selection-chip" key={option}>
-                  <span>{option}</span>
+                  <span className="ui-truncate">{option}</span>
                   <button
                     type="button"
                     className="selection-chip__remove"
