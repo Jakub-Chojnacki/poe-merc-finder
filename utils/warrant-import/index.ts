@@ -9,6 +9,7 @@ import { MERCENARY_OPTIONS } from '@/utils/mercenary-data/const'
 const WARRANT_NAME = 'Mercenary Warrant'
 const SECTION_SEPARATOR_PATTERN = /^\s*-{8,}\s*$/m
 const SUPPORT_TIER_PATTERN = /^\(Tier:\s*\d+\)$/i
+const INFAMOUS_BUILD_PREFIX_PATTERN = /^infamous\s+/i
 
 export class WarrantImportError extends Error {
   constructor(message: string) {
@@ -65,6 +66,7 @@ export function parseMercenaryWarrant(value: string): ImportedWarrantFilter {
         line => isBuildLine(line) && line.slice('Build:'.length).trim().length > 0,
       )
     : undefined
+
   const copiedBuild = buildLine?.slice('Build:'.length).trim()
 
   if (!buildSection || !copiedBuild) {
@@ -72,9 +74,10 @@ export function parseMercenaryWarrant(value: string): ImportedWarrantFilter {
   }
 
   const buildSectionIndex = sections.indexOf(buildSection)
+  const buildName = copiedBuild.replace(INFAMOUS_BUILD_PREFIX_PATTERN, '')
 
   const mercenaryClass = findCanonicalName(
-    copiedBuild,
+    buildName,
     MERCENARY_OPTIONS.map(option => option.name),
   )
 
