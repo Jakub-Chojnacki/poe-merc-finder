@@ -2,10 +2,11 @@ import { describe, expect, it } from 'vitest'
 import {
   getMercenarySkillOptions,
   getMercenarySkillTradeStatId,
+  getMercenarySupportOptions,
   getMercenarySupportTradeStatId,
   normalizeMercenarySkillName,
 } from '.'
-import { MERCENARY_OPTIONS } from './const'
+import { ALL_SKILL_OPTIONS, MERCENARY_OPTIONS } from './const'
 
 describe('mercenary skill options', () => {
   it('limits skills to the selected mercenary class', () => {
@@ -32,6 +33,22 @@ describe('mercenary skill options', () => {
     expect(MERCENARY_OPTIONS.find(option => option.name === 'Bastion'))
       .toMatchObject({ house: 'Azadi' })
     expect(MERCENARY_OPTIONS.every(option => option.iconPath)).toBe(true)
+  })
+
+  it('only includes skills assigned to a mercenary in the unfiltered list', () => {
+    const names = ALL_SKILL_OPTIONS.map(option => option.name)
+
+    expect(names).toContain('Storm Call')
+    expect(names).not.toContain('Stormcall')
+    expect(names).not.toContain('Lightning Warp Trap')
+  })
+
+  it('limits supports to those compatible with the selected skill', () => {
+    const supports = getMercenarySupportOptions('Kinetic Bolt')
+
+    expect(supports).toContain('Greater Multiple Projectiles')
+    expect(supports).toContain('Lesser Faster Attacks')
+    expect(supports).not.toContain('Melee Splash')
   })
 })
 

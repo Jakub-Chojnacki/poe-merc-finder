@@ -3,7 +3,6 @@ import mercenaryData from '@/data/mercenaries.json'
 import {
   ALL_SKILL_OPTIONS,
   MERCENARY_SKILL_STAT_IDS,
-  MERCENARY_SUPPORT_NAMES_BY_STAT_ID,
   MERCENARY_SUPPORT_STAT_IDS,
   MERCENARY_SUPPORT_STAT_IDS_BY_SKILL_STAT_ID,
   SKILL_CATEGORIES,
@@ -60,7 +59,7 @@ export function getMercenarySupportOptions(skillName: string): string[] {
 
   return mercenaryData.supportGems
     .filter(support => allowedSupportStatIds.has(support.tradeStatId))
-    .map(support => MERCENARY_SUPPORT_NAMES_BY_STAT_ID.get(support.tradeStatId)!)
+    .map(support => support.name)
 }
 
 export function normalizeMercenarySkillName(name: string): string {
