@@ -17,6 +17,16 @@ export function createEmptyFilterDraft(): FilterDraft {
   }
 }
 
+export function hasConfiguredSkillRequirements(
+  requirements: SkillRequirementDraft[],
+): boolean {
+  return requirements.some(requirement => (
+    Boolean(requirement.skill.trim())
+    || requirement.requiredSupports.length > 0
+    || requirement.optionalSupports.length > 0
+  ))
+}
+
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null
 }

@@ -1,14 +1,18 @@
 import type { SkillRequirementUpdates } from './skill-requirement/types'
 import type { FilterEditorProps } from './types'
-import { useId } from 'react'
+import { useId, useState } from 'react'
 import SelectField from '@/components/select-field'
 import UiCheckbox from '@/components/ui/checkbox'
-import { createEmptySkillRequirement } from '@/utils/filter-draft'
+import {
+  createEmptySkillRequirement,
+  hasConfiguredSkillRequirements,
+} from '@/utils/filter-draft'
 import { getMercenarySkillOptions } from '@/utils/mercenary-data'
 import {
   MERCENARY_CLASS_OPTIONS,
 } from './const'
 import FilterActions from './filter-actions'
+import MercenaryChangeDialog from './mercenary-change-dialog'
 import SkillRequirementEditor from './skill-requirement'
 
 const FilterEditor: React.FC<FilterEditorProps> = ({
@@ -18,6 +22,7 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
   value,
 }) => {
   const hideFailuresId = useId()
+  const [pendingMercenaryClass, setPendingMercenaryClass] = useState<string>()
   const skillOptions = getMercenarySkillOptions(value.mercenaryClass).map(
     skill => ({
       label: skill.label,
@@ -57,6 +62,35 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
     })
   }
 
+  const updateMercenaryClass = (mercenaryClass: string): void => {
+    if (
+      mercenaryClass
+      && mercenaryClass !== value.mercenaryClass
+      && hasConfiguredSkillRequirements(value.requirements)
+    ) {
+      setPendingMercenaryClass(mercenaryClass)
+      return
+    }
+
+    onChange({
+      ...value,
+      mercenaryClass,
+    })
+  }
+
+  const confirmMercenaryClass = (): void => {
+    if (!pendingMercenaryClass) {
+      return
+    }
+
+    onChange({
+      ...value,
+      mercenaryClass: pendingMercenaryClass,
+      requirements: [createEmptySkillRequirement()],
+    })
+    setPendingMercenaryClass(undefined)
+  }
+
   return (
     <section className="filter-editor" aria-labelledby="filter-editor-title">
       <header className="section-header">
@@ -72,11 +106,16 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
         emptyLabel="All mercenary classes"
         options={MERCENARY_CLASS_OPTIONS}
         value={value.mercenaryClass}
-        onChange={mercenaryClass => onChange({
-          ...value,
-          mercenaryClass,
-        })}
+        onChange={updateMercenaryClass}
       />
+
+      {pendingMercenaryClass && (
+        <MercenaryChangeDialog
+          mercenaryClass={pendingMercenaryClass}
+          onCancel={() => setPendingMercenaryClass(undefined)}
+          onConfirm={confirmMercenaryClass}
+        />
+      )}
 
       <div className="skill-groups">
         {value.requirements.map((requirement, index) => (
