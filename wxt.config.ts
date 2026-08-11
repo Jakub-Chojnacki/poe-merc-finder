@@ -16,5 +16,9 @@ export default defineConfig({
       default_title: 'Toggle PoE Merc Finder',
     },
     permissions: ['storage'],
+    web_accessible_resources: [{
+      resources: ['icons/houses/*.png'],
+      matches: ['https://*.pathofexile.com/*'],
+    }],
   },
 })

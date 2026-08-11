@@ -1,9 +1,11 @@
 import type { SkillRequirementEditorProps } from './types'
+import { useState } from 'react'
 import CloseIcon from '@/components/icons/close'
 import MultiSelectField from '@/components/multi-select-field'
 import SelectField from '@/components/select-field'
 import UiTooltip from '@/components/ui/tooltip'
-import { SUPPORT_GEM_NAMES } from '@/utils/mercenary-data'
+import { getMercenarySupportOptions } from '@/utils/mercenary-data'
+import SkillChangeDialog from '../skill-change-dialog'
 
 const SkillRequirementEditor: React.FC<SkillRequirementEditorProps> = ({
   index,
@@ -12,8 +14,43 @@ const SkillRequirementEditor: React.FC<SkillRequirementEditorProps> = ({
   skillOptions,
   value,
 }) => {
+  const [pendingSkill, setPendingSkill] = useState<string | null>(null)
   const skillNumber = index + 1
   const skillLabel = `Skill ${skillNumber}`
+  const supportOptions = getMercenarySupportOptions(value.skill)
+  const hasConfiguredSupports = (
+    !!value.requiredSupports.length || !!value.optionalSupports.length
+  )
+
+  const applySkill = (skill: string): void => {
+    onChange({
+      skill,
+      requiredSupports: [],
+      optionalSupports: [],
+    })
+  }
+
+  const updateSkill = (skill: string): void => {
+    if (skill === value.skill) {
+      return
+    }
+
+    if (hasConfiguredSupports) {
+      setPendingSkill(skill)
+      return
+    }
+
+    applySkill(skill)
+  }
+
+  const confirmSkill = (): void => {
+    if (pendingSkill === null) {
+      return
+    }
+
+    applySkill(pendingSkill)
+    setPendingSkill(null)
+  }
 
   return (
     <section className="skill-group" aria-label={skillLabel}>
@@ -29,7 +66,7 @@ const SkillRequirementEditor: React.FC<SkillRequirementEditorProps> = ({
             emptyLabel="Choose a skill"
             options={skillOptions}
             value={value.skill}
-            onChange={skill => onChange({ skill })}
+            onChange={updateSkill}
           />
         </div>
 
@@ -47,22 +84,36 @@ const SkillRequirementEditor: React.FC<SkillRequirementEditorProps> = ({
         </UiTooltip>
       </header>
 
+      {pendingSkill !== null && (
+        <SkillChangeDialog
+          skill={pendingSkill}
+          onCancel={() => setPendingSkill(null)}
+          onConfirm={confirmSkill}
+        />
+      )}
+
       <div className="skill-group__content">
         <MultiSelectField
+          disabled={!value.skill}
           label="Required supports"
           value={value.requiredSupports}
           onChange={requiredSupports => onChange({ requiredSupports })}
-          options={SUPPORT_GEM_NAMES}
-          placeholder="Choose required supports"
+          options={supportOptions}
+          placeholder={value.skill
+            ? 'Choose required supports'
+            : 'Choose a skill first'}
           hint="All must be linked."
         />
 
         <MultiSelectField
+          disabled={!value.skill}
           label="Optional supports"
           value={value.optionalSupports}
           onChange={optionalSupports => onChange({ optionalSupports })}
-          options={SUPPORT_GEM_NAMES}
-          placeholder="Choose optional supports"
+          options={supportOptions}
+          placeholder={value.skill
+            ? 'Choose optional supports'
+            : 'Choose a skill first'}
         />
       </div>
     </section>

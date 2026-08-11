@@ -1,5 +1,36 @@
 import { describe, expect, it } from 'vitest'
-import { normalizeFilterDraft, normalizeGemNames } from '.'
+import {
+  hasConfiguredSkillRequirements,
+  normalizeFilterDraft,
+  normalizeGemNames,
+} from '.'
+
+describe('hasConfiguredSkillRequirements', () => {
+  it('detects configured skills and supports', () => {
+    expect(hasConfiguredSkillRequirements([{
+      id: 'requirement-1',
+      skill: 'Shield Crush',
+      requiredSupports: [],
+      optionalSupports: [],
+    }])).toBe(true)
+
+    expect(hasConfiguredSkillRequirements([{
+      id: 'requirement-1',
+      skill: '',
+      requiredSupports: ['Return'],
+      optionalSupports: [],
+    }])).toBe(true)
+  })
+
+  it('ignores completely empty requirements', () => {
+    expect(hasConfiguredSkillRequirements([{
+      id: 'requirement-1',
+      skill: '  ',
+      requiredSupports: [],
+      optionalSupports: [],
+    }])).toBe(false)
+  })
+})
 
 describe('normalizeGemNames', () => {
   it('migrates legacy text lists and removes case-insensitive duplicates', () => {

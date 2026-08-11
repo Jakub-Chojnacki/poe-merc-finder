@@ -435,10 +435,24 @@
   cursor: pointer;
 }
 
-.select-field__trigger span {
+.select-field__value {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.select-field__value span {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.select-field__icon {
+  flex: 0 0 auto;
+  width: var(--space-5);
+  height: var(--space-5);
+  object-fit: contain;
 }
 
 .select-field__trigger[data-state="open"] {
@@ -547,6 +561,12 @@
   font-weight: 700;
 }
 
+.multi-select__trigger:disabled {
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 .multi-select__chevron {
   width: var(--space-2-5);
   height: var(--space-2-5);
@@ -653,6 +673,13 @@
 .select-field__option small {
   color: var(--color-text-muted);
   font-size: var(--font-size-xs);
+}
+
+.select-field__option-value {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
 }
 
 .multi-select__empty,
@@ -1025,6 +1052,41 @@
 }
 
 .setup-code-dialog__primary {
+  color: var(--color-background);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  font-weight: 700;
+}
+
+.reset-confirmation-dialog {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-5);
+}
+
+.reset-confirmation-dialog__title {
+  margin: 0;
+  font-size: var(--font-size-lg);
+}
+
+.reset-confirmation-dialog__description {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+
+.reset-confirmation-dialog__description strong {
+  color: var(--color-text);
+}
+
+.reset-confirmation-dialog__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2);
+}
+
+.reset-confirmation-dialog__confirm {
   color: var(--color-background);
   background: var(--color-accent);
   border-color: var(--color-accent);

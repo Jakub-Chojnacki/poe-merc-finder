@@ -1,10 +1,12 @@
 import type { SelectOption } from '@/components/select-field/types'
 import type { FilterApplyStatus } from '@/hooks/use-trade-page-filter/types'
-import { MERCENARY_OPTIONS } from '@/utils/mercenary-data'
+import { MERCENARY_OPTIONS } from '@/utils/mercenary-data/const'
 
 export const MERCENARY_CLASS_OPTIONS: SelectOption[] = MERCENARY_OPTIONS.map(
   mercenary => ({
-    label: mercenary.attribute,
+    iconAlt: `House ${mercenary.house}`,
+    iconPath: mercenary.iconPath,
+    label: `${mercenary.attribute} • House ${mercenary.house}`,
     value: mercenary.name,
   }),
 )

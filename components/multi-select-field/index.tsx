@@ -16,6 +16,7 @@ import {
 } from './utils'
 
 const MultiSelectField: React.FC<MultiSelectFieldProps> = ({
+  disabled = false,
   hint,
   label,
   onChange,
@@ -76,6 +77,7 @@ const MultiSelectField: React.FC<MultiSelectFieldProps> = ({
                 type="button"
                 className="multi-select__trigger"
                 aria-labelledby={labelId}
+                disabled={disabled}
               >
                 Add
                 <ChevronIcon className="multi-select__chevron" />

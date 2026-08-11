@@ -24,12 +24,14 @@ const SelectField: React.FC<SelectFieldProps> = ({
 }) => {
   const labelId = useId()
   const searchId = useId()
+  const valueId = useId()
   const [isOpen, setIsOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const availableOptions = useMemo(
     () => getAvailableSelectOptions(options, value, searchQuery),
     [options, searchQuery, value],
   )
+  const selectedOption = options.find(option => option.value === value)
 
   const selectOption = (optionValue: string): void => {
     onChange(optionValue)
@@ -59,9 +61,18 @@ const SelectField: React.FC<SelectFieldProps> = ({
           <button
             type="button"
             className="select-field__trigger"
-            aria-labelledby={labelId}
+            aria-labelledby={`${labelId} ${valueId}`}
           >
-            <span>{value || emptyLabel}</span>
+            <span id={valueId} className="select-field__value">
+              {selectedOption?.iconPath && (
+                <img
+                  className="select-field__icon"
+                  src={browser.runtime.getURL(selectedOption.iconPath)}
+                  alt={selectedOption.iconAlt}
+                />
+              )}
+              <span>{value || emptyLabel}</span>
+            </span>
             <ChevronIcon className="select-field__chevron" />
           </button>
         </PopoverTrigger>
@@ -105,7 +116,17 @@ const SelectField: React.FC<SelectFieldProps> = ({
                 key={option.value}
                 value={option.value}
               >
-                <span>{option.value}</span>
+                <span className="select-field__option-value">
+                  {option.iconPath && (
+                    <img
+                      className="select-field__icon"
+                      src={browser.runtime.getURL(option.iconPath)}
+                      alt={option.iconAlt}
+                      aria-hidden="true"
+                    />
+                  )}
+                  <span>{option.value}</span>
+                </span>
                 {option.label && <small>{option.label}</small>}
               </ToggleGroupItem>
             ))}
