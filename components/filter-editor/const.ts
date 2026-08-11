@@ -4,6 +4,7 @@ import { MERCENARY_OPTIONS } from '@/utils/mercenary-data'
 
 export const MERCENARY_CLASS_OPTIONS: SelectOption[] = MERCENARY_OPTIONS.map(
   mercenary => ({
+    iconAlt: `House ${mercenary.house}`,
     iconPath: mercenary.iconPath,
     label: `${mercenary.attribute} • House ${mercenary.house}`,
     value: mercenary.name,

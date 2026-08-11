@@ -24,6 +24,7 @@ const SelectField: React.FC<SelectFieldProps> = ({
 }) => {
   const labelId = useId()
   const searchId = useId()
+  const valueId = useId()
   const [isOpen, setIsOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const availableOptions = useMemo(
@@ -60,14 +61,14 @@ const SelectField: React.FC<SelectFieldProps> = ({
           <button
             type="button"
             className="select-field__trigger"
-            aria-labelledby={labelId}
+            aria-labelledby={`${labelId} ${valueId}`}
           >
-            <span className="select-field__value">
+            <span id={valueId} className="select-field__value">
               {selectedOption?.iconPath && (
                 <img
                   className="select-field__icon"
                   src={browser.runtime.getURL(selectedOption.iconPath)}
-                  alt=""
+                  alt={selectedOption.iconAlt}
                 />
               )}
               <span>{value || emptyLabel}</span>
@@ -120,7 +121,8 @@ const SelectField: React.FC<SelectFieldProps> = ({
                     <img
                       className="select-field__icon"
                       src={browser.runtime.getURL(option.iconPath)}
-                      alt=""
+                      alt={option.iconAlt}
+                      aria-hidden="true"
                     />
                   )}
                   <span>{option.value}</span>
