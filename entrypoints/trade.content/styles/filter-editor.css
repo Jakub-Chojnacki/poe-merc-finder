@@ -15,11 +15,48 @@
   font-size: var(--font-size-lg);
 }
 
+.section-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.clear-filter-button,
 .add-skill-button {
-  padding: var(--space-1) 0;
-  color: var(--color-accent);
   font-size: var(--font-size-sm);
   font-weight: 700;
+}
+
+.clear-filter-button {
+  padding: var(--space-1) 0;
+  color: var(--color-text-muted);
+}
+
+.clear-filter-button:hover {
+  color: var(--color-danger);
+}
+
+.clear-filter-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.clear-filter-button:disabled:hover {
+  color: var(--color-text-muted);
+}
+
+.add-skill-button {
+  min-height: 26px;
+  padding: var(--space-1) var(--space-2);
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+  border: var(--border-width) solid var(--color-accent);
+  border-radius: var(--radius-sm);
+}
+
+.add-skill-button:hover {
+  color: var(--color-background);
+  background: var(--color-accent);
 }
 
 .skill-groups {
