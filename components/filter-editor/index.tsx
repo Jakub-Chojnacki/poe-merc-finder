@@ -4,6 +4,7 @@ import { useId, useState } from 'react'
 import SelectField from '@/components/select-field'
 import UiCheckbox from '@/components/ui/checkbox'
 import {
+  createEmptyFilterDraft,
   createEmptySkillRequirement,
   hasConfiguredSkillRequirements,
 } from '@/utils/filter-draft'
@@ -13,6 +14,7 @@ import {
 } from './const'
 import FilterActions from './filter-actions'
 import MercenaryChangeDialog from './mercenary-change-dialog'
+import ResetConfirmationDialog from './reset-confirmation-dialog'
 import SkillRequirementEditor from './skill-requirement'
 
 const FilterEditor: React.FC<FilterEditorProps> = ({
@@ -23,6 +25,7 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
 }) => {
   const hideFailuresId = useId()
   const [pendingMercenaryClass, setPendingMercenaryClass] = useState<string>()
+  const [isResetting, setIsResetting] = useState(false)
   const skillOptions = getMercenarySkillOptions(value.mercenaryClass).map(
     skill => ({
       label: skill.label,
@@ -91,15 +94,47 @@ const FilterEditor: React.FC<FilterEditorProps> = ({
     setPendingMercenaryClass(undefined)
   }
 
+  const canClear = Boolean(
+    value.mercenaryClass
+    || value.hideFailures
+    || value.requirements.length !== 1
+    || hasConfiguredSkillRequirements(value.requirements),
+  )
+
+  const clearFilter = (): void => {
+    onChange(createEmptyFilterDraft())
+    setIsResetting(false)
+  }
+
   return (
     <section className="filter-editor" aria-labelledby="filter-editor-title">
       <header className="section-header">
         <h2 id="filter-editor-title">Skill requirements</h2>
 
-        <button type="button" className="add-skill-button" onClick={addRequirement}>
-          + Add skill
-        </button>
+        <div className="section-header__actions">
+          <button
+            type="button"
+            className="clear-filter-button"
+            disabled={!canClear}
+            onClick={() => setIsResetting(true)}
+          >
+            Clear
+          </button>
+          <button type="button" className="add-skill-button" onClick={addRequirement}>
+            + Add skill
+          </button>
+        </div>
       </header>
+
+      {isResetting && (
+        <ResetConfirmationDialog
+          title="Clear filter?"
+          confirmLabel="Clear filter"
+          description="This will reset the mercenary class, every skill and support, and the listing visibility option. This cannot be undone."
+          onCancel={() => setIsResetting(false)}
+          onConfirm={clearFilter}
+        />
+      )}
 
       <SelectField
         label="Mercenary class"
