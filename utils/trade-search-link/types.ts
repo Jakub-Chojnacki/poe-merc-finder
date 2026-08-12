@@ -4,13 +4,20 @@ export interface TradeStatFilter {
   id: string
 }
 
-export interface TradeStatGroup {
+export interface MercenaryTradeStatGroup {
   type: 'mercenary'
   value: {
     min: number
   }
   filters: TradeStatFilter[]
 }
+
+export interface AndTradeStatGroup {
+  type: 'and'
+  filters: TradeStatFilter[]
+}
+
+export type TradeStatGroup = AndTradeStatGroup | MercenaryTradeStatGroup
 
 export interface TradeSearchRequest {
   query: {
@@ -26,6 +33,12 @@ export interface TradeSearchRequest {
 
 export interface TradeSearchResponse {
   id?: unknown
+}
+
+export interface TradeSearchErrorResponse {
+  error?: {
+    message?: unknown
+  }
 }
 
 export interface TradeSearchContext {

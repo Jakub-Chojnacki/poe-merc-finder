@@ -116,7 +116,7 @@ const SetupCodeDialog: React.FC<SetupCodeDialogProps> = (props) => {
             <DialogDescription className="form-dialog__description form-dialog__description--header">
               {isExport
                 ? 'Copy this code to share the selected setup.'
-                : 'Paste a setup code. An existing setup with the same name will be updated.'}
+                : 'Paste a setup code to save and load it. An existing setup with the same name will be updated.'}
             </DialogDescription>
           </div>
 

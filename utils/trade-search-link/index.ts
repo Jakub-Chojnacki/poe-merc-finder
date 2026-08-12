@@ -2,8 +2,10 @@ import type {
   GeneratedTradeSearchLink,
   GenerateTradeSearchLinkOptions,
   TradeSearchContext,
+  TradeSearchErrorResponse,
   TradeSearchRequest,
   TradeSearchResponse,
+  TradeStatFilter,
   TradeStatGroup,
 } from './types'
 import type { FilterConfig, SkillRequirement } from '@/utils/filter-config/types'
@@ -26,6 +28,18 @@ export class TradeSearchLinkError extends Error {
   }
 }
 
+async function isComplexQueryResponse(response: Response): Promise<boolean> {
+  try {
+    const result = await response.json() as TradeSearchErrorResponse
+
+    return typeof result.error?.message === 'string'
+      && result.error.message.toLocaleLowerCase().includes('query is too complex')
+  }
+  catch {
+    return false
+  }
+}
+
 function createUnknownStatsMessage(names: string[]): string {
   return `No Path of Exile trade stat was found for: ${names.join(', ')}.`
 }
@@ -33,6 +47,7 @@ function createUnknownStatsMessage(names: string[]): string {
 function createTradeStatGroup(
   requirement: SkillRequirement,
   unknownNames: string[],
+  unlinkedSkillFilters: TradeStatFilter[],
 ): TradeStatGroup | undefined {
   const skillStatId = getMercenarySkillTradeStatId(requirement.skill)
 
@@ -60,6 +75,11 @@ function createTradeStatGroup(
     return
   }
 
+  if (resolvedSupportStatIds.length === 0) {
+    unlinkedSkillFilters.push({ id: skillStatId })
+    return
+  }
+
   return {
     type: 'mercenary',
     value: {
@@ -77,8 +97,13 @@ export function createTradeSearchRequest(
   }
 
   const unknownNames: string[] = []
-  const stats = filter.requirements
-    .map(requirement => createTradeStatGroup(requirement, unknownNames))
+  const unlinkedSkillFilters: TradeStatFilter[] = []
+  const linkedSkillGroups = filter.requirements
+    .map(requirement => createTradeStatGroup(
+      requirement,
+      unknownNames,
+      unlinkedSkillFilters,
+    ))
     .filter(group => group !== undefined)
 
   if (unknownNames.length > 0) {
@@ -86,6 +111,16 @@ export function createTradeSearchRequest(
       createUnknownStatsMessage([...new Set(unknownNames)]),
     )
   }
+
+  const stats: TradeStatGroup[] = [
+    ...(unlinkedSkillFilters.length > 0
+      ? [{
+          type: 'and' as const,
+          filters: unlinkedSkillFilters,
+        }]
+      : []),
+    ...linkedSkillGroups,
+  ]
 
   return {
     query: {
@@ -149,7 +184,7 @@ export async function generateTradeSearchLink(
   try {
     response = await fetchSearch(endpoint, {
       method: 'POST',
-      credentials: 'same-origin',
+      credentials: 'include',
       headers: {
         'accept': 'application/json',
         'content-type': 'application/json',
@@ -162,6 +197,12 @@ export async function generateTradeSearchLink(
   }
 
   if (!response.ok) {
+    if (response.status === 400 && await isComplexQueryResponse(response)) {
+      throw new TradeSearchLinkError(
+        TRADE_SEARCH_ERROR_MESSAGES.complexQuery,
+      )
+    }
+
     throw new TradeSearchLinkError(
       response.status === 429
         ? TRADE_SEARCH_ERROR_MESSAGES.rateLimited

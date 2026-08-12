@@ -98,6 +98,7 @@ const SavedSetupManager: React.FC<SavedSetupManagerProps> = ({
 
       setSetupName(savedSetup.name)
       setSelectedSetupId(savedSetup.id)
+      onLoad(structuredClone(savedSetup.filterDraft))
     }
     finally {
       setIsMutating(false)
