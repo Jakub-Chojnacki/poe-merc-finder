@@ -1,9 +1,7 @@
 .sidebar-container {
   position: fixed;
-  z-index: 1100;
-  inset: 0 var(--sidebar-right-offset) 0 auto;
+  inset: 0 0 0 auto;
   width: var(--sidebar-width);
-  transition: right 180ms ease;
   pointer-events: none;
 }
 

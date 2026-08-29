@@ -92,12 +92,13 @@ function createTradeStatGroup(
 export function createTradeSearchRequest(
   filter: FilterConfig,
 ): TradeSearchRequest {
-  if (filter.requirements.length === 0) {
+  if (!filter.requirements.length) {
     throw new TradeSearchLinkError(TRADE_SEARCH_ERROR_MESSAGES.empty)
   }
 
   const unknownNames: string[] = []
   const unlinkedSkillFilters: TradeStatFilter[] = []
+
   const linkedSkillGroups = filter.requirements
     .map(requirement => createTradeStatGroup(
       requirement,
