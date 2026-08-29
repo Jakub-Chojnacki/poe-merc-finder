@@ -1,10 +1,5 @@
-import type { FilterDraft } from '@/utils/filter-draft/types'
-
-export interface SavedSetup {
-  id: string
-  name: string
-  filterDraft: FilterDraft
-}
+import type { FilterDraft } from '@/features/mercenary-filter/model/filter-draft/types'
+import type { SavedSetup } from '@/features/saved-setups/model/saved-setup'
 
 export interface UseSavedSetupsResult {
   deleteSetup: (setupId: string) => Promise<void>

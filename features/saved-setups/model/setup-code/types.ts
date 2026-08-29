@@ -1,4 +1,4 @@
-import type { FilterDraft } from '@/utils/filter-draft/types'
+import type { FilterDraft } from '@/features/mercenary-filter/model/filter-draft/types'
 
 export interface SavedSetupCodeRequirement {
   optionalSupports: string[]

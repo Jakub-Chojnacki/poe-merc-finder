@@ -1,5 +1,5 @@
-import type { SavedSetup } from '@/hooks/use-saved-setups/types'
-import type { ImportedSavedSetup } from '@/utils/saved-setup-code/types'
+import type { SavedSetup } from '@/features/saved-setups/model/saved-setup'
+import type { ImportedSavedSetup } from '@/features/saved-setups/model/setup-code/types'
 
 interface SetupCodeDialogBaseProps {
   disabled?: boolean

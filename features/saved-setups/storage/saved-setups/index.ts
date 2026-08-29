@@ -1,5 +1,5 @@
-import type { SavedSetup } from './types'
-import { normalizeFilterDraft } from '@/utils/filter-draft'
+import type { SavedSetup } from '@/features/saved-setups/model/saved-setup'
+import { normalizeFilterDraft } from '@/features/mercenary-filter/model/filter-draft'
 
 function migrateSavedSetups(value: unknown): SavedSetup[] {
   if (!Array.isArray(value)) {

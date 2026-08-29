@@ -1,7 +1,8 @@
-import type { SavedSetup, UseSavedSetupsResult } from './types'
-import type { FilterDraft } from '@/utils/filter-draft/types'
+import type { UseSavedSetupsResult } from './types'
+import type { FilterDraft } from '@/features/mercenary-filter/model/filter-draft/types'
+import type { SavedSetup } from '@/features/saved-setups/model/saved-setup'
 import { useCallback, useEffect, useState } from 'react'
-import { SAVED_SETUPS_STORAGE_ITEM } from './const'
+import { SAVED_SETUPS_STORAGE_ITEM } from '@/features/saved-setups/storage/saved-setups'
 
 function sortSetups(setups: SavedSetup[]): SavedSetup[] {
   return setups.toSorted((left, right) => left.name.localeCompare(right.name))

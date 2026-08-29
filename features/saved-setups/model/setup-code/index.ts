@@ -2,8 +2,8 @@ import type {
   ImportedSavedSetup,
   SavedSetupCodePayload,
 } from './types'
-import type { SavedSetup } from '@/hooks/use-saved-setups/types'
-import { normalizeFilterDraft } from '@/utils/filter-draft'
+import type { SavedSetup } from '@/features/saved-setups/model/saved-setup'
+import { normalizeFilterDraft } from '@/features/mercenary-filter/model/filter-draft'
 import {
   SAVED_SETUP_CODE_ERRORS,
   SAVED_SETUP_CODE_MAX_LENGTH,

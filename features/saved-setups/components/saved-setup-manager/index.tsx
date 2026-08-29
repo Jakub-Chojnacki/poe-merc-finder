@@ -1,16 +1,16 @@
 import type { SavedSetupManagerProps } from './types'
-import type { ImportedSavedSetup } from '@/utils/saved-setup-code/types'
+import type { ImportedSavedSetup } from '@/features/saved-setups/model/setup-code/types'
 import { useId, useMemo, useState } from 'react'
-import CheckIcon from '@/components/icons/check'
-import TrashIcon from '@/components/icons/trash'
+import { useSavedSetups } from '@/features/saved-setups/hooks/use-saved-setups'
 import {
   CollapsibleContent,
   CollapsibleRoot,
   CollapsibleTrigger,
-} from '@/components/ui/collapsible'
-import IconButton from '@/components/ui/icon-button'
-import UiSelect from '@/components/ui/select'
-import { useSavedSetups } from '@/hooks/use-saved-setups'
+} from '@/shared/ui/collapsible'
+import IconButton from '@/shared/ui/icon-button'
+import CheckIcon from '@/shared/ui/icons/check'
+import TrashIcon from '@/shared/ui/icons/trash'
+import UiSelect from '@/shared/ui/select'
 import { SETUP_NAME_MAX_LENGTH } from './const'
 import SetupCodeDialog from './setup-code-dialog'
 

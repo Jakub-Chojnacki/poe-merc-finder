@@ -1,8 +1,9 @@
 import type { SetupCodeDialogProps } from './types'
 import { useId, useMemo, useState } from 'react'
-import CloseIcon from '@/components/icons/close'
-import ExportIcon from '@/components/icons/export'
-import ImportIcon from '@/components/icons/import'
+import {
+  exportSavedSetupCode,
+  importSavedSetupCode,
+} from '@/features/saved-setups/model/setup-code'
 import {
   DialogClose,
   DialogContent,
@@ -10,12 +11,11 @@ import {
   DialogRoot,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog'
-import IconButton from '@/components/ui/icon-button'
-import {
-  exportSavedSetupCode,
-  importSavedSetupCode,
-} from '@/utils/saved-setup-code'
+} from '@/shared/ui/dialog'
+import IconButton from '@/shared/ui/icon-button'
+import CloseIcon from '@/shared/ui/icons/close'
+import ExportIcon from '@/shared/ui/icons/export'
+import ImportIcon from '@/shared/ui/icons/import'
 import {
   SETUP_CODE_DIALOG_COPY_LABELS,
   SETUP_CODE_DIALOG_ERRORS,

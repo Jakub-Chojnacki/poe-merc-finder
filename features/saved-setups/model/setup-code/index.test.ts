@@ -1,4 +1,4 @@
-import type { SavedSetup } from '@/hooks/use-saved-setups/types'
+import type { SavedSetup } from '@/features/saved-setups/model/saved-setup'
 import { describe, expect, it } from 'vitest'
 import {
   exportSavedSetupCode,
