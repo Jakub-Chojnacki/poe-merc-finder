@@ -1,4 +1,3 @@
-import type { PublicPath } from 'wxt/browser'
 import type { WarrantImportDialogProps } from './types'
 import { useId, useState } from 'react'
 import CloseIcon from '@/components/icons/close'
@@ -11,8 +10,7 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog'
 import { parseMercenaryWarrant } from '@/utils/warrant-import'
-
-const WARRANT_ICON_PATH = '/icons/mercenary-warrant.png' as PublicPath
+import { WARRANT_ICON_PATH } from './const'
 
 function formatCount(count: number, label: string): string {
   return `${count} ${label}${count === 1 ? '' : 's'}`
@@ -81,7 +79,7 @@ const WarrantImportDialog: React.FC<WarrantImportDialogProps> = ({
           <img
             className="warrant-import-button__icon"
             src={browser.runtime.getURL(WARRANT_ICON_PATH)}
-            alt=""
+            alt="poe-warrant"
           />
           <span className="warrant-import-button__label">
             <strong>Import a Mercenary Warrant</strong>
