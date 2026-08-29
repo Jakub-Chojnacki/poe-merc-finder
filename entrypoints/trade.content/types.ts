@@ -1,4 +1,4 @@
-import type { SkillRequirement } from '@/utils/filter-config/types'
+import type { SkillRequirement } from '@/features/mercenary-filter/model/filter-config/types'
 
 export type ListingStatus = 'perfect' | 'match' | 'fail'
 

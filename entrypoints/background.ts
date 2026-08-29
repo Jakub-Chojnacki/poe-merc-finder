@@ -1,4 +1,4 @@
-import { TOGGLE_SIDEBAR_MESSAGE } from '@/components/sidebar-panel/const'
+import { TOGGLE_SIDEBAR_MESSAGE } from '@/extension/messages'
 
 export default defineBackground(() => {
   browser.action.onClicked.addListener((tab) => {

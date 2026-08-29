@@ -5,8 +5,8 @@ import type {
   RequirementEvaluation,
   SupportNameEvaluation,
 } from './types'
-import type { FilterConfig, SkillRequirement } from '@/utils/filter-config/types'
-import { normalizeMercenarySkillName } from '@/utils/mercenary-data'
+import type { FilterConfig, SkillRequirement } from '@/features/mercenary-filter/model/filter-config/types'
+import { normalizeMercenarySkillName } from '@/shared/mercenary-data'
 import {
   BADGE_LABELS,
   BADGE_VARIANT_CLASSES,

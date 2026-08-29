@@ -1,11 +1,11 @@
 import type { Root } from 'react-dom/client'
-import type { FilterConfig } from '@/utils/filter-config/types'
+import type { FilterConfig } from '@/features/mercenary-filter/model/filter-config/types'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import SidebarPanel from '@/components/sidebar-panel'
-import UiProvider from '@/components/ui/provider'
-import { createFilterConfig } from '@/utils/filter-config'
-import { getGeneratedSearchDraft } from '@/utils/generated-search-drafts'
+import { createFilterConfig } from '@/features/mercenary-filter/model/filter-config'
+import { getGeneratedSearchDraft } from '@/features/trade-search/storage/generated-search-drafts'
+import UiProvider from '@/shared/ui/provider'
+import SidebarPanel from './components/sidebar-panel'
 import { HIGHLIGHT_DELAY_MS } from './const'
 import {
   applyTradeFilter,
