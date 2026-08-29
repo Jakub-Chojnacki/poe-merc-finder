@@ -1,4 +1,11 @@
 :host {
+  //Many users will use poe-better-trade extension which 
+  //has zIndex 1000 on host so we have to bump it up by 1
+  --better-trade-zIndex: 1000;
+
+  position: relative !important;
+  z-index: calc(var(--better-trade-zIndex) + 1) !important;
+
   --color-background: #101014;
   --color-surface: #18181d;
   --color-border: #2c2c34;

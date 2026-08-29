@@ -1,11 +1,10 @@
-import type { SidebarPanelProps, SidebarPanelStyle } from './types'
+import type { SidebarPanelProps } from './types'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import MainSidebar from '@/components/main-sidebar'
 import {
   CollapsibleContent,
   CollapsibleRoot,
 } from '@/components/ui/collapsible'
-import { useBetterTradingOffset } from '@/hooks/use-better-trading-offset'
 import {
   COLLAPSED_STORAGE_KEY,
   PAGE_CLASS,
@@ -19,7 +18,6 @@ const SidebarPanel: React.FC<SidebarPanelProps> = ({
 }) => {
   const [isCollapsed, setIsCollapsed] = useState(true)
   const isCollapsedRef = useRef(true)
-  const betterTradingOffset = useBetterTradingOffset()
 
   useEffect(() => {
     let isActive = true
@@ -75,17 +73,13 @@ const SidebarPanel: React.FC<SidebarPanelProps> = ({
     return () => browser.runtime.onMessage.removeListener(handleMessage)
   }, [updateOpen])
 
-  const sidebarStyle: SidebarPanelStyle = {
-    '--sidebar-right-offset': `${betterTradingOffset}px`,
-  }
-
   return (
     <CollapsibleRoot
       asChild
       open={!isCollapsed}
       onOpenChange={updateOpen}
     >
-      <div className="sidebar-container" style={sidebarStyle}>
+      <div className="sidebar-container">
         <CollapsibleContent forceMount asChild>
           <aside
             className="sidebar-panel"

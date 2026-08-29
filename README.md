@@ -30,8 +30,6 @@ gem, but it cannot require those supports to be linked to a specific skill. This
   them later.
 - Export saved setups as portable codes and import codes shared by other users.
 - Open or close the extension panel from the browser toolbar.
-- Automatically move alongside the Better Trading panel when both extensions
-  are active.
 
 ## Usage
 

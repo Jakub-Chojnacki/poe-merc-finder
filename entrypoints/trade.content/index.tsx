@@ -51,18 +51,17 @@ export default defineContentScript({
 
     const ui = await createShadowRootUi<Root>(ctx, {
       name: 'poe-merc-finder-sidebar',
-      position: 'modal',
+      position: 'inline',
       anchor: 'body',
       css: panelStyles,
       isolateEvents: true,
-      zIndex: 2147483000,
       onMount(container) {
-        container.style.pointerEvents = 'none'
-
         const app = document.createElement('div')
-        app.className = 'extension-root'
         const portalContainer = document.createElement('div')
+
+        app.className = 'extension-root'
         portalContainer.className = 'extension-portals'
+
         container.append(app, portalContainer)
 
         const root = createRoot(app)

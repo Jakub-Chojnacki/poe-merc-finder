@@ -19,17 +19,19 @@ import {
 } from './utils'
 
 export function exportSavedSetupCode(setup: SavedSetup): string {
+  const { filterDraft: { hideFailures, mercenaryClass, requirements }, name } = setup
+
   const payload: SavedSetupCodePayload = {
     filter: {
-      hideFailures: setup.filterDraft.hideFailures,
-      mercenaryClass: setup.filterDraft.mercenaryClass,
-      requirements: setup.filterDraft.requirements.map(requirement => ({
-        optionalSupports: requirement.optionalSupports,
-        requiredSupports: requirement.requiredSupports,
-        skill: requirement.skill,
+      hideFailures,
+      mercenaryClass,
+      requirements: requirements.map(({ optionalSupports, requiredSupports, skill }) => ({
+        optionalSupports,
+        requiredSupports,
+        skill,
       })),
     },
-    name: setup.name,
+    name,
     version: SAVED_SETUP_CODE_VERSION,
   }
 
