@@ -1,6 +1,7 @@
 import type { WarrantImportDialogProps } from './types'
 import { useId, useState } from 'react'
-import CloseIcon from '@/components/icons/close'
+import { parseMercenaryWarrant } from '@/features/warrant-import/model/warrant-parser'
+import formatCount from '@/shared/format-count'
 import {
   DialogClose,
   DialogContent,
@@ -8,13 +9,9 @@ import {
   DialogRoot,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog'
-import { parseMercenaryWarrant } from '@/utils/warrant-import'
+} from '@/shared/ui/dialog'
+import CloseIcon from '@/shared/ui/icons/close'
 import { WARRANT_ICON_PATH } from './const'
-
-function formatCount(count: number, label: string): string {
-  return `${count} ${label}${count === 1 ? '' : 's'}`
-}
 
 const WarrantImportDialog: React.FC<WarrantImportDialogProps> = ({
   confirmReplacement,

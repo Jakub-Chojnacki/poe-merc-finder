@@ -1,10 +1,10 @@
 import type { ImportedWarrantFilter } from './types'
-import type { SkillRequirementDraft } from '@/utils/filter-draft/types'
+import type { SkillRequirementDraft } from '@/features/mercenary-filter/model/filter-draft/types'
 import {
   getMercenarySkillOptions,
   getMercenarySupportOptions,
-} from '@/utils/mercenary-data'
-import { MERCENARY_OPTIONS } from '@/utils/mercenary-data/const'
+} from '@/shared/mercenary-data'
+import { MERCENARY_OPTIONS } from '@/shared/mercenary-data/const'
 
 const WARRANT_NAME = 'Mercenary Warrant'
 const SECTION_SEPARATOR_PATTERN = /^\s*-{8,}\s*$/m

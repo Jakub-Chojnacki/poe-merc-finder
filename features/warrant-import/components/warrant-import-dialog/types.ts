@@ -1,4 +1,4 @@
-import type { ImportedWarrantFilter } from '@/utils/warrant-import/types'
+import type { ImportedWarrantFilter } from '@/features/warrant-import/model/warrant-parser/types'
 
 export interface WarrantImportDialogProps {
   confirmReplacement: boolean
