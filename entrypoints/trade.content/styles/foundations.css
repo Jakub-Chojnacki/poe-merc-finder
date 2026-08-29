@@ -1,6 +1,5 @@
 :host {
-  //Many users will use poe-better-trade extension which 
-  //has zIndex 1000 on host so we have to bump it up by 1
+  /* PoE Better Trading uses z-index 1000, so keep this host above it. */
   --better-trade-zIndex: 1000;
 
   position: relative !important;

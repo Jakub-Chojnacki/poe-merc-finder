@@ -1,6 +1,6 @@
 .sidebar-container {
   position: fixed;
-  inset: 0 0 0 auto;
+  inset: 0 var(--removed-body-scroll-bar-size, 0px) 0 auto;
   width: var(--sidebar-width);
   pointer-events: none;
 }
