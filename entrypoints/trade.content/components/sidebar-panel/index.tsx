@@ -1,15 +1,15 @@
 import type { SidebarPanelProps } from './types'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import MainSidebar from '@/components/main-sidebar'
+import { TOGGLE_SIDEBAR_MESSAGE } from '@/extension/messages'
 import {
   CollapsibleContent,
   CollapsibleRoot,
-} from '@/components/ui/collapsible'
+} from '@/shared/ui/collapsible'
+import MainSidebar from '../main-sidebar'
 import {
   COLLAPSED_STORAGE_KEY,
   PAGE_CLASS,
   PAGE_OPEN_CLASS,
-  TOGGLE_SIDEBAR_MESSAGE,
 } from './const'
 
 const SidebarPanel: React.FC<SidebarPanelProps> = ({

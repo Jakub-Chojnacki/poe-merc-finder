@@ -1,19 +1,16 @@
 import type { MainSidebarProps } from './types'
-import type { FilterDraft } from '@/utils/filter-draft/types'
-import type { ImportedWarrantFilter } from '@/utils/warrant-import/types'
+import type { FilterDraft } from '@/features/mercenary-filter/model/filter-draft/types'
+import type { ImportedWarrantFilter } from '@/features/warrant-import/model/warrant-parser/types'
 import { useState } from 'react'
-import FilterEditor from '@/components/filter-editor'
-import ChevronIcon from '@/components/icons/chevron'
-import SavedSetupManager from '@/components/saved-setup-manager'
-import { CollapsibleTrigger } from '@/components/ui/collapsible'
-import UiTooltip from '@/components/ui/tooltip'
-import WarrantImportDialog from '@/components/warrant-import-dialog'
-import { useTradePageFilter } from '@/hooks/use-trade-page-filter'
-import { hasConfiguredSkillRequirements } from '@/utils/filter-draft'
-
-function formatCount(count: number, label: string): string {
-  return `${count} ${label}${count === 1 ? '' : 's'}`
-}
+import FilterEditor from '@/features/mercenary-filter/components/filter-editor'
+import { useTradePageFilter } from '@/features/mercenary-filter/hooks/use-trade-page-filter'
+import { hasConfiguredSkillRequirements } from '@/features/mercenary-filter/model/filter-draft'
+import SavedSetupManager from '@/features/saved-setups/components/saved-setup-manager'
+import WarrantImportDialog from '@/features/warrant-import/components/warrant-import-dialog'
+import formatCount from '@/shared/format-count'
+import { CollapsibleTrigger } from '@/shared/ui/collapsible'
+import ChevronIcon from '@/shared/ui/icons/chevron'
+import UiTooltip from '@/shared/ui/tooltip'
 
 const MainSidebar: React.FC<MainSidebarProps> = ({
   initialFilterDraft,
