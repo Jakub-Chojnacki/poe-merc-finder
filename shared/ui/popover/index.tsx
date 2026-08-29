@@ -1,8 +1,8 @@
 import type { ComponentPropsWithRef } from 'react'
 import type { PopoverContentProps } from './types'
 import * as RadixPopover from 'radix-ui/popover'
-import { usePortalContainer } from '@/components/ui/provider/context'
-import { mergeClassNames } from '@/components/ui/utils'
+import { usePortalContainer } from '@/shared/ui/provider/context'
+import { mergeClassNames } from '@/shared/ui/utils'
 import {
   POPOVER_COLLISION_PADDING_PX,
   POPOVER_SIDE_OFFSET_PX,

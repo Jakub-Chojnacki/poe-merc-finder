@@ -1,6 +1,6 @@
 import type { IconButtonProps } from './types'
-import UiTooltip from '@/components/ui/tooltip'
-import { mergeClassNames } from '@/components/ui/utils'
+import UiTooltip from '@/shared/ui/tooltip'
+import { mergeClassNames } from '@/shared/ui/utils'
 
 const IconButton: React.FC<IconButtonProps> = ({
   children,

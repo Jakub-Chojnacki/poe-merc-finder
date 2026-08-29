@@ -1,7 +1,7 @@
 import type { UiCheckboxProps } from './types'
 import * as Checkbox from 'radix-ui/checkbox'
-import CheckIcon from '@/components/icons/check'
-import { mergeClassNames } from '@/components/ui/utils'
+import CheckIcon from '@/shared/ui/icons/check'
+import { mergeClassNames } from '@/shared/ui/utils'
 
 const UiCheckbox: React.FC<UiCheckboxProps> = ({ className, ...props }) => {
   const checkboxClassName = mergeClassNames('ui-checkbox', className)

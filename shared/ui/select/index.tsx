@@ -1,9 +1,9 @@
 import type { UiSelectProps } from './types'
 import * as Select from 'radix-ui/select'
-import CheckIcon from '@/components/icons/check'
-import ChevronIcon from '@/components/icons/chevron'
-import { usePortalContainer } from '@/components/ui/provider/context'
-import { mergeClassNames } from '@/components/ui/utils'
+import CheckIcon from '@/shared/ui/icons/check'
+import ChevronIcon from '@/shared/ui/icons/chevron'
+import { usePortalContainer } from '@/shared/ui/provider/context'
+import { mergeClassNames } from '@/shared/ui/utils'
 import {
   SELECT_COLLISION_PADDING_PX,
   SELECT_SIDE_OFFSET_PX,

@@ -1,16 +1,16 @@
 import type { SelectFieldProps } from './types'
 import { useId, useMemo, useState } from 'react'
-import ChevronIcon from '@/components/icons/chevron'
+import ChevronIcon from '@/shared/ui/icons/chevron'
 import {
   PopoverContent,
   PopoverRoot,
   PopoverTrigger,
-} from '@/components/ui/popover'
+} from '@/shared/ui/popover'
 import {
   ToggleGroupItem,
   ToggleGroupRoot,
-} from '@/components/ui/toggle-group'
-import UiVisuallyHidden from '@/components/ui/visually-hidden'
+} from '@/shared/ui/toggle-group'
+import UiVisuallyHidden from '@/shared/ui/visually-hidden'
 import { getAvailableSelectOptions } from './utils'
 
 const SelectField: React.FC<SelectFieldProps> = ({

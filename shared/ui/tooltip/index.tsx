@@ -1,6 +1,6 @@
 import type { UiTooltipProps } from './types'
 import * as Tooltip from 'radix-ui/tooltip'
-import { usePortalContainer } from '@/components/ui/provider/context'
+import { usePortalContainer } from '@/shared/ui/provider/context'
 import { TOOLTIP_SIDE_OFFSET_PX } from './const'
 
 const UiTooltip: React.FC<UiTooltipProps> = ({

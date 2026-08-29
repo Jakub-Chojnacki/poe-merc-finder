@@ -1,8 +1,8 @@
 import type { ComponentPropsWithRef } from 'react'
 import type { DialogContentProps } from './types'
 import * as RadixDialog from 'radix-ui/dialog'
-import { usePortalContainer } from '@/components/ui/provider/context'
-import { mergeClassNames } from '@/components/ui/utils'
+import { usePortalContainer } from '@/shared/ui/provider/context'
+import { mergeClassNames } from '@/shared/ui/utils'
 
 export const DialogRoot: React.FC<
   ComponentPropsWithRef<typeof RadixDialog.Root>

@@ -1,15 +1,15 @@
 import type { MultiSelectFieldProps } from './types'
 import { useId, useMemo, useState } from 'react'
-import ChevronIcon from '@/components/icons/chevron'
-import CloseIcon from '@/components/icons/close'
-import UiCheckbox from '@/components/ui/checkbox'
+import UiCheckbox from '@/shared/ui/checkbox'
+import ChevronIcon from '@/shared/ui/icons/chevron'
+import CloseIcon from '@/shared/ui/icons/close'
 import {
   PopoverAnchor,
   PopoverContent,
   PopoverRoot,
   PopoverTrigger,
-} from '@/components/ui/popover'
-import UiVisuallyHidden from '@/components/ui/visually-hidden'
+} from '@/shared/ui/popover'
+import UiVisuallyHidden from '@/shared/ui/visually-hidden'
 import {
   getAvailableMultiSelectOptions,
   updateSelectedOptions,
