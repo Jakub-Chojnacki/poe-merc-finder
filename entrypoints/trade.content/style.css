@@ -30,7 +30,6 @@ body.poe-merc-finder-page {
 @media (min-width: 1280px) {
   body.poe-merc-finder-page.poe-merc-finder-panel-open {
     box-sizing: border-box;
-    width: 100%;
     padding-right: var(--poe-merc-finder-panel-width) !important;
   }
 }
